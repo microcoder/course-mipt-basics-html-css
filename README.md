@@ -4,13 +4,9 @@
 Автор этого репозитория проходил обучение по данному курсу и родилась идея реализовать краткий справочник-конспект по пройденному материалу курса.
 
 # Пример страниц
-<<<<<<< HEAD
 ![Gif-анимация визуальной части проекта](https://github.com/microcoder/course_basics_html_css/blob/master/res/site_animation.gif)
-=======
-![alt text](https://github.com/microcoder/course_basics_html_css/raw/master/src/res/site_animation.gif)
->>>>>>> aec365ff3869a30908b83d2bb5a4affe64102e43
 
 # Как использовать?
 Варианты:
-1. Вы можете скачать файлы из репозитория и запустить с локального диска файл index.html который находится в корне проекта.
-2. Развернуть каталог с проектом на HTTP-сервере и запустить http://localhost:8080/index.html
+1. Вы можете скачать файлы из репозитория и запустить с локального диска файл index.html который находится в корне проекта. Так как проект использует AJAX подгрузку страниц, то в браузере Google Chrome это не работает по причине: `Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https.`, используйте вместо этого браузер Firefox.
+2. Вы можете развернуть каталог с проектом на HTTP-сервере и запустить его по адресу: http://localhost:8080/index.html
