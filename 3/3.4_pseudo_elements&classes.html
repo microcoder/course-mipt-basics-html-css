@@ -1,0 +1,495 @@
+<div class="row">
+    <div class="col-8">
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Динамические псевдоклассы</h3>
+            <p>Позволяют выбрать элементы определенного состояния</p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Количество элементов <code>:
+                    * Если один, то отображается исходный код и он же проигрывается на странице.
+                    * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+                -->
+                <code class="html">
+                    <a href="#1">Ссылка 1</a>
+                    <a href="#2">Ссылка 2</a>
+                    <a href="#3">Ссылка 3</a>
+                    
+                    <style type="text/css">
+                        /* Выбирается HTML элемент <a> и его псевдоклассы (link, active, hover, visited, focus) - состояние элемента */
+                        a:link { color: blue; }           /* Элемент который ссылается на документ */
+                        a:active { color: red; }          /* Элемент на который нажали указателем мыши */
+                        a:hover { color: green; }         /* Элемент на который навели указатель мыши */
+                        a:visited { color: purple; }      /* Элемент который ссылается на документ и его уже посетили */
+                        a:focus { color: yellow; }        /* Элемент на который сфокусировались с помощью клавиатуры */
+                    </style>
+                </code>
+                <code class="html">
+                    <a class="ex1" href="#1">Ссылка 1</a>
+                    <a class="ex1" href="#2">Ссылка 2</a>
+                    <a class="ex1" href="#3">Ссылка 3</a>
+                    
+                    <style type="text/css">
+                        /* Выбирается HTML элемент <a> и его псевдоклассы (link, active, hover, visited, focus) - состояние элемента */
+                        a.ex1:link { color: blue; }           /* Элемент который ссылается на документ */
+                        a.ex1:active { color: red; }          /* Элемент на который нажали указателем мыши */
+                        a.ex1:hover { color: green; }         /* Элемент на который навели указатель мыши */
+                        a.ex1:visited { color: purple; }      /* Элемент который ссылается на документ и его уже посетили */
+                        a.ex1:focus { color: yellow; }        /* Элемент на который сфокусировались с помощью клавиатуры */
+                    </style>
+                </code>
+            </div>
+            <p>
+                Еще динамические псевдоклассы:<br>
+                <ul>
+                    <li><em>:enabled</em> - Позволяет выбрать все элементы форм в которых есть атрибут enabled</li>
+                    <li><em>:disabled</em> - Позволяет выбрать все элементы форм в которых есть атрибут disabled</li>
+                    <li><em>:checked</em> - Позволяет выбрать все элементы форм в которых есть атрибут checked</li>
+                    <li><em>:indeterminate</em> - Такого состояния нет в HTML, но такое состояние существует у checkbox'ов. Это состояние можно задать из JS.
+                        Чаще всего оно употребляется для вложенных списков для того, чтобы выбрать одним checkbox'ом всю категорию.
+                        Если вдруг, внутри категории вы выбераете не все элементы, а только некоторые, то селектор для категорий
+                        переходит в неопределенное состояние. Он как бы показывает, что у вас в категории есть и выбранные, и
+                        не выбранные элементы.
+                    </li>
+                    <li><em>:read-only</em> - Позволяет выбрать те элементы у которых задан атрибут только для чтения</li>
+                    <li><em>:valid</em> - Позволяет у элементов форм показать что введенный код, например, валиден.</li>
+                </ul>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <p>
+                            <input type="number" min="0" max="10" class="example">
+                            <input type="text" class="example" disabled>
+                        </p>
+                        
+                        <style type="text/css">
+                            input.example { padding: 5px; }
+                            .example:enabled { background: red; }
+                            .example:disabled { background: yellow; }
+                            .example:valid { background: green; }
+                        </style>
+                    </code>
+                </div>
+
+            </p>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Структурные псевдоклассы</h3>
+            <p>
+                Позволяют выбрать элементы в зависимости от их положения в структуре HTML документа:<br>
+                <ul>
+                    <li><em>:root</em> - позволяет выбрать корневой элемент HTML документа</li>
+                    <li><em>:first-child</em> и <em>:last-child</em> - позволяют выбирать первого или последнего ребенка</li>
+                    <li><em>:nth-child</em> и <em>:nth-last-child(2n+1)</em> - 
+                        позволяют выбирать n-ого ребенка или n-ого ребенка с конца. В примере выбираются все нечетные дети</li>
+                    <li><em>:nth-of-type</em> и <em>:nth-last-of-type(-n+4)</em> - 
+                        позволяют выбирать детей не только в зависимости от их положения относительно других детей, но еще
+                        предварительно сгруппировав их по типу</li>
+                    <li><em>:only-child</em> и <em>:only-of-type</em> - позволяют выбирать уникальных детей</li>
+                    <li><em>:empty</em> - позволяет выбрать элементы которые пусты, т.е. не содержат никакого контента</li>
+                </ul>
+                Как работают псевдоклассы?
+            </p>
+            
+            <div class="card bg-light mb-3 p-3">
+                <code class="html">
+                    <!-- Псевдокласс :first-child выберет первые элементы на каждом из уровней -->
+                    <div>                          <!-- <div> первый ребенок у корневого элемента -->
+                        <ul>                        <!-- <ul> первый ребенок у элемента <html> -->
+                            <li>item1</li>          <!-- <li> первый ребенок у элемента <ul> -->
+                            <li>item2</li>
+                            <li>
+                                <ul>                <!-- <ul> первый ребенок у элемента <li> -->
+                                    <li>item3</li>  <!-- <li> первый ребенок у элемента <ul> -->
+                                    <li>item4</li>
+                                </ul>
+                                <ul>
+                                    <li>item5</li>  <!-- <ul> первый ребенок у элемента <ul> -->
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p>Текст в параграфе</p>
+                    </div>
+                    
+                    <style type="text/css">
+                        div :first-child {
+                            color:red;
+                        }
+                    </style>
+                </code>
+                <code class="html">
+                    <div id="ex2">
+                        <ul>                        <!-- <ul> первый ребенок у элемента <div> -->
+                            <li>item1</li>          <!-- <li> первый ребенок у элемента <ul> -->
+                            <li>item2</li>
+                            <li>
+                                <ul>                <!-- <ul> первый ребенок у элемента <li> -->
+                                    <li>item3</li>  <!-- <li> первый ребенок у элемента <ul> -->
+                                    <li>item4</li>
+                                </ul>
+                                <ul>
+                                    <li>item5</li>  <!-- <ul> первый ребенок у элемента <ul> -->
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p>Текст в параграфе</p>
+                    </div>
+                    <style type="text/css">
+                        div#ex2 :first-child {
+                            color:red;
+                        }
+                    </style>
+                </code>
+            </div>
+
+            <div class="card bg-light mb-3 p-3">
+                <code class="html">
+                    <!-- Псевдокласс :last-child выберет последние элементы на каждом из уровней -->
+                    <div>
+                        <ul>
+                            <li>item1</li>
+                            <li>item2</li>
+                            <li>                    <!-- <li> последний ребенок у элемента <ul> -->
+                                <ul>
+                                    <li>item3</li>
+                                    <li>item4</li>  <!-- <li> последний ребенок у элемента <ul> -->
+                                </ul>
+                                <ul>                <!-- <ul> последний ребенок у элемента <li> -->
+                                    <li>item5</li>  <!-- <li> последний ребенок у элемента <ul> -->
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p>Текст в параграфе</p>              <!-- <p> последний ребенок у элемента <div> -->
+                    </div>
+
+                    <style type="text/css">
+                        div :last-child {
+                            color:red;
+                        }
+                    </style>
+                </code>
+                <code class="html">
+                    <!-- Псевдокласс :last-child выберет последние элементы на каждом из уровней -->
+                    <div id="ex3">
+                        <ul>
+                            <li>item1</li>
+                            <li>item2</li>
+                            <li>                    <!-- <li> последний ребенок у элемента <ul> -->
+                                <ul>
+                                    <li>item3</li>
+                                    <li>item4</li>  <!-- <li> последний ребенок у элемента <ul> -->
+                                </ul>
+                                <ul>                <!-- <ul> последний ребенок у элемента <li> -->
+                                    <li>item5</li>  <!-- <li> последний ребенок у элемента <ul> -->
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p>Текст в параграфе</p>              <!-- <p> последний ребенок у элемента <div> -->
+                    </div>
+
+                    <style type="text/css">
+                        div#ex3 :last-child {
+                            color:red;
+                        }
+                    </style>
+                </code>
+            </div>
+
+            <div class="card bg-light mb-3 p-3">
+                <code class="html">
+                    <!-- Псевдокласс :only-child выберет элементы, которые являются единственными детьми внутри данного -->
+                    <div>
+                        <ul>
+                            <li>item1</li>
+                            <li>item2</li>
+                            <li>
+                                <ul>
+                                    <li>item3</li>
+                                    <li>item4</li>
+                                </ul>
+                                <ul>
+                                    <li>item5</li>  <!--единственный ребенок -->
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div :only-child {
+                            color:red;
+                        }
+                    </style>
+                </code>
+                <code class="html">
+                    <!-- Псевдокласс :only-child выберет элементы, которые являются единственными детьми внутри данного -->
+                    <div id="ex4">
+                        <ul>
+                            <li>item1</li>
+                            <li>item2</li>
+                            <li>
+                                <ul>
+                                    <li>item3</li>
+                                    <li>item4</li>
+                                </ul>
+                                <ul>
+                                    <li>item5</li>  <!--единственный ребенок -->
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div#id4 :only-child {
+                            color:red;
+                            font-weight: bold;
+                        }
+                    </style>
+                </code>
+            </div>
+
+            <div class="card bg-light mb-3 p-3">
+                <code class="html">
+                    <!-- Псевдокласс :nth-child(2n) выберет каждый второй элемент на уровне -->
+                    <div>
+                        <div>
+                            <span>item1</span>
+                            <em>item2</em>              <!-- n-ый элемент -->
+                            <div>
+                                <em>
+                                    <span>item3</span>
+                                    <span>item4</span>  <!-- n-ый элемент -->
+                                </em>
+                                <em>                    <!-- n-ый элемент -->
+                                    <i>item5</i>
+                                </em>
+                            </div>
+                            <span>item6</span>          <!-- n-ый элемент -->
+                            <div>item7</div>
+                        </div>
+
+                        <div>item8</div>                <!-- n-ый элемент -->
+                    </div>
+
+                    <style type="text/css">
+                        div :nth-child(2n) {
+                            color:red;
+                        }
+                    </style>
+                </code>
+                <code class="html">
+                    <!-- Псевдокласс :nth-child(2n) выберет каждый второй элемент на уровне -->
+                    <div id="ex5">
+                        <div>
+                            <span>item1</span>
+                            <em>item2</em>              <!-- n-ый элемент -->
+                            <div>
+                                <em>
+                                    <span>item3</span>
+                                    <span>item4</span>  <!-- n-ый элемент -->
+                                </em>
+                                <em>                    <!-- n-ый элемент -->
+                                    <i>item5</i>
+                                </em>
+                            </div>
+                            <span>item6</span>          <!-- n-ый элемент -->
+                            <div>item7</div>
+                        </div>
+
+                        <div>item8</div>                <!-- n-ый элемент -->
+                    </div>
+
+                    <style type="text/css">
+                        div#ex5 :nth-child(2n) {
+                            color:red;
+                        }
+                    </style>
+                </code>
+            </div>
+
+            <div class="card bg-light mb-3 p-3">
+                <code class="html">
+                    <!-- div:nth-of-type(2n) выберет каждый второй элемент <div> (заданного типа) на уровне иерархии -->
+                    <div>
+                        <div>
+                            <span>item1</span>
+                            <em>item2</em>
+                            <div>
+                                <em>
+                                    <span>item3</span>
+                                    <span>item4</span>
+                                </em>
+                                <em>
+                                    <i>item5</i>
+                                </em>
+                            </div>
+                            <span>item6</span>
+                            <div>item7</div>            <!-- n-ый элемент <div> -->
+                        </div>
+
+                        <div>item8</div>                <!-- n-ый элемент <div> -->
+                    </div>
+
+                    <style type="text/css">
+                        div div:nth-of-type(2n) {
+                            color:red;
+                        }
+                    </style>
+                </code>
+                <code class="html">
+                    <!-- div:nth-of-type(2n) выберет каждый второй элемент <div> (заданного типа) на уровне иерархии -->
+                    <div id="ex6">
+                        <div>
+                            <span>item1</span>
+                            <em>item2</em>
+                            <div>
+                                <em>
+                                    <span>item3</span>
+                                    <span>item4</span>
+                                </em>
+                                <em>
+                                    <i>item5</i>
+                                </em>
+                            </div>
+                            <span>item6</span>
+                            <div>item7</div>            <!-- n-ый элемент <div> -->
+                        </div>
+
+                        <div>item8</div>                <!-- n-ый элемент <div> -->
+                    </div>
+
+                    <style type="text/css">
+                        div#ex6 div:nth-of-type(2n) {
+                            color:red;
+                        }
+                    </style>
+                </code>
+            </div>
+
+            <div class="card bg-light mb-3 p-3">
+                <code class="html">
+                    <!-- :nth-of-type(2n) выберет каждый второй элемент каждого из типов на уровне иерархии -->
+                    <div>
+                        <div>
+                            <span>item1</span>
+                            <em>item2</em>
+                            <div>
+                                <em>
+                                    <span>item3</span>
+                                    <span>item4</span>  <!-- n-ый элемент -->
+                                </em>
+                                <em>                    <!-- n-ый элемент -->
+                                    <i>item5</i>
+                                </em>
+                            </div>
+                            <span>item6</span>          <!-- n-ый элемент -->
+                            <div>item7</div>            <!-- n-ый элемент -->
+                        </div>
+
+                        <div>item8</div>                <!-- n-ый элемент -->
+                    </div>
+
+                    <style type="text/css">
+                        div :nth-of-type(2n) {
+                            color:red;
+                        }
+                    </style>
+                </code>
+                <code class="html">
+                    <!-- :nth-of-type(2n) выберет каждый второй элемент каждого из типов на уровне иерархии -->
+                    <div id="ex7">
+                        <div>
+                            <span>item1</span>
+                            <em>item2</em>
+                            <div>
+                                <em>
+                                    <span>item3</span>
+                                    <span>item4</span>  <!-- n-ый элемент -->
+                                </em>
+                                <em>                    <!-- n-ый элемент -->
+                                    <i>item5</i>
+                                </em>
+                            </div>
+                            <span>item6</span>          <!-- n-ый элемент -->
+                            <div>item7</div>            <!-- n-ый элемент -->
+                        </div>
+
+                        <div>item8</div>                <!-- n-ый элемент -->
+                    </div>
+
+                    <style type="text/css">
+                        div#ex7 :nth-of-type(2n) {
+                            color:red;
+                        }
+                    </style>
+                </code>
+            </div>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Псевдоэлементы</h3>
+            <p>
+                Позволяют выбрать несуществующие элементы на странице HTML документа: <br>
+                <ul>
+                    <li><em>::first-letter { color: red; }</em> - Выбирает первый символ</li>
+                    <li><em>::first-line { color: blue; }</em> - Выбирает первую строку</li>
+                </ul>
+            </p>
+            <div class="card bg-light mb-3 p-3">
+                <code class="html">
+                    <p class="ya">
+                        Яндекс.Браузер предостерегает пользователей, <br>
+                        когда они начинают вводить пароль на подозрительных страницах.
+                    </p>
+                    
+                    <style type="text/css">
+                        p.ya::first-letter { color: red; }
+                        p.ya::first-line { color: blue; }
+                    </style>
+                </code>
+            </div>
+            <p>
+                Существуют еще такие псевдоэлементы как ::before и ::after которые вставляются внутри HTML документа виртуально перед
+                открывающим тегом и перед закрывающим тегом элемента. Они всегда находятся здесь:
+                <p>
+                    &lt;div&gt; <br>
+                        <strong>::before</strong>Однажды, в студеную зимнюю пору <br>
+                        Я из лесу вышел; был сильный мороз. <br>
+                        Гляжу, поднимается медленно в гору <br>
+                        Лошадка, везущая хворосту воз.<strong>::after</strong><br>
+                    &lt;/div&gt;
+                </p>
+                Для чего это может быть нужно? Пример:
+            </p>
+            <div class="card bg-light mb-3 p-3">
+                <code class="html">
+                    <p class="decore">
+                    Однажды, в студеную зимнюю пору <br>
+                    Я из лесу вышел; был сильный мороз. <br>
+                    Гляжу, поднимается медленно в гору <br>
+                    Лошадка, везущая хворосту воз.
+                    </p>
+                    
+                    <style type="text/css">
+                        p.decore::before,
+                        p.decore::after {
+                            color: red;
+                            font-weight: bold;
+                            content: '«';
+                        }
+                        p.decore::after {
+                            content: '»';
+                        }
+                    </style>
+                </code>
+            </div>
+        </article>
+        
+    </div>
+</div>

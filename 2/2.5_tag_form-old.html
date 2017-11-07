@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Тег <form></title>
+    </head>
+</html>
+
+<!-- ########################################################################################################
+    form - предназначена для обмена данными между пользователем и сервером.
+-->
+<h2>Элемент form</h2>
+
+<p>
+    <form>
+        <input type="text" name="name" placeholder="Ваше Ф.И.О."><br>
+        <input type="email" name="email" placeholder="Ваш e-mail"><br>
+        <input type="hidden" name="secret">
+        <button type="submit">Отправить</button>
+        <button type="reset">Сбросить</button>
+    </form>
+</p>
+
+<!--
+    Атрибут action - указывает обработчик к которому обращаются данные формы при их отправке на сервер.
+-->
+<h2>Атрибут action</h2>
+<p>
+    <form action="http://localhost/index.html">
+        <input type="text" name="name" placeholder="Ваше Ф.И.О."><br>
+        <input type="email" name="email" placeholder="Ваш e-mail"><br>
+        <input type="hidden" name="secret">
+        <button type="submit">Отправить</button>
+    </form>
+</p>
+
+<!--
+    Атрибут method - сообщает серверу о типе запроса. Значения атрибута:
+        get  - Предназначен для получения требуемой информации и передачи данных в адресной строке (ограничение в 4kb).
+               Это значение метода по умолчанию. Приемущества: Можно сохранить строку запроса в закладках.
+        post - Посылает на сервер данные в запросе браузера. Большие объемы данных используются в форумах, почтовых службах,
+               заполнении базы данных, при пересылке файлов и т.д.
+               Приемущества: Отправка данных свыше 4kb, отправка секретных данных которые не должны быть сохранены
+                             или отображаемы в адресной строке браузера
+ -->
+<h2>Атрибут method</h2>
+<p>
+    <form method="post" action="http://localhost/index.html">
+        <input type="text" name="firstName" value="Артем">
+        <button>Отправить</button>
+    </form>
+</p>
+
+
+<!-- В HTML5 появилась особенность проверки форм -->
+<h2>Валидация формы (для HTML5)</h2>
+<p>
+    <form method="post">
+        <input type="text" placeholder="Как Вас зовут?" required> <!-- required - браузер требует заполнение формы -->
+        <input type="email" placeholder="e-mail" required>
+        <input type="url" placeholder="URL" required>
+        <input type="tel" pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="+7 (985) 968-92-48" title="В Firefox pattern не работает" required>
+
+        <button type="submit">Отправить</button>
+        <button type="reset">Очистить</button>
+    </form>
+</p>
+
+
+<!--
+    Атрибут tabindex - устанавливает порядок получения фокуса при переходе между элементами с помощью клавиши <TAB>
+-->
+<h2>Атрибут tabindex</h2>
+
+<p>
+    <p>Нажмите клавишу <TAB> для перехода между элементами</p>
+    <button>Шестой</button><br>
+    <button>Седьмой</button><br>
+    <button tabindex="5">Пятый</button><br>
+    <button tabindex="1">Первый</button><br>
+    <button tabindex="3">Третий</button><br>
+    <button tabindex="2">Второй</button><br>
+    <button tabindex="4">Четвертый</button><br>
+    <button tabindex="0">Нулевой</button>
+</p>

@@ -1,0 +1,232 @@
+<div class="row">
+    <div class="col-8">
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Директива DOCTYPE</h3>
+            <p>Первой строчкой в документе директива указывает спецификацию по которой создан этот документ</p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Количество элементов <code>:
+                    * Если один, то отображается исходный код и он же проигрывается на странице.
+                    * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+                -->
+                <code class="html">
+                    !DOCTYPE html
+                </code>
+                <code>
+                    <!-- Код исполняться не будет -->
+                </code>
+            </div>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Тег &lt;html&gt;</h3>
+            <p>
+                Тег задает границу для всего документа. Пройти валидацию HTML кода можно по
+                <a href="http://validator.w3.org/" target="_blank">этому адресу</a>
+            </p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Используются псевдотеги. В JS коде они заменяются на реальные -->
+                <code class="html">
+                    <htmltag lang="ru">  <!-- Задает границу для всего документа.  -->
+                        <headtag>        <!-- В этом теге соедержаться метаэлементы -->
+                            <meta name="description" content="..." />
+                            <title>CERN</title>
+                        </headtag>
+                        <bodytag>
+                            <p>
+                                <a href="http://home.web.cern.ch">CERN</a>
+                                is a <b>European</b> research organization
+                                that operates the <i>largest</i> particle
+                                <u>physics</u> laboratory in the world.
+                            </p>
+                        </bodytag>
+                    </htmltag>
+                </code>
+                <code>
+                    <!-- Код исполняться не будет -->
+                </code>
+            </div>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Тег &lt;title&gt;</h3>
+            <p>Тег определяет заголовок документа. Единственный обязательный элемент, и он не должен быть пустым</p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Используются псевдотеги. В JS коде они заменяются на реальные -->
+                <code class="html">
+                    <htmltag lang="ru">
+                        <headtag>
+                            <title>CERN</title>
+                        </headtag>
+                    </htmltag>
+                </code>
+                <code>
+                    <!-- Код исполняться не будет -->
+                </code>
+            </div>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Тег &lt;link&gt;</h3>
+            <p>Тег устанавливает связь с внешними документами</p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Используются псевдотеги. В JS коде они заменяются на реальные -->
+                <code class="html">
+                    <htmltag lang="ru">
+                        <headtag>
+                            <!-- Определяется связь с favicon -->
+                            <link href="favicon.ico">
+                            <!-- Определяется связь с CSS документом -->
+                            <link href="inc/master.css">
+                            <!-- Атрибут media указывает, для какого устройства будет применен этот файл -->
+                            <link href="inc/print-style.css" media="print">
+                        </headtag>
+                    </htmltag>
+                </code>
+                <code>
+                    <!-- Код исполняться не будет -->
+                </code>
+            </div>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Атрибут rel (relationship)</h3>
+            <p>Атрибут rel (relationship) тега <link> позволяет описывать тип связи между документом и внешним файлом.
+            Значений у этого атрибута довольно много, все они доступны по
+            <a href="https://www.w3.org/TR/html5/links.html#linkTypes" target="_blank">этому адресу</a>.
+            Значение alternate - указывает, что у документа есть альтернативный формат.</p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Используются псевдотеги. В JS коде они заменяются на реальные -->
+                <code class="html">
+                    <htmltag lang="en">
+                        <headtag>
+                            <link rel="alternate" type="application/rss+xml" href="rss.xml">
+                        </headtag>
+                    </htmltag>
+                </code>
+                <code>
+                    <!-- Код исполняться не будет -->
+                </code>
+            </div>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Тег &lt;base&gt;</h3>
+            <p>Тег определяет базовый адрес для всех ссылок документа,
+            а также как они будут открываться (в текущем окне target="_self" или в новом окне target="_blank")</p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Используются псевдотеги. В JS коде они заменяются на реальные -->
+                <code class="html">
+                    <htmltag lang="ru">
+                        <headtag>
+                            <base href="http://ya.ru/pages/" target="_blank">
+                        </headtag>
+                        <bodytag>
+                            <a href="about.html">About</a> <!-- адрес изменяется на http://ya.ru/pages/about.html -->
+                            <img src="cat.jpg">            <!-- адрес изменяется на http://ya.ru/pages/cat.jpg -->
+                        </bodytag>
+                    </htmltag>
+                </code>
+                <code>
+                    <!-- Код исполняться не будет -->
+                </code>
+            </div>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Тег &lt;script&gt;</h3>
+            <p>Тег предназначен для описания скриптов, может содержать ссылку на скрипт или его текст
+            на определенном языке.</p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Используются псевдотеги. В JS коде они заменяются на реальные -->
+                <code class="html">
+                    <htmltag lang="ru">
+                        <headtag>
+                            <script type="text/javascript" src="js/jquery-plugin.js"></script>
+                        </headtag>
+                        <bodytag>
+                            <script type="text/javascript">
+                                console.log('Hello!');
+                            </script>
+                        </bodytag>
+                    </htmltag>
+                </code>
+                <code>
+                    <!-- Код исполняться не будет -->
+                </code>
+            </div>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Тег &lt;style&gt;</h3>
+            <p>Тег предназначен для определения стилей
+            Атрибут media описывает устройство, для которого следует применять стилевое оформление.
+            Значения атрибута media могут быть: all, screen, print, speech, braille</p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Используются псевдотеги. В JS коде они заменяются на реальные -->
+                <code class="html">
+                    <htmltag lang="ru">
+                        <headtag>
+                            <style media="all">
+                                p {color: red;}
+                            </style>
+                        </headtag>
+                        <bodytag>
+                            <p>
+                                Demo style
+                            </p>
+                        </bodytag>
+                    </htmltag>
+                </code>
+                <code>
+                    <!-- Код исполняться не будет -->
+                </code>
+            </div>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Тег &lt;meta&gt;</h3>
+            <p>Тег определяет метаинформацию документа.
+            Эту информацию могут использовать поисковые роботы, браузер или даже социальные сети.</p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Используются псевдотеги. В JS коде они заменяются на реальные -->
+                <code class="html">
+                    <htmltag lang="ru">
+                        <headtag>
+                            <meta charset="utf-8">
+                            <meta name="description" content="CERN, the European">
+                            <meta name="autor" content="Tim Berners-Lee">
+                        </headtag>
+                    </htmltag>
+                </code>
+                <code>
+                    <!-- Код исполняться не будет -->
+                </code>
+            </div>
+        </article>
+
+        <article> <!-- ===================================================================================== -->
+            <h3>OpenGraph</h3>
+            <p>OpenGraph - возможность связывать свой контент с социальными сетями,
+            возможность там его правильно представлять.
+            Этих свойств довольно <a href="http://fbdevwiki.com/wiki/Open_Graph_protocol" target="_blank">много</a></p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Используются псевдотеги. В JS коде они заменяются на реальные -->
+                <code class="html">
+                    <htmltag lang="ru">
+                        <headtag>
+                            <meta property="og:title" content="Осень, Matt Absolon.">
+                            <meta property="og:type" content="website">
+                            <meta property="og:url" content="http://yandex.ru/images...">
+                            <meta property="og:image" content="http://images.yandex.ru/...">
+                        </headtag>
+                    </htmltag>
+                </code>
+                <code>
+                    <!-- Код исполняться не будет -->
+                </code>
+            </div>
+        </article>
+
+    </div>
+</div>
