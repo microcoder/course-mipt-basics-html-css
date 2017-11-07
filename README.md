@@ -4,11 +4,7 @@
 Автор этого репозитория проходил обучение по данному курсу и родилась идея реализовать краткий справочник-конспект по пройденному материалу курса.
 
 # Пример страниц
-<<<<<<< HEAD
 ![Gif-анимация визуальной части проекта](https://github.com/microcoder/course_basics_html_css/blob/master/res/site_animation.gif)
-=======
-![alt text](https://github.com/microcoder/course_basics_html_css/raw/master/src/res/site_animation.gif)
->>>>>>> aec365ff3869a30908b83d2bb5a4affe64102e43
 
 # Как использовать?
 Варианты:
