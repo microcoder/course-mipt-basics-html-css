@@ -8,5 +8,6 @@
 
 # Как использовать?
 Варианты:
-1. Вы можете [скачать](https://github.com/microcoder/course-basics-html-css/archive/master.zip) файлы из репозитория и запустить с локального диска файл index.html который находится в корне проекта. Так как проект использует AJAX подгрузку страниц, то в браузере Google Chrome это не работает по причине: `Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https.`, используйте вместо этого браузер Firefox.
-2. Вы можете развернуть каталог с проектом на HTTP-сервере и запустить его по адресу: http://localhost:8080/index.html
+1. Вы можете перейти по [этому адресу](https://cdn.rawgit.com/microcoder/course-basics-html-css/master/index.html) и использовать проект в онлайне.
+2. Вы можете [скачать](https://github.com/microcoder/course-basics-html-css/archive/master.zip) файлы из репозитория и запустить с локального диска файл index.html который находится в корне проекта. Так как проект использует AJAX подгрузку страниц, то в браузере Google Chrome это не работает по причине: `Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https.`, используйте вместо этого браузер Firefox.
+3. Вы можете развернуть каталог с проектом на своем HTTP-сервере и запустить его по адресу: http://localhost:8080/index.html
