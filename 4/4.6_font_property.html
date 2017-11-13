@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-8">
+
+        <article> <!-- ===================================================================================== -->
+            <h3>Свойство font</h3>
+            <p>
+                Доступны следующие свойства в указанном порядке:
+            </p>
+            <p>
+                font: <kbd>variant</kbd>
+                      <kbd>style</kbd>
+                      <kbd>weight</kbd>
+                      <kbd>size</kbd>
+                      <kbd>/ line-height</kbd>
+                      <kbd>family</kbd>
+            </p>
+            <p>
+                Обязательными из этих свойств являются <em>size</em> и <em>family</em>, без них ваша запись <em>font</em> работать не будет:<br>
+            </p>
+            <p>
+                font: <kbd style="color: gray;">variant</kbd>
+                      <kbd style="color: gray;">style</kbd>
+                      <kbd style="color: gray;">weight</kbd>
+                      <kbd>size</kbd>
+                      <kbd style="color: gray;">/ line-height</kbd>
+                      <kbd>family</kbd>
+            </p>
+            <p>
+                Рассмотрим примеры:
+            </p>
+            <div class="card bg-light mb-3 p-3">
+                <!-- Количество элементов <code>:
+                    * Если один, то отображается исходный код и он же проигрывается на странице.
+                    * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+                -->
+                <code class="css">
+                    body {
+                        font: 14px;            /* Не будет работать */
+                        font: italic Arial;    /* Не будет работать */
+                        
+                        font: 14px Arial, sans-serif;
+                        font: 14px / 1.2 Arial, sans-serif;
+                        font: italic bold 14px Times New Roman;
+                        font: small-caps italic 700 14px / 20px Arial, sans-serif;
+                    }
+                </code>
+                <code></code>
+            </div>
+        </article>
+        
+    </div>
+</div>

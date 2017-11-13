@@ -2,32 +2,29 @@
     <div class="col-8">
 
         <article> <!-- ===================================================================================== -->
+            <style> .mymark1 { background-color: #7c9dff; border-radius: 5px; } </style>
             <h3>Начертание шрифта</h3>
             <p>
-                <em>Гарнитура</em> - типографский термин, объединяющий набор шрифтов, которые отличаются по размеру,
-                <mark style="background: #7c9dff">начертанию</mark>, наличию или отсутствию засечек на концах линий,
+                <strong>Гарнитура</strong> - типографский термин, объединяющий набор шрифтов, которые отличаются по размеру,
+                <mark class="mymark1">начертанию</mark>, наличию или отсутствию засечек на концах линий,
                 пропорциям символов, по соотношению размера высоты прописных и строчных знаков, величине верхних и
-                нижних выносных элементов, <mark style="background: #7c9dff">плотности</mark>, то есть близких по
+                нижних выносных элементов, <mark class="mymark1">плотности</mark>, то есть близких по
                 характеру и отличительным знакам рисунка.
             </p>
             <p>
                 Характеристики одной гарнитуры:
-                <table class="table table-sm table-bordered w-50" style="text-align: center;">
-                    <thead>
-                        <tr>
-                            <th>Наклон</th>
-                            <th>Насыщенность</th>
-                            <th>Плотность</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="font-size: 40px; font-style: italic;">01</td>
-                            <td style="font-size: 40px; font-weight: bold;">02</td>
-                            <td style="font-size: 40px;">03</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="container" style="text-align: center;">
+                    <div class="row" style="font-weight: bold;">
+                        <div class="col-2">Наклон</div>
+                        <div class="col-2">Насыщенность</div>
+                        <div class="col-2">Плотность</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2" style="font-size: 40px; font-style: italic;">01</div>
+                        <div class="col-2" style="font-size: 40px; font-weight: bold;">02</div>
+                        <div class="col-2" style="font-size: 40px;">03</div>
+                    </div>
+                </div>
             </p>
         </article>
 
@@ -91,22 +88,19 @@
                     <span style="font-size: 40px; font-style: italic;">П</span>
                 </code>
             </div>
-            <table class="table table-sm table-bordered w-50" style="text-align: center;">
-                <thead>
-                    <tr>
-                        <th>Прямые</th>
-                        <th>Наклонные</th>
-                        <th>Курсивные</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="font-size: 40px; font-style: normal;">П</td>
-                        <td style="font-size: 40px; font-style: oblique;">П</td>
-                        <td style="font-size: 40px; font-style: italic;">П</td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <div class="container" style="text-align: center;">
+                <div class="row" style="font-weight: bold;">
+                    <div class="col-2">Прямые</div>
+                    <div class="col-2">Наклонные</div>
+                    <div class="col-2">Курсивные</div>
+                </div>
+                <div class="row">
+                    <div class="col-2" style="font-size: 40px; font-style: normal;">П</div>
+                    <div class="col-2" style="font-size: 40px; font-style: oblique;">П</div>
+                    <div class="col-2" style="font-size: 40px; font-style: italic;">П</div>
+                </div>
+            </div>
         </article>
 
         <article> <!-- ===================================================================================== -->
@@ -121,26 +115,21 @@
                     <span style="font-size: 40px; font-weight: light;">П</span>
                 </code>
             </div>
-            <table class="table table-sm table-bordered w-50" style="text-align: center;">
-                <thead>
-                    <tr>
-                        <th>Обычный</th>
-                        <th>Жирный</th>
-                        <th>Тонкий</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="font-size: 40px; font-weight: normal;">П</td>
-                        <td style="font-size: 40px; font-weight: bold;">П</td>
-                        <td style="font-size: 40px; font-weight: light;">П</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="container" style="text-align: center;">
+                <div class="row" style="font-weight: bold;">
+                    <div class="col-2">Обычный</div>
+                    <div class="col-2">Жирный</div>
+                    <div class="col-2">Тонкий</div>
+                </div>
+                <div class="row">
+                    <div class="col-2" style="font-size: 40px; font-style: normal;">П</div>
+                    <div class="col-2" style="font-size: 40px; font-style: bold;">П</div>
+                    <div class="col-2" style="font-size: 40px; font-style: light;">П</div>
+                </div>
+            </div>
             <p>
                 Так же, значение можно установить числом:
             </p>
-            
             <table class="table table-sm table-bordered w-50">
                 <tbody>
                     <tr>
@@ -203,22 +192,18 @@
             <p>
                 Чтобы управлять плотностью шрифта в CSS существует свойство <em>font-stretch</em>.
             </p>
-            <table class="table table-sm table-bordered w-50" style="text-align: center;">
-                <thead>
-                    <tr>
-                        <th>Узкие</th>
-                        <th>Нормальные</th>
-                        <th>Широкие</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="font-size: 40px; font-stretch: ultra-condensed;">П</td>
-                        <td style="font-size: 40px; font-stretch: normal;">П</td>
-                        <td style="font-size: 40px; font-stretch: ultra-expanded;">П</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="container" style="text-align: center;">
+                <div class="row" style="font-weight: bold;">
+                    <div class="col-2">Узкие</div>
+                    <div class="col-2">Нормальные</div>
+                    <div class="col-2">Широкие</div>
+                </div>
+                <div class="row">
+                    <div class="col-2" style="font-size: 40px; font-stretch: ultra-condensed;">П</div>
+                    <div class="col-2" style="font-size: 40px; font-stretch: normal;">П</div>
+                    <div class="col-2" style="font-size: 40px; font-stretch: ultra-expanded;">П</div>
+                </div>
+            </div>
             <p>
                 Данное свойство не поддерживается в браузере Safari, а также совсем недавно появилось в Chrome.
                 Если нужен, например, узкий шрифт, то его нужно подключать отдельно, например с помощью этой записи:
