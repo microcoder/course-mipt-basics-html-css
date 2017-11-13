@@ -70,14 +70,14 @@
 
                         function escapeHtml(text) {
                             var map = {
-                              '&': '&amp;',
+                              //'&': '&amp;',
                               '<': '&lt;',
                               '>': '&gt;',
                               '"': '&quot;',
                               "'": '&#039;'
                             };
                             // return unescape(text)
-                            return text.replace(/[&<>"']/g, function(m) {
+                            return text.replace(/[<>"']/g, function(m) {
                                 return map[m];
                             });
                         }
@@ -105,7 +105,7 @@
                                     if (rcode.text().trim() == ''){
                                         rcode_empty = true;
                                     }
-                                    rcode_text = rcode.html();              // Получаем HTML, потому что сохраняем возможный HTML-комментарий в элементе
+                                    rcode_text = rcode.html();              // Получаем HTML, потому что сохраняем HTML-комментарий в элементе
                                     rcode.remove();                         // Удаляем элемент со всем его содержимым
                                 }
                                 
@@ -260,6 +260,7 @@
                                         <a id="4/4.6_font_property.html" href="#" class="list-group-item list-group-item-action">Свойство font</a>
                                         <a id="4/4.7_text_base_property.html" href="#" class="list-group-item list-group-item-action">Базовые свойства с текстом</a>
                                         <a id="4/4.8_multicolumn.html" href="#" class="list-group-item list-group-item-action">Многоколоночность и переполнение текста</a>
+                                        <a id="4/4.9_format_spaces.html" href="#" class="list-group-item list-group-item-action">Форматирование пробелов и переносов в тексте</a>
 
                                     </div>
                                 </div>
