@@ -16,6 +16,10 @@
             <script>hljs.initHighlightingOnLoad();</script>
         <!-- END highlight - https://highlightjs.org/ -->
 
+        <!-- BEGIN spinner loader - http://tobiasahlin.com/spinkit/ -->
+        <link rel="stylesheet" href="inc/spinner.css">
+        <!-- END spinner loader - http://tobiasahlin.com/spinkit/ -->
+
         <script type="text/javascript">
             $(document).ready(function() {
 
@@ -40,9 +44,22 @@
                     $(this).addClass('active');            // Устанавливаем класс текущему элементу
                     var filepath = $(this).attr('id');     // Получаем из атрибута id путь к документу
                     var title = $(this).text();            // Получаем содержание элемента
+
+                    // Enable CSS loading animation
+                    $(this).append('<div class="sk-circle" style="float: right;"> \
+                                        <div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div> \
+                                        <div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div> \
+                                        <div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div> \
+                                        <div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div> \
+                                        <div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div> \
+                                        <div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div> \
+                                    </div>');
                     
                     // Загружаем документ в HTML элемент
                     $('div.contents').load(filepath, function(response, status, xhr){
+                        // Disable CSS loading animation
+                        $('div.sk-circle').remove();
+                        
                         if (status == "error"){
                             alertOnLoad(filepath);
                             return; // Прерываем дальнейшее исполнение функции
@@ -242,7 +259,8 @@
                                         <a id="4/4.5_font-family.html" href="#" class="list-group-item list-group-item-action">Семейства шрифтов</a>
                                         <a id="4/4.6_font_property.html" href="#" class="list-group-item list-group-item-action">Свойство font</a>
                                         <a id="4/4.7_text_base_property.html" href="#" class="list-group-item list-group-item-action">Базовые свойства с текстом</a>
-                                        
+                                        <a id="4/4.8_multicolumn.html" href="#" class="list-group-item list-group-item-action">Многоколоночность и переполнение текста</a>
+
                                     </div>
                                 </div>
                             </div>
