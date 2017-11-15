@@ -22,31 +22,16 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
+                // element - это текущий элемент из которого функция получает URL и title документа.
+                function loadContent(element){
 
-                function alertOnLoad(filename){
-                    alert('Невозможно загрузить документ по адресу:\n' +
-                           window.location.pathname.replace(/[^\\\/]*$/, '') + filename + '\n\n' +
-                           'P.S. В Google Chrome загрузка с локального диска невозможна. Доп. информацию смотри в web-консоли.');  
-                }
-
-                // Загружаем дефолтную страницу (default.html)
-                $('div.contents').load('default.html', function(response, status, xhr){
-                    if (status == "error"){
-                        alertOnLoad('default.html');
-                        return; // Прерываем дальнейшее исполнение функции
-                    }
-                });
-
-                // Задаем функцию при клике на элемент меню слева
-                $("div.list-group a").click(function() {
-                    
-                    $('div.list-group a').removeClass('active'); // Удаляем со всех элементов класс active
-                    $(this).addClass('active');            // Устанавливаем класс текущему элементу
-                    var filepath = $(this).attr('id');     // Получаем из атрибута id путь к документу
-                    var title = $(this).text();            // Получаем содержание элемента
+                    $('div.list-group a').removeClass('active');   // Удаляем со всех элементов класс active
+                    element.addClass('active');                    // Добавляем класс текущему элементу
+                    var title = element.text();                    // Получаем содержание текущего элемента
+                    var filepath = element.attr('id');             // Получаем из атрибута id путь к документу
 
                     // Enable CSS loading animation
-                    $(this).append('<div class="sk-circle" style="float: right;"> \
+                    element.append('<div class="sk-circle" style="float: right;"> \
                                         <div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div> \
                                         <div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div> \
                                         <div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div> \
@@ -54,14 +39,15 @@
                                         <div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div> \
                                         <div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div> \
                                     </div>');
-                    
+
                     // Загружаем документ в HTML элемент
                     $('div.contents').load(filepath, function(response, status, xhr){
                         // Disable CSS loading animation
                         $('div.sk-circle').remove();
                         
                         if (status == "error"){
-                            alertOnLoad(filepath);
+                            alert('Невозможно загрузить документ: ' + window.location.pathname.replace(/[^\\\/]*$/, '') + filepath + '\n' +
+                                'P.S. В Google Chrome загрузка с локального диска невозможна. Доп. информацию смотри в web-консоли.');  
                             return; // Прерываем дальнейшее исполнение функции
                         }
 
@@ -70,11 +56,11 @@
 
                         function escapeHtml(text) {
                             var map = {
-                              //'&': '&amp;',
-                              '<': '&lt;',
-                              '>': '&gt;',
-                              '"': '&quot;',
-                              "'": '&#039;'
+                                //'&': '&amp;',
+                                '<': '&lt;',
+                                '>': '&gt;',
+                                '"': '&quot;',
+                                "'": '&#039;'
                             };
                             // return unescape(text)
                             return text.replace(/[<>"']/g, function(m) {
@@ -134,10 +120,31 @@
                         
                         // Отрисовка подсветки. https://highlightjs.org/usage/ Custom Initialization
                         $('div.contents pre code').each(function(i, block) {
-                          hljs.highlightBlock(block);
+                            hljs.highlightBlock(block);
                         });
-                    })
-                })
+                    });
+                }
+                
+                // ================================= BEGIN ===============================
+                // Если осуществлен переход по URL
+                if(window.location.hash){
+                    let hash = window.location.hash;
+                    
+                    $('div.card div.collapse').removeClass('show');              // Сворачиваем все accordion слева
+                    $('div.card div#week' + hash.substr(3,1)).addClass('show');  // Показываем accordion с определенным id
+
+                    let element = $('div.list-group a[href="'+ hash +'"]');      // Поиск элемента типа 'a' в котором содержится id с именем/путем к файлу
+                    loadContent(element);                                        // Загружаем файл в элемент div.contents
+                }else{
+                    // Здесь реализация загрузки дефолтной страницы
+                    let element = $('<a id="default.html">' + $('title').text() + '</a>'); // Создаем новый элемент, который передадим аргументом в функцию loadContent
+                    loadContent(element);
+                }
+
+                // Задаем функцию при клике на элементах слева в accordion
+                $("div.list-group a").click(function() {
+                    loadContent($(this));
+                });
             });
         </script>
     </head>
@@ -179,14 +186,14 @@
                             <div id="week1" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
                                     <div class="list-group">
-                                        <a id="1/1.1_murkup_langs.html" href="#" class="list-group-item list-group-item-action">Языки разметки</a>
-                                        <a id="1/1.2_miphs_of_w3c.html" href="#" class="list-group-item list-group-item-action">Мифы W3C</a>
-                                        <a id="1/1.3_anatomy_html.html" href="#" class="list-group-item list-group-item-action">Анатомия HTML</a>
-                                        <a id="1/1.4_elements.html" href="#" class="list-group-item list-group-item-action">Элементы HTML</a>
-                                        <a id="1/1.5_grouping_elements.html" href="#" class="list-group-item list-group-item-action">Группировка элементов</a>
-                                        <a id="1/1.6_tables.html" href="#" class="list-group-item list-group-item-action">Таблицы</a>
-                                        <a id="1/1.6_text_elements.html" href="#" class="list-group-item list-group-item-action">Текстовые элементы</a>
-                                        <a id="1/1.7_links.html" href="#" class="list-group-item list-group-item-action">Ссылки</a>
+                                        <a id="1/1.1_murkup_langs.html" href="#!/1/murkup-langs" class="list-group-item list-group-item-action">Языки разметки</a>
+                                        <a id="1/1.2_miphs_of_w3c.html" href="#!/1/miphs-of-w3c" class="list-group-item list-group-item-action">Мифы W3C</a>
+                                        <a id="1/1.3_anatomy_html.html" href="#!/1/anatomy-html" class="list-group-item list-group-item-action">Анатомия HTML</a>
+                                        <a id="1/1.4_elements.html" href="#!/1/elements" class="list-group-item list-group-item-action">Элементы HTML</a>
+                                        <a id="1/1.5_grouping_elements.html" href="#!/1/grouping-elements" class="list-group-item list-group-item-action">Группировка элементов</a>
+                                        <a id="1/1.6_tables.html" href="#!/1/tables" class="list-group-item list-group-item-action">Таблицы</a>
+                                        <a id="1/1.6_text_elements.html" href="#!/1/text-elements" class="list-group-item list-group-item-action">Текстовые элементы</a>
+                                        <a id="1/1.7_links.html" href="#!/1/links" class="list-group-item list-group-item-action">Ссылки</a>
                                     </div>
                                 </div>
                             </div>
@@ -204,13 +211,13 @@
                             <div id="week2" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
                                     <div class="list-group">
-                                        <a id="2/2.1_semantic_markup.html" href="#" class="list-group-item list-group-item-action">Семантическая разметка</a>
-                                        <a id="2/2.2_reference_elements.html" href="#" class="list-group-item list-group-item-action">Ссылочные элементы</a>
-                                        <a id="2/2.3_built-in_elements.html" href="#" class="list-group-item list-group-item-action">Встраиваемые элементы</a>
-                                        <a id="2/2.4_form_elements.html" href="#" class="list-group-item list-group-item-action">Элементы форм</a>
-                                        <a id="2/2.5_tag_form.html" href="#" class="list-group-item list-group-item-action">Тег &lt;form&gt;</a>
-                                        <a id="2/2.6_i18n.html" href="#" class="list-group-item list-group-item-action">Интернационализация (i18n)</a>
-                                        <a id="2/2.7_links.html" href="#" class="list-group-item list-group-item-action">Ссылки</a>
+                                        <a id="2/2.1_semantic_markup.html" href="#!/2/semantic-markup" class="list-group-item list-group-item-action">Семантическая разметка</a>
+                                        <a id="2/2.2_reference_elements.html" href="#!/2/reference-elements" class="list-group-item list-group-item-action">Ссылочные элементы</a>
+                                        <a id="2/2.3_built-in_elements.html" href="#!/2/built-in-elements" class="list-group-item list-group-item-action">Встраиваемые элементы</a>
+                                        <a id="2/2.4_form_elements.html" href="#!/2/form-elements" class="list-group-item list-group-item-action">Элементы форм</a>
+                                        <a id="2/2.5_tag_form.html" href="#!/2/tag-form" class="list-group-item list-group-item-action">Тег &lt;form&gt;</a>
+                                        <a id="2/2.6_i18n.html" href="#!/2/i18n" class="list-group-item list-group-item-action">Интернационализация (i18n)</a>
+                                        <a id="2/2.7_links.html" href="#!/2/links" class="list-group-item list-group-item-action">Ссылки</a>
                                     </div>
                                 </div>
                             </div>
@@ -228,13 +235,13 @@
                             <div id="week3" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
                                     <div class="list-group">
-                                        <a id="3/3.1-2_css.html" href="#" class="list-group-item list-group-item-action">Структура CSS</a>
-                                        <a id="3/3.3_base_selectors.html" href="#" class="list-group-item list-group-item-action">Основные селекторы CSS</a>
-                                        <a id="3/3.4_pseudo_elements&classes.html" href="#" class="list-group-item list-group-item-action">Псевдоэлементы и псевдоклассы</a>
-                                        <a id="3/3.5_relations.html" href="#" class="list-group-item list-group-item-action">Отношения (Combinators)</a>
-                                        <a id="3/3.6_specificity.html" href="#" class="list-group-item list-group-item-action">Специфичность и Наследование</a>
-                                        <a id="3/3.7_units.html" href="#" class="list-group-item list-group-item-action">Единицы измерения (Units)</a>
-                                        <a id="3/3.8_css_file.html" href="#" class="list-group-item list-group-item-action">Пример CSS файла</a>
+                                        <a id="3/3.1-2_css.html" href="#!/3/css" class="list-group-item list-group-item-action">Структура CSS</a>
+                                        <a id="3/3.3_base_selectors.html" href="#!/3/base-selectors" class="list-group-item list-group-item-action">Основные селекторы CSS</a>
+                                        <a id="3/3.4_pseudo_elements_classes.html" href="#!/3/pseudo-elements-classes" class="list-group-item list-group-item-action">Псевдоэлементы и псевдоклассы</a>
+                                        <a id="3/3.5_relations.html" href="#!/3/relations" class="list-group-item list-group-item-action">Отношения (Combinators)</a>
+                                        <a id="3/3.6_specificity.html" href="#!/3/specificity" class="list-group-item list-group-item-action">Специфичность и Наследование</a>
+                                        <a id="3/3.7_units.html" href="#!/3/units" class="list-group-item list-group-item-action">Единицы измерения (Units)</a>
+                                        <a id="3/3.8_css_file.html" href="#!/3/css-file" class="list-group-item list-group-item-action">Пример CSS файла</a>
                                     </div>
                                 </div>
                             </div>
@@ -252,17 +259,17 @@
                             <div id="week4" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
                                     <div class="list-group">
-                                        <a id="4/4.1_font.html" href="#" class="list-group-item list-group-item-action">Что такое шрифт?</a>
-                                        <a id="4/4.2_font-size.html" href="#" class="list-group-item list-group-item-action">Размер шрифта</a>
-                                        <a id="4/4.3_line_distances.html" href="#" class="list-group-item list-group-item-action">Расстояния строк и символов</a>
-                                        <a id="4/4.4_font-style.html" href="#" class="list-group-item list-group-item-action">Начертание шрифта</a>
-                                        <a id="4/4.5_font-family.html" href="#" class="list-group-item list-group-item-action">Семейства шрифтов</a>
-                                        <a id="4/4.6_font_property.html" href="#" class="list-group-item list-group-item-action">Свойство font</a>
-                                        <a id="4/4.7_text_base_property.html" href="#" class="list-group-item list-group-item-action">Базовые свойства с текстом</a>
-                                        <a id="4/4.8_multicolumn.html" href="#" class="list-group-item list-group-item-action">Многоколоночность и переполнение текста</a>
-                                        <a id="4/4.9_format_spaces.html" href="#" class="list-group-item list-group-item-action">Форматирование пробелов и переносов в тексте</a>
-                                        <a id="4/4.10_psevdo_elements.html" href="#" class="list-group-item list-group-item-action">Псевдоэлементы</a>
-                                        <a id="4/4.11_links.html" href="#" class="list-group-item list-group-item-action">Ссылки</a>
+                                        <a id="4/4.1_font.html" href="#!/4/font" class="list-group-item list-group-item-action">Что такое шрифт?</a>
+                                        <a id="4/4.2_font-size.html" href="#!/4/font-size" class="list-group-item list-group-item-action">Размер шрифта</a>
+                                        <a id="4/4.3_line_distances.html" href="#!/4/line-distances" class="list-group-item list-group-item-action">Расстояния строк и символов</a>
+                                        <a id="4/4.4_font-style.html" href="#!/4/font-style" class="list-group-item list-group-item-action">Начертание шрифта</a>
+                                        <a id="4/4.5_font-family.html" href="#!/4/font-family" class="list-group-item list-group-item-action">Семейства шрифтов</a>
+                                        <a id="4/4.6_font_property.html" href="#!/4/font-property" class="list-group-item list-group-item-action">Свойство font</a>
+                                        <a id="4/4.7_base_property_text.html" href="#!/4/base-property-text" class="list-group-item list-group-item-action">Базовые свойства с текстом</a>
+                                        <a id="4/4.8_multicolumn.html" href="#!/4/multicolumn" class="list-group-item list-group-item-action">Многоколоночность и переполнение текста</a>
+                                        <a id="4/4.9_format_spaces.html" href="#!/4/format-spaces" class="list-group-item list-group-item-action">Форматирование пробелов и переносов в тексте</a>
+                                        <a id="4/4.10_psevdo_elements.html" href="#!/4/psevdo-elements" class="list-group-item list-group-item-action">Псевдоэлементы</a>
+                                        <a id="4/4.11_links.html" href="#!/4/links" class="list-group-item list-group-item-action">Ссылки</a>
                                     </div>
                                 </div>
                             </div>
@@ -280,7 +287,7 @@
                             <div id="week5" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
                                     <div class="list-group">
-                                        <!-- <a id="5/5.1_transformations.html" href="#" class="list-group-item list-group-item-action">Преобразования</a> -->
+                                        <a id="5/5.1_transformations.html" href="#!/5/transformations" class="list-group-item list-group-item-action">Преобразования</a>
                                     </div>
                                 </div>
                             </div>
