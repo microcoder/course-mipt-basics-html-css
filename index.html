@@ -25,7 +25,7 @@
                 // element - это текущий элемент из которого функция получает URL и title документа.
                 function loadContent(element){
 
-                    $('div.list-group a').removeClass('active');   // Удаляем со всех элементов класс active
+                    $('div.list-group a.active').removeClass('active');   // Удаляем со всех элементов класс active
                     element.addClass('active');                    // Добавляем класс текущему элементу
                     var title = element.text();                    // Получаем содержание текущего элемента
                     var filepath = element.attr('id');             // Получаем из атрибута id путь к документу
@@ -130,7 +130,7 @@
                 if(window.location.hash){
                     let hash = window.location.hash;
                     
-                    $('div.card div.collapse').removeClass('show');              // Сворачиваем все accordion слева
+                    $('div.card div.show').removeClass('show');                  // Сворачиваем все accordion слева
                     $('div.card div#week' + hash.substr(3,1)).addClass('show');  // Показываем accordion с определенным id
 
                     let element = $('div.list-group a[href="'+ hash +'"]');      // Поиск элемента типа 'a' в котором содержится id с именем/путем к файлу
