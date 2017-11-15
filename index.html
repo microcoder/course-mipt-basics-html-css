@@ -137,6 +137,7 @@
                     loadContent(element);                                        // Загружаем файл в элемент div.contents
                 }else{
                     // Здесь реализация загрузки дефолтной страницы
+                    $('div.card div#week1').addClass('show');                    // Разворачиваем дефолтный accordion слева
                     let element = $('<a id="default.html">' + $('title').text() + '</a>'); // Создаем новый элемент, который передадим аргументом в функцию loadContent
                     loadContent(element);
                 }
@@ -183,7 +184,7 @@
                                 </h5>
                             </div>
                         
-                            <div id="week1" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div id="week1" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
                                     <div class="list-group">
                                         <a id="1/1.1_murkup_langs.html" href="#!/1/murkup-langs" class="list-group-item list-group-item-action">Языки разметки</a>

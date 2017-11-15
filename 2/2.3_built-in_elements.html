@@ -46,7 +46,7 @@
             <p>Элемент добавляет, воспроизводит и управляет настройками видеоролика на веб-странице</p>
             <div class="card bg-light mb-3 p-3">
                 <code class="html">
-                    <video src="res/video.mp4" poster="res/poster.png" height="300" width="400" controls autoplay />
+                    <video src="res/video.mp4" poster="res/poster.png" height="300" width="400" controls muted autoplay />
                 </code>
             </div>
 
@@ -56,7 +56,7 @@
 
             <div class="card bg-light mb-3 p-3">
                 <code class="html">
-                    <video poster="res/poster.png" height="400" width="720" controls autoplay loop>
+                    <video poster="res/poster.png" height="400" width="720" controls muted autoplay loop>
                         <source src="res/video.mp4" type="video/mp4">
                         <source src="res/video.ogv" type="video/ogg">
                         Элемент video не поддерживается вашим браузером, <a href="res/video.mp4">скачайте видео</a>
@@ -99,7 +99,7 @@
             <p>В плеере, на панели управления видео появляется дополнительный элемент [cc] с опциями выбора языков субтитров</p>
             <div class="card bg-light mb-3 p-3">
                 <code class="html">
-                    <video height="400" width="720" controls autoplay loop>
+                    <video height="400" width="720" controls muted autoplay loop>
                         <track kind="subtitles" src="res/sampleSubtitles_en.vtt" srclang="en" label="English">
                         <track kind="subtitles" src="res/sampleSubtitles_ru.vtt" srclang="ru" label="Русский" default>
                         <source src="res/video.mp4" type="video/mp4">
