@@ -1,602 +1,602 @@
 <div class="row">
     <div class="col-8">
+        <section>
+            <header><h3>Базовые свойства для работы с текстом</h3></header>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Базовые свойства для работы с текстом</h3>
-            <h3>Что такое текст?</h3>
-            <blockquote>
+            <article> <!-- ===================================================================================== -->
+                <h4>Что такое текст?</h4>
+                <blockquote>
+                    <p>
+                        <strong>Текст</strong> (от лат. textus «ткань; сплетение, связь, сочетание») — зафиксированная на каком-либо материальном
+                        носителе человеческая мысль; в общем плане связная и полная последовательность символов.
+                    </p>
+                    <footer class="blockquote-footer">
+                        Об этом говорит <cite><a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82" target="_blank">Википедия</a></cite>
+                    </footer>
+                </blockquote>
+            </article>
+
+            <article>
+                <h4>Выравнивание</h4>
                 <p>
-                    <strong>Текст</strong> (от лат. textus «ткань; сплетение, связь, сочетание») — зафиксированная на каком-либо материальном
-                    носителе человеческая мысль; в общем плане связная и полная последовательность символов.
+                    Осуществляется с помощью свойства <em>text-align</em> и имеет следующие значения:
                 </p>
-                <footer class="blockquote-footer">
-                    Об этом говорит <cite><a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82" target="_blank">Википедия</a></cite>
-                </footer>
-            </blockquote>
-        </article>
-        <article>
-            <h3>Выравнивание</h3>
-            <p>Осуществляется с помощью свойства <em>text-align</em> и имеет следующие значения:</p>
-            <div class="card bg-light mb-3 p-3">
-                <!-- Количество элементов <code>:
-                    * Если один, то отображается исходный код и он же проигрывается на странице.
-                    * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
-                -->
-                <code class="css">
+                <div class="card bg-light mb-3 p-3">
+                    <!-- Количество элементов <code>:
+                        * Если один, то отображается исходный код и он же проигрывается на странице.
+                        * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+                    -->
+                    <code class="css">
+                        .uno    { text-align: left;    }
+                        .dos    { text-align: start;   }
+                        .tres   { text-align: right;   }
+                        .quatro { text-align: end;     }
+                        .cinco  { text-align: center;  }
+                        .seis   { text-align: justify; }
+                    </code>
+                    <code></code>
+                </div>
+                <style>
                     .uno    { text-align: left;    }
                     .dos    { text-align: start;   }
                     .tres   { text-align: right;   }
                     .quatro { text-align: end;     }
                     .cinco  { text-align: center;  }
                     .seis   { text-align: justify; }
-                </code>
-                <code></code>
-            </div>
-            <style>
-                .uno    { text-align: left;    }
-                .dos    { text-align: start;   }
-                .tres   { text-align: right;   }
-                .quatro { text-align: end;     }
-                .cinco  { text-align: center;  }
-                .seis   { text-align: justify; }
-            </style>
-
-            <div class="container mb-3">
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По левому краю (left)</div>
+                </style>
+    
+                <div class="container mb-3">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По левому краю (left)</div>
+                            </div>
+                            <div class="row">
+                                <div class="col uno">Строка текста</div>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col uno">Строка текста</div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По краю начала текста (start)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col dos">Строка текста</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По краю начала текста (start)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col dos">Строка текста</div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По правому краю (right)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col tres">Строка текста</div>
+                        <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По правому краю (right)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col tres">Строка текста</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По конечному краю (end)</div>
+    
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По конечному краю (end)</div>
+                            </div>
+                            <div class="row">
+                                <div class="col quatro">Строка текста</div>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col quatro">Строка текста</div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По центру (center)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col cinco">Строка текста</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По центру (center)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col cinco">Строка текста</div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По всей ширине (justify)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col seis">Строка текста</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p>Выравнивание по всей ширине не сработало. Почему? Потому, что нужно больше одной строки текста:</p>
-
-            <div class="container mb-3">
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По левому краю (left)</div>
-                        </div>
-                        <div class="row">
-                            <div class="col uno">Строка текста</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По краю начала текста (start)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col dos">Строка текста</div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По правому краю (right)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col tres">Строка текста</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По конечному краю (end)</div>
-                        </div>
-                        <div class="row">
-                            <div class="col quatro">Строка текста</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По центру (center)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col cinco">Строка текста</div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По всей ширине (justify)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col seis">We need so many text as possible, my comrade, otherwise, we can't see what's "justify" doing</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p>Если мы поменяем направление текста на <em>rtl</em>, то получим немного другие результаты:</p>
-
-            <div class="container mb-3">
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По левому краю (left)</div>
-                        </div>
-                        <div class="row">
-                            <div class="col uno" dir="rtl">Строка текста</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По краю начала текста (start)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col dos" dir="rtl" style="color: crimson">Строка текста</div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По правому краю (right)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col tres" dir="rtl">Строка текста</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По конечному краю (end)</div>
-                        </div>
-                        <div class="row">
-                            <div class="col quatro" dir="rtl" style="color: crimson">Строка текста</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По центру (center)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col cinco" dir="rtl">Строка текста</div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                        <div class="row alert-secondary pt-1 pb-1">
-                            <div class="col" style="font-weight: bold;">По всей ширине (justify)</div>
-                        </div>
-                        <div class="row pt-1 pb-1">
-                            <div class="col seis" dir="rtl" style="color: crimson">
-                                We need so many text as possible, my comrade, otherwise, we can't see what's "justify" doing
+                        <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По всей ширине (justify)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col seis">Строка текста</div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </article>
-        
-        <article> <!-- ===================================================================================== -->
-            <h3>"Украшение" текста</h3>
-            <p>
-                Устанавливается с помощью свойства <em>text-decoration</em>, которое имеет три законных значения:
-               <em>overline</em>, <em>line-through</em> и <em>underline</em>. Оно позволяет нам сделать так:
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <ul>
-                        <li style="text-decoration: overline;">Подчеркивание над текстом</li>
-                        <li style="text-decoration: line-through;">Зачеркнутый текст</li>
-                        <li style="text-decoration: underline;">Подчеркнутый текст. Можно использовать для ссылок</li>
-                    </ul>
-                </code>
-            </div>
-            <p>
-                <em>text-decoration</em> не наследуется дочерними элементами, и им нельзя отменить "украшение", которое применено к родителю.
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <p style="text-decoration: overline;">
-                        Текст надчеркнут.
-                        <span style="text-decoration: none;">Текст попрежнему надчеркнут</span>.
-                    </p>
-                </code>
-            </div>
-        </article>
-
-        <article> <!-- ===================================================================================== -->
-            <h3>Трансформация текста</h3>
-            <p>
-                Свойство <em>text-transform</em> позволяет менять регистр букв с помощью трех значений: <em>capitalize</em>, <em>lowercase</em> и <em>uppercase</em>.
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <ul>
-                        <li style="text-transform: capitalize;">Регистр прям как у названий песен</li>
-                        <li style="text-transform: lowercase;">В HTML ЭТОТ ТЕКСТ НАБРАН CAPS'ОМ</li>
-                        <li style="text-transform: uppercase;">а этот текст в HTML набран не caps'ом</li>
-                    </ul>
-                </code>
-            </div>
-        </article>
-
-        <article> <!-- ===================================================================================== -->
-            <h3>Абзацный отступ</h3>
-            <p>
-                Для задания величины отступа используется свойство <em>text-ident</em>.<br>
-                Допустимо использовать любые единицы измерения длины и их отрицательные значения.
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <style>
-                        .eins { text-indent: 5%; }
-                        .zwe1 { text-indent: -1em; }
-                    </style>
-
-                    <p class="eins">
-                        Let's talk about the old days<br>
-                        Let's talk about your friends<br>
-                        Let's talk about the summer<br>
-                        And how you wished it wouldn't end<br>
-                        Did I forget to tell you how pretty you looked in that dress?<br>
-                        And the first time that I saw you,<br>
-                        You cleaned the mess from my head
-                    </p>
-                    <p class="zwe1">
-                        Let's go walking on the boardwalk<br>
-                        Dip my feet into the sea<br>
-                        Let's find ourselves lost for hours<br>
-                        Until we find ourselves a drink<br>
-                        Let's talk that sun into setting<br>
-                        Just need the sound of your voice<br>
-                        I need that calming and the comfort<br>
-                        Something to drown out the noise
-                    </p>
-                </code>
-            </div>
-        </article>
-
-        <article>
-            <h3>Цвет</h3>
-            <p>
-                Цвет текста задается с помощью свойства <em>color</em>.<br>
-                Принято использовать <em>hex</em> для сплошных цветов и <em>rgba()</em> для полупрозрачных.
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <style>
-                        h1 { color: #f00; }
-                    </style>
-
-                    <h1>DEADLINE</h1>
-                </code>
-                <code>
-                    <style>
-                        h1#ex1 { color: #f00; }
-                    </style>
-
-                    <h1 id="ex1">DEADLINE</h1>
-                </code>
-            </div>
-
-            <p>Ньюансы использования:</p>
-            <ol>
-                <li>
-                    <em>color</em> устанавливает так называемый "цвет переднего плана" (в противовес <em>background-color</em> - цвет фона),
-                    поэтому он имеет влияние на многие свойства.
-                    <div class="card bg-light mb-3 p-3">
-                        <code class="html">
-                            <style>
-                                p {
-                                    color: #0f0;             /* зеленый цвет текста */
-                                    border: 2px solid;         /* рамка будет зеленой */
-                                    box-shadow: 0 0 50px;      /* и тень элемента */
-                                    text-shadow: 4px 4px 10px; /* и тень текста */
-                                }
-                            </style>
-        
-                            <p>
-                                Текст параграфа
-                            </p>
-                        </code>
-                        <code>
-                            <style>
-                                p#ex2 {
-                                    color: #0f0;             /* зеленый цвет текста */
-                                    border: 2px solid;         /* рамка будет зеленой */
-                                    box-shadow: 0 0 50px;      /* и тень элемента */
-                                    text-shadow: 4px 4px 10px; /* и тень текста */
-                                }
-                            </style>
-        
-                            <p id="ex2">
-                                Текст параграфа
-                            </p>
-                        </code>
+    
+                <p>Выравнивание по всей ширине не сработало. Почему? Потому, что нужно больше одной строки текста:</p>
+    
+                <div class="container mb-3">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По левому краю (left)</div>
+                            </div>
+                            <div class="row">
+                                <div class="col uno">Строка текста</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По краю начала текста (start)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col dos">Строка текста</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По правому краю (right)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col tres">Строка текста</div>
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        В примере видим, что всё стало абсолютно зеленым, потому что все три свойства указанные после свойства <em>color</em>
-                        наследуют этот цвет, если им специально его не указать.
-                    </p>
-                </li>
-                <li>
-                    Свойства которые не наследуют цвет от <em>color</em> автоматически, могут сделать это при помощи ключевого слова
-                    <em>currentColor</em>:
-                    <div class="card bg-light mb-3 p-3">
-                        <code class="html">
-                            <style>
-                                h1 {
-                                    color: #f0f;
-                                    background-color: currentColor; /* цвет фона тоже станет #f0f */
-                                }
-                            </style>
-        
-                            <h1>Текст заголовка</h1>
-                        </code>
-                        <code>
-                            <style>
-                                h1#ex3 {
-                                    color: #f0f;
-                                    background-color: currentColor; /* цвет фона тоже станет #f0f */
-                                }
-                            </style>
-        
-                            <h1 id="ex3">Текст заголовка</h1>
-                        </code>
+    
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По конечному краю (end)</div>
+                            </div>
+                            <div class="row">
+                                <div class="col quatro">Строка текста</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По центру (center)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col cinco">Строка текста</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По всей ширине (justify)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col seis">We need so many text as possible, my comrade, otherwise, we can't see what's "justify" doing</div>
+                            </div>
+                        </div>
                     </div>
-                </li>
-            </ol>
-        </article>
+                </div>
+    
+                <p>Если мы поменяем направление текста на <em>rtl</em>, то получим немного другие результаты:</p>
+    
+                <div class="container mb-3">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По левому краю (left)</div>
+                            </div>
+                            <div class="row">
+                                <div class="col uno" dir="rtl">Строка текста</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По краю начала текста (start)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col dos" dir="rtl" style="color: crimson">Строка текста</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По правому краю (right)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col tres" dir="rtl">Строка текста</div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По конечному краю (end)</div>
+                            </div>
+                            <div class="row">
+                                <div class="col quatro" dir="rtl" style="color: crimson">Строка текста</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По центру (center)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col cinco" dir="rtl">Строка текста</div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
+                            <div class="row alert-secondary pt-1 pb-1">
+                                <div class="col" style="font-weight: bold;">По всей ширине (justify)</div>
+                            </div>
+                            <div class="row pt-1 pb-1">
+                                <div class="col seis" dir="rtl" style="color: crimson">
+                                    We need so many text as possible, my comrade, otherwise, we can't see what's "justify" doing
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
 
-        <article>
-            <h3>Тень текста</h3>
-            <p>
-                Тень текста задается с помощью свойства <em>text-shadow</em> с такой записью:
-            </p>
-            <p>
-                text-shadow: <kbd>offset-x</kbd>
-                             <kbd>offset-y</kbd>
-                             <kbd>blur-radius</kbd>
-                             <kbd>color</kbd>
-            </p>
-            <p>
-                Обязательными являются только сдвиг по x и по y. Цвет наследуется от родителя, а <em>blur-radius</em> будет равен 0.
-            </p>
-            <p>
-                text-shadow: <kbd>offset-x</kbd>
-                             <kbd>offset-y</kbd>
-                             <kbd style="color: gray;">blur-radius</kbd>
-                             <kbd style="color: gray;">color</kbd>
-            </p>
-            <p>
-                Создадим тень со сдвигом в 2 пикселя вправо вниз, по умолчанию она будет такого же цвета, что и текст:
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <style>
-                        h1 {
-                            text-shadow: 2px 2px;
-                        }
-                    </style>
+            <article> <!-- ===================================================================================== -->
+                <h4>"Украшение" текста</h4>
+                <p>
+                    Устанавливается с помощью свойства <em>text-decoration</em>, которое имеет три законных значения:
+                   <em>overline</em>, <em>line-through</em> и <em>underline</em>. Оно позволяет нам сделать так:
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <ul>
+                            <li style="text-decoration: overline;">Подчеркивание над текстом</li>
+                            <li style="text-decoration: line-through;">Зачеркнутый текст</li>
+                            <li style="text-decoration: underline;">Подчеркнутый текст. Можно использовать для ссылок</li>
+                        </ul>
+                    </code>
+                </div>
+                <p>
+                    <em>text-decoration</em> не наследуется дочерними элементами, и им нельзя отменить "украшение", которое применено к родителю.
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <p style="text-decoration: overline;">
+                            Текст надчеркнут.
+                            <span style="text-decoration: none;">Текст попрежнему надчеркнут</span>.
+                        </p>
+                    </code>
+                </div>
+            </article>
 
-                    <h1>Shadow heading</h1>
-                </code>
-                <code>
-                    <style>
-                        h1#ex4 {
-                            text-shadow: 2px 2px;
-                        }
-                    </style>
+            <article> <!-- ===================================================================================== -->
+                <h4>Трансформация текста</h4>
+                <p>
+                    Свойство <em>text-transform</em> позволяет менять регистр букв с помощью трех значений: <em>capitalize</em>, <em>lowercase</em> и <em>uppercase</em>.
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <ul>
+                            <li style="text-transform: capitalize;">Регистр прям как у названий песен</li>
+                            <li style="text-transform: lowercase;">В HTML ЭТОТ ТЕКСТ НАБРАН CAPS'ОМ</li>
+                            <li style="text-transform: uppercase;">а этот текст в HTML набран не caps'ом</li>
+                        </ul>
+                    </code>
+                </div>
+            </article>
 
-                    <h1 id="ex4">Shadow heading</h1>
-                </code>
-            </div>
+            <article> <!-- ===================================================================================== -->
+                <h4>Абзацный отступ</h4>
+                <p>
+                    Для задания величины отступа используется свойство <em>text-ident</em>.<br>
+                    Допустимо использовать любые единицы измерения длины и их отрицательные значения.
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <style>
+                            .eins { text-indent: 5%; }
+                            .zwe1 { text-indent: -1em; }
+                        </style>
+    
+                        <p class="eins">
+                            Let's talk about the old days<br>
+                            Let's talk about your friends<br>
+                            Let's talk about the summer<br>
+                            And how you wished it wouldn't end<br>
+                            Did I forget to tell you how pretty you looked in that dress?<br>
+                            And the first time that I saw you,<br>
+                            You cleaned the mess from my head
+                        </p>
+                        <p class="zwe1">
+                            Let's go walking on the boardwalk<br>
+                            Dip my feet into the sea<br>
+                            Let's find ourselves lost for hours<br>
+                            Until we find ourselves a drink<br>
+                            Let's talk that sun into setting<br>
+                            Just need the sound of your voice<br>
+                            I need that calming and the comfort<br>
+                            Something to drown out the noise
+                        </p>
+                    </code>
+                </div>
+            </article>
 
-            <p>Закрасим цвет красным цветом:</p>
+            <article>
+                <h4>Цвет</h4>
+                <p>
+                    Цвет текста задается с помощью свойства <em>color</em>.<br>
+                    Принято использовать <em>hex</em> для сплошных цветов и <em>rgba()</em> для полупрозрачных.
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <style>
+                            h1 { color: #f00; }
+                        </style>
+    
+                        <h1>DEADLINE</h1>
+                    </code>
+                    <code>
+                        <style>
+                            h1#ex1 { color: #f00; }
+                        </style>
+    
+                        <h1 id="ex1">DEADLINE</h1>
+                    </code>
+                </div>
+    
+                <p>Ньюансы использования:</p>
+                <ol>
+                    <li>
+                        <em>color</em> устанавливает так называемый "цвет переднего плана" (в противовес <em>background-color</em> - цвет фона),
+                        поэтому он имеет влияние на многие свойства.
+                        <div class="card bg-light mb-3 p-3">
+                            <code class="html">
+                                <style>
+                                    p {
+                                        color: #0f0;             /* зеленый цвет текста */
+                                        border: 2px solid;         /* рамка будет зеленой */
+                                        box-shadow: 0 0 50px;      /* и тень элемента */
+                                        text-shadow: 4px 4px 10px; /* и тень текста */
+                                    }
+                                </style>
+            
+                                <p>
+                                    Текст параграфа
+                                </p>
+                            </code>
+                            <code>
+                                <style>
+                                    p#ex2 {
+                                        color: #0f0;             /* зеленый цвет текста */
+                                        border: 2px solid;         /* рамка будет зеленой */
+                                        box-shadow: 0 0 50px;      /* и тень элемента */
+                                        text-shadow: 4px 4px 10px; /* и тень текста */
+                                    }
+                                </style>
+            
+                                <p id="ex2">
+                                    Текст параграфа
+                                </p>
+                            </code>
+                        </div>
+                        <p>
+                            В примере видим, что всё стало абсолютно зеленым, потому что все три свойства указанные после свойства <em>color</em>
+                            наследуют этот цвет, если им специально его не указать.
+                        </p>
+                    </li>
+                    <li>
+                        Свойства которые не наследуют цвет от <em>color</em> автоматически, могут сделать это при помощи ключевого слова
+                        <em>currentColor</em>:
+                        <div class="card bg-light mb-3 p-3">
+                            <code class="html">
+                                <style>
+                                    h1 {
+                                        color: #f0f;
+                                        background-color: currentColor; /* цвет фона тоже станет #f0f */
+                                    }
+                                </style>
+            
+                                <h1>Текст заголовка</h1>
+                            </code>
+                            <code>
+                                <style>
+                                    h1#ex3 {
+                                        color: #f0f;
+                                        background-color: currentColor; /* цвет фона тоже станет #f0f */
+                                    }
+                                </style>
+            
+                                <h1 id="ex3">Текст заголовка</h1>
+                            </code>
+                        </div>
+                    </li>
+                </ol>
+            </article>
 
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <style>
-                        h1 {
-                            text-shadow: 2px 2px #f00;
-                        }
-                    </style>
-
-                    <h1>Shadow heading</h1>
-                </code>
-                <code>
-                    <style>
-                        h1#ex5 {
-                            text-shadow: 2px 2px #f00;
-                        }
-                    </style>
-
-                    <h1 id="ex5">Shadow heading</h1>
-                </code>
-            </div>
-            <p>Добавим размытие в 5 пикселей:</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <style>
-                        h1 {
-                            text-shadow: 2px 2px 5px #f00;
-                        }
-                    </style>
-
-                    <h1>Shadow heading</h1>
-                </code>
-                <code>
-                    <style>
-                        h1#ex6 {
-                            text-shadow: 2px 2px 5px #f00;
-                        }
-                    </style>
-
-                    <h1 id="ex6">Shadow heading</h1>
-                </code>
-            </div>
-
-            <p>Укажем еще одну тень со сдвигом влево вверх зеленого цвета:</p>
-
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <style>
-                        h1 {
-                            text-shadow: 2px 2px 5px #f00,
-                                        -2px -2px 5px #0f0;
-                        }
-                    </style>
-
-                    <h1>Shadow heading</h1>
-                </code>
-                <code>
-                    <style>
-                        h1#ex7 {
-                            text-shadow: 2px 2px 5px #f00,
-                                        -2px -2px 5px #0f0;
-                        }
-                    </style>
-
-                    <h1 id="ex7">Shadow heading</h1>
-                </code>
-            </div>
-            <p>
-                Примеры эффектов:
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <style>
-                        h1 {
-                            padding: 10px 0px 10px 0px;
-                            text-align: center;
-                            color: white;
-                            background-color: black;
-                            text-shadow: 0px 0px 5px,
-                                         0px 0px 10px,
-                                         0px 0px 15px,
-                                         0px 0px 20px #f0f,
-                                         0px 0px 25px #f0f,
-                                         0px 0px 30px #f0f,
-                                         0px 0px 40px #f0f,
-                                         0px 0px 50px #f0f;
-                        }
-                    </style>
-
-                    <h1>Shadow heading</h1>
-                </code>
-                <code>
-                    <style>
-                        h1#ex9 {
-                            padding: 10px 0px 10px 0px;
-                            text-align: center;
-                            color: white;
-                            background-color: black;
-                            text-shadow: 0px 0px 5px,
-                                         0px 0px 10px,
-                                         0px 0px 15px,
-                                         0px 0px 20px #f0f,
-                                         0px 0px 25px #f0f,
-                                         0px 0px 30px #f0f,
-                                         0px 0px 40px #f0f,
-                                         0px 0px 50px #f0f;
-                        }
-                    </style>
-
-                    <h1 id="ex9">Shadow heading</h1>
-                </code>
-            </div>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <style>
-                        h1 {
-                            padding: 10px 0px 10px 0px;
-                            text-align: center;
-                            color: white;
-                            background: #aaf;
-                            text-shadow: 0px 1px 0px #ccc,
-                                         0px 2px 0px #c9c9c9,
-                                         0px 3px 0px #bbb,
-                                         0px 4px 0px #b9b9b9,
-                                         0px 5px 0px #aaa,
-                                         0px 6px 1px rgba(0,0,0, .1),
-                                         0px 0px 5px rgba(0,0,0, .1),
-                                         0px 1px 3px rgba(0,0,0, .3),
-                                         0px 3px 5px rgba(0,0,0, .2),
-                                         0px 5px 10px rgba(0,0,0, .25),
-                                         0px 10px 10px rgba(0,0,0, .2),
-                                         0px 20px 20px rgba(0,0,0, .15);
-                        }
-                    </style>
-
-                    <h1>Shadow heading</h1>
-                </code>
-                <code>
-                    <style>
-                        h1#ex10 {
-                            padding: 10px 0px 10px 0px;
-                            text-align: center;
-                            color: white;
-                            background: #aaf;
-                            text-shadow: 0px 1px 0px #ccc,
-                                         0px 2px 0px #c9c9c9,
-                                         0px 3px 0px #bbb,
-                                         0px 4px 0px #b9b9b9,
-                                         0px 5px 0px #aaa,
-                                         0px 6px 1px rgba(0,0,0, .1),
-                                         0px 0px 5px rgba(0,0,0, .1),
-                                         0px 1px 3px rgba(0,0,0, .3),
-                                         0px 3px 5px rgba(0,0,0, .2),
-                                         0px 5px 10px rgba(0,0,0, .25),
-                                         0px 10px 10px rgba(0,0,0, .2),
-                                         0px 20px 20px rgba(0,0,0, .15);
-                        }
-                    </style>
-
-                    <h1 id="ex10">Shadow heading</h1>
-                </code>
-            </div>
-        </article>
-
-
+            <article>
+                <h4>Тень текста</h4>
+                <p>
+                    Тень текста задается с помощью свойства <em>text-shadow</em> с такой записью:
+                </p>
+                <p>
+                    text-shadow: <kbd>offset-x</kbd> <kbd>offset-y</kbd>
+                                 <kbd>blur-radius</kbd> <kbd>color</kbd>
+                </p>
+                <p>
+                    Обязательными являются только сдвиг по x и по y. Цвет наследуется от родителя, а <em>blur-radius</em> будет равен 0.
+                </p>
+                <p>
+                    text-shadow: <kbd>offset-x</kbd> <kbd>offset-y</kbd>
+                                 <kbd style="color: gray;">blur-radius</kbd>
+                                 <kbd style="color: gray;">color</kbd>
+                </p>
+                <p>
+                    Создадим тень со сдвигом в 2 пикселя вправо вниз, по умолчанию она будет такого же цвета, что и текст:
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <style>
+                            h1 {
+                                text-shadow: 2px 2px;
+                            }
+                        </style>
+    
+                        <h1>Shadow heading</h1>
+                    </code>
+                    <code>
+                        <style>
+                            h1#ex4 {
+                                text-shadow: 2px 2px;
+                            }
+                        </style>
+    
+                        <h1 id="ex4">Shadow heading</h1>
+                    </code>
+                </div>
+    
+                <p>Закрасим цвет красным цветом:</p>
+    
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <style>
+                            h1 {
+                                text-shadow: 2px 2px #f00;
+                            }
+                        </style>
+    
+                        <h1>Shadow heading</h1>
+                    </code>
+                    <code>
+                        <style>
+                            h1#ex5 {
+                                text-shadow: 2px 2px #f00;
+                            }
+                        </style>
+    
+                        <h1 id="ex5">Shadow heading</h1>
+                    </code>
+                </div>
+                <p>Добавим размытие в 5 пикселей:</p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <style>
+                            h1 {
+                                text-shadow: 2px 2px 5px #f00;
+                            }
+                        </style>
+    
+                        <h1>Shadow heading</h1>
+                    </code>
+                    <code>
+                        <style>
+                            h1#ex6 {
+                                text-shadow: 2px 2px 5px #f00;
+                            }
+                        </style>
+    
+                        <h1 id="ex6">Shadow heading</h1>
+                    </code>
+                </div>
+    
+                <p>Укажем еще одну тень со сдвигом влево вверх зеленого цвета:</p>
+    
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <style>
+                            h1 {
+                                text-shadow: 2px 2px 5px #f00,
+                                            -2px -2px 5px #0f0;
+                            }
+                        </style>
+    
+                        <h1>Shadow heading</h1>
+                    </code>
+                    <code>
+                        <style>
+                            h1#ex7 {
+                                text-shadow: 2px 2px 5px #f00,
+                                            -2px -2px 5px #0f0;
+                            }
+                        </style>
+    
+                        <h1 id="ex7">Shadow heading</h1>
+                    </code>
+                </div>
+                <p>
+                    Примеры эффектов:
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <style>
+                            h1 {
+                                padding: 10px 0px 10px 0px;
+                                text-align: center;
+                                color: white;
+                                background-color: black;
+                                text-shadow: 0px 0px 5px,
+                                                0px 0px 10px,
+                                                0px 0px 15px,
+                                                0px 0px 20px #f0f,
+                                                0px 0px 25px #f0f,
+                                                0px 0px 30px #f0f,
+                                                0px 0px 40px #f0f,
+                                                0px 0px 50px #f0f;
+                            }
+                        </style>
+    
+                        <h1>Shadow heading</h1>
+                    </code>
+                    <code>
+                        <style>
+                            h1#ex9 {
+                                padding: 10px 0px 10px 0px;
+                                text-align: center;
+                                color: white;
+                                background-color: black;
+                                text-shadow: 0px 0px 5px,
+                                                0px 0px 10px,
+                                                0px 0px 15px,
+                                                0px 0px 20px #f0f,
+                                                0px 0px 25px #f0f,
+                                                0px 0px 30px #f0f,
+                                                0px 0px 40px #f0f,
+                                                0px 0px 50px #f0f;
+                            }
+                        </style>
+    
+                        <h1 id="ex9">Shadow heading</h1>
+                    </code>
+                </div>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <style>
+                            h1 {
+                                padding: 10px 0px 10px 0px;
+                                text-align: center;
+                                color: white;
+                                background: #aaf;
+                                text-shadow: 0px 1px 0px #ccc,
+                                                0px 2px 0px #c9c9c9,
+                                                0px 3px 0px #bbb,
+                                                0px 4px 0px #b9b9b9,
+                                                0px 5px 0px #aaa,
+                                                0px 6px 1px rgba(0,0,0, .1),
+                                                0px 0px 5px rgba(0,0,0, .1),
+                                                0px 1px 3px rgba(0,0,0, .3),
+                                                0px 3px 5px rgba(0,0,0, .2),
+                                                0px 5px 10px rgba(0,0,0, .25),
+                                                0px 10px 10px rgba(0,0,0, .2),
+                                                0px 20px 20px rgba(0,0,0, .15);
+                            }
+                        </style>
+    
+                        <h1>Shadow heading</h1>
+                    </code>
+                    <code>
+                        <style>
+                            h1#ex10 {
+                                padding: 10px 0px 10px 0px;
+                                text-align: center;
+                                color: white;
+                                background: #aaf;
+                                text-shadow: 0px 1px 0px #ccc,
+                                                0px 2px 0px #c9c9c9,
+                                                0px 3px 0px #bbb,
+                                                0px 4px 0px #b9b9b9,
+                                                0px 5px 0px #aaa,
+                                                0px 6px 1px rgba(0,0,0, .1),
+                                                0px 0px 5px rgba(0,0,0, .1),
+                                                0px 1px 3px rgba(0,0,0, .3),
+                                                0px 3px 5px rgba(0,0,0, .2),
+                                                0px 5px 10px rgba(0,0,0, .25),
+                                                0px 10px 10px rgba(0,0,0, .2),
+                                                0px 20px 20px rgba(0,0,0, .15);
+                            }
+                        </style>
+    
+                        <h1 id="ex10">Shadow heading</h1>
+                    </code>
+                </div>
+            </article>
+        </section>
     </div>
 </div>

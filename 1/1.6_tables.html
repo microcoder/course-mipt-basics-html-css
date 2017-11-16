@@ -1,97 +1,99 @@
 <div class="row">
     <div class="col-8">
+        <section>
+            <header><h3>Таблицы</h3></header>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Простая таблица</h3>
-            <div class="card bg-light mb-3 p-3">
-                <!-- Количество элементов <code>:
-                    * Если один, то отображается исходный код и он же проигрывается на странице.
-                    * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
-                -->
-                <code class="html">
-                    <table border="1">
-                        <tbody>
-                            <tr>
-                                <td>Diablo</td>    <!-- Обозначает ячейку таблицы -->
-                                <td>Blizzard</td>
-                            </tr>
-                            <tr>
-                                <td>Portal</td>
-                                <td>Valve</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </code>
-            </div>
-        </article>
+            <article> <!-- ===================================================================================== -->
+                <h4>Простая таблица</h4>
+                <div class="card bg-light mb-3 p-3">
+                    <!-- Количество элементов <code>:
+                        * Если один, то отображается исходный код и он же проигрывается на странице.
+                        * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+                    -->
+                    <code class="html">
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <td>Diablo</td>    <!-- Обозначает ячейку таблицы -->
+                                    <td>Blizzard</td>
+                                </tr>
+                                <tr>
+                                    <td>Portal</td>
+                                    <td>Valve</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </code>
+                </div>
+            </article>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Объединение ячеек</h3>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <table border="1">
-                        <tbody>
-                            <tr>
-                                <!-- colspan - объединяет горизонтальные ячейки -->
-                                <td colspan="2">Blizzard Entertament: Diablo III</td>
-                            </tr>
-                            <tr>
-                                <td>Portal</td>
-                                <td>Valve</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </code>
-            </div>
-
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <table border="1">
-                        <tbody>
-                            <tr>
-                                <!-- rowspan - объединяет вертикальные ячейки -->
-                                <td rowspan="2">Blizzard Entertament: Diablo III</td>
-                                <td>Blizzard</td>
-                            </tr>
-                            <tr>
-                                <td>Valve</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </code>
-            </div>
-
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <table border="1">
-                            
-                        <caption>Games</caption> <!-- Заголовок таблицы -->
-
-                        <thead> <!-- Обозначает шапку таблицы -->
-                            <tr> <!-- Обозначает строку данных -->
-                                <th>Game name</th> <!-- Обозначает ячейку шапки -->
-                                <th>Game publisher</th>
-                            </tr>
-                        </thead>
-
-                        <tfoot> <!-- Обозначает подвал таблицы -->
-                            <tr>
-                                <td>Game name</td>
-                                <td>Game publisher</td>
-                            </tr>
-                        </tfoot>
-
-                        <tbody> <!-- Обозначает данные таблицы -->
-                            <tr>
-                                <td>Diablo</td> <!-- Обозначает ячейку таблицы -->
-                                <td>Blizzard</td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-                </code>
-            </div>
-        </article>
-
+            <article> <!-- ===================================================================================== -->
+                <h4>Объединение ячеек</h4>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <!-- colspan - объединяет горизонтальные ячейки -->
+                                    <td colspan="2">Blizzard Entertament: Diablo III</td>
+                                </tr>
+                                <tr>
+                                    <td>Portal</td>
+                                    <td>Valve</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </code>
+                </div>
+    
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <table border="1">
+                            <tbody>
+                                <tr>
+                                    <!-- rowspan - объединяет вертикальные ячейки -->
+                                    <td rowspan="2">Blizzard Entertament: Diablo III</td>
+                                    <td>Blizzard</td>
+                                </tr>
+                                <tr>
+                                    <td>Valve</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </code>
+                </div>
+    
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <table border="1">
+                                
+                            <caption>Games</caption> <!-- Заголовок таблицы -->
+    
+                            <thead> <!-- Обозначает шапку таблицы -->
+                                <tr> <!-- Обозначает строку данных -->
+                                    <th>Game name</th> <!-- Обозначает ячейку шапки -->
+                                    <th>Game publisher</th>
+                                </tr>
+                            </thead>
+    
+                            <tfoot> <!-- Обозначает подвал таблицы -->
+                                <tr>
+                                    <td>Game name</td>
+                                    <td>Game publisher</td>
+                                </tr>
+                            </tfoot>
+    
+                            <tbody> <!-- Обозначает данные таблицы -->
+                                <tr>
+                                    <td>Diablo</td> <!-- Обозначает ячейку таблицы -->
+                                    <td>Blizzard</td>
+                                </tr>
+                            </tbody>
+    
+                        </table>
+                    </code>
+                </div>
+            </article>
+        </section>
     </div>
 </div>

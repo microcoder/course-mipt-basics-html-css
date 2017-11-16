@@ -1,202 +1,199 @@
 <div class="row">
     <div class="col-8">
+        <section>
+            <header><h3>Анатомия HTML</h3></header>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>HTML элемент</h3>
-            <p>
-                HTML элемент состоит из открывающего тега <a> и закрывающего </a>.
-                Внутри тега указываются атрибуты, которые позволяют задавать свойства элемента.
-                Между открывающим и закрывающим тегом находится содержимое этого элемента.
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <!-- Количество элементов <code>:
-                    * Если один, то отображается исходный код и он же проигрывается на странице.
-                    * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
-                -->
-                <code class="html">
-                    <a href="http://home.web.cern.ch">CERN</a>
-                </code>
-            </div>
-        </article>
-
-        <article> <!-- ===================================================================================== -->
-            <p>Не все элементы имеют закрывающий тег:</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <img src="res/cat.jpg" alt="Котики">
-                </code>
-            </div>
-        </article>
-
-        <article> <!-- ===================================================================================== -->
-            <p>Существуют элементы, которые могут содержать только лишь текст:</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <title>HTML Лекция</title>
-                </code>
-                <code>
-                    <!-- Код исполняться не будет -->
-                </code>
-            </div>
-        </article>
-
-        <article> <!-- ===================================================================================== -->
-            <p>Элементы в которые могут вкладываться другие элементы:</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <p>
+            <article> <!-- ===================================================================================== -->
+                <h4>HTML элемент</h4>
+                <p>
+                    HTML элемент состоит из открывающего тега <a> и закрывающего </a>.
+                    Внутри тега указываются атрибуты, которые позволяют задавать свойства элемента.
+                    Между открывающим и закрывающим тегом находится содержимое этого элемента.
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <!-- Количество элементов <code>:
+                        * Если один, то отображается исходный код и он же проигрывается на странице.
+                        * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+                    -->
+                    <code class="html">
                         <a href="http://home.web.cern.ch">CERN</a>
-                        is a European research organization
-                        that operates the largest particle
-                        physics laboratory in the world.
-                    </p>
-                </code>
-            </div>
-        </article>
+                    </code>
+                </div>
+                
+                <p>Не все элементы имеют закрывающий тег:</p>
+                
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <img src="res/cat.jpg" alt="Котики">
+                    </code>
+                </div>
 
-        <article> <!-- ===================================================================================== -->
-            <p>Незакрывающиеся элементы. Стандарт позволяет не закрывать некоторые теги.
-            Полный список элементов доступен по <a href="https://www.w3.org/TR/html5/syntax.html#optional-tags" target="_blank">этому адресу</a>.</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <ul>
-                        <li>Молоко
-                        <li>Хлеб
-                        <li>Яблоки
-                        <li>Audi TT
-                    </ul>
-                </code>
-            </div>
-        </article>
+                <p>Существуют элементы, которые могут содержать только лишь текст:</p>
 
-        <article> <!-- ===================================================================================== -->
-            <p>Атрибуты состоят из имени "href" и значения "http://home.web.cern.ch"</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <a href="http://home.web.cern.ch">CERN</a>
-                </code>
-            </div>
-        </article>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <title>HTML Лекция</title>
+                    </code>
+                    <code>
+                        <!-- Код исполняться не будет -->
+                    </code>
+                </div>
 
-        <article> <!-- ===================================================================================== -->
-            <p>У элементов можно указывать несколько атрибутов:</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <input type="button" value="Click me">
-                </code>
-            </div>
-        </article>
+                <p>Элементы в которые могут вкладываться другие элементы:</p>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Одиночный атрибут</h3>
-            <p>Бывают одиночные атрибуты, они работают как булевы значения, либо True, либо False.
-            Если есть атрибут, то он работает как True, если нет, то False</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <input disabled>
-                    <!-- Тоже самое -->
-                    <input disabled="sometext">
-                </code>
-            </div>
-        </article>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <p>
+                            <a href="http://home.web.cern.ch">CERN</a>
+                            is a European research organization
+                            that operates the largest particle
+                            physics laboratory in the world.
+                        </p>
+                    </code>
+                </div>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Универсальный атрибут id</h3>
-            <p>id - задает уникальный идентификатор элемента. Его значение не должно повторятся на странице
-            При помощи CSS стилей мы можем обратится к этому элементу:</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <input type="email" id="email_input">
-                    <style>#email_input {width: 100px}</style>
-                </code>
-            </div>
-        </article>
+                <p>
+                    Незакрывающиеся элементы. Стандарт позволяет не закрывать некоторые теги.
+                    Полный список элементов доступен по <a href="https://www.w3.org/TR/html5/syntax.html#optional-tags" target="_blank">этому адресу</a>.
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <ul>
+                            <li>Молоко
+                            <li>Хлеб
+                            <li>Яблоки
+                            <li>Audi TT
+                        </ul>
+                    </code>
+                </div>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Универсальный атрибут class</h3>
-            <p>Задает класс элементов, позволяя их группировать. При помощи CSS стилей мы можем обратится:</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    Список покупок:<br>
-                    <ul class="list">
-                        <li class="food">Молоко</li>
-                        <li class="food">Хлеб</li>
-                        <li class="car">Audi TT</li>
-                        <li class="car">Audi Q5</li>
-                    </ul>
-                    <style>
-                        .food {color: blue}
-                        .car {color: red}
-                    </style>
-                </code>
-            </div>
-        </article>
+                <p>Атрибуты состоят из имени "href" и значения "http://home.web.cern.ch"</p>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Атрибут style</h3>
-            <p>Позволяет указать стили конкретному элементу:</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <h1 style="color: green; border: 1px solid;">The Martian.</h1>
-                </code>
-            </div>
-        </article>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <a href="http://home.web.cern.ch">CERN</a>
+                    </code>
+                </div>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Атрибут title</h3>
-            <p>Позволяет добавлять пояснения к содержимому элемента который появляется при наведении указателя:</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <abbr title="World Wide Web">www</abbr>
-                    <p title="application programming interface">API</p>
-                </code>
-            </div>
-        </article>
+                <p>У элементов можно указывать несколько атрибутов:</p>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>HTML Entity</h3>
-            <p>Не все символы можно вставить с клавиатуры, для этого используются
-            <a href="https://www.w3.org/TR/html5/syntax.html#named-character-references" target="_blank">специальные символьные коды</a>.
-            Мы можем указывать как именованную ссылку на символ, так и числовую:</p>
-            <table class="table table-sm table-bordered" style="width: 600px">
-                <thead class="thead-light">
-                    <tr>
-                        <th scope="col">Код</th>
-                        <th scope="col">Описание</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>&amp;copy;</td><td>&copy;</td></tr>
-                    <tr><td>&amp;amp;</td><td>&amp;</td></tr>
-                    <tr><td>&amp;pound;</td><td>&pound;</td></tr>
-                    <tr><td>&amp;sum;</td><td>&sum;</td></tr>
-                    <tr><td>&amp;nbsp;</td><td>Неразрывный пробел (no-break space)</td></tr>
-                    <tr><td>&amp;#x03A3;</td><td>Шестнадцатиричный код</td></tr>
-                    <tr><td>&amp;#x3A3;</td><td>Шестнадцатиричный код. Ноль можно опустить</td></tr>
-                    <tr><td>&amp;#0931;</td><td>Десятичный код</td></tr>
-                    <tr><td>&amp;#931;</td><td>Десятичный код. Ноль можно опустить</td></tr>
-                <tbody>
-            </table>
-        </article>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <input type="button" value="Click me">
+                    </code>
+                </div>
+            </article>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>HTML разметка</h3>
-            <p>HTML разметку можно разбить на два типа:</p>
-            <ol>
-                <li>
-                    <p>
-                        В теге &lt;head&gt; находится описательная часть.<br>
-                        Определяет мета информацию документа. Этой информацией пользуются браузеры, поисковики, социальные сети
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        В теге &lt;body&gt; находится структурная часть.<br>
-                        Это визуальная часть, которую видит пользователь.
-                    </p>
-                </li>
-            </ol>
-        </article>
+            <article> <!-- ===================================================================================== -->
+                <h4>Одиночный атрибут</h4>
+                <p>Бывают одиночные атрибуты, они работают как булевы значения, либо True, либо False.
+                Если есть атрибут, то он работает как True, если нет, то False</p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <input disabled>
+                        <!-- Тоже самое -->
+                        <input disabled="sometext">
+                    </code>
+                </div>
+            </article>
 
+            <article> <!-- ===================================================================================== -->
+                <h4>Универсальный атрибут id</h4>
+                <p>id - задает уникальный идентификатор элемента. Его значение не должно повторятся на странице
+                При помощи CSS стилей мы можем обратится к этому элементу:</p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <input type="email" id="email_input">
+                        <style>#email_input {width: 100px}</style>
+                    </code>
+                </div>
+            </article>
+
+            <article> <!-- ===================================================================================== -->
+                <h4>Универсальный атрибут class</h4>
+                <p>Задает класс элементов, позволяя их группировать. При помощи CSS стилей мы можем обратится:</p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        Список покупок:<br>
+                        <ul class="list">
+                            <li class="food">Молоко</li>
+                            <li class="food">Хлеб</li>
+                            <li class="car">Audi TT</li>
+                            <li class="car">Audi Q5</li>
+                        </ul>
+                        <style>
+                            .food {color: blue}
+                            .car {color: red}
+                        </style>
+                    </code>
+                </div>
+            </article>
+
+            <article> <!-- ===================================================================================== -->
+                <h4>Атрибут style</h4>
+                <p>Позволяет указать стили конкретному элементу:</p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <h1 style="color: green; border: 1px solid;">The Martian.</h1>
+                    </code>
+                </div>
+            </article>
+
+            <article> <!-- ===================================================================================== -->
+                <h4>Атрибут title</h4>
+                <p>Позволяет добавлять пояснения к содержимому элемента который появляется при наведении указателя:</p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <abbr title="World Wide Web">www</abbr>
+                        <p title="application programming interface">API</p>
+                    </code>
+                </div>
+            </article>
+
+            <article> <!-- ===================================================================================== -->
+                <h4>HTML Entity</h4>
+                <p>Не все символы можно вставить с клавиатуры, для этого используются
+                <a href="https://www.w3.org/TR/html5/syntax.html#named-character-references" target="_blank">специальные символьные коды</a>.
+                Мы можем указывать как именованную ссылку на символ, так и числовую:</p>
+                <table class="table table-sm table-bordered" style="width: 600px">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Код</th>
+                            <th scope="col">Описание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>&amp;copy;</td><td>&copy;</td></tr>
+                        <tr><td>&amp;amp;</td><td>&amp;</td></tr>
+                        <tr><td>&amp;pound;</td><td>&pound;</td></tr>
+                        <tr><td>&amp;sum;</td><td>&sum;</td></tr>
+                        <tr><td>&amp;nbsp;</td><td>Неразрывный пробел (no-break space)</td></tr>
+                        <tr><td>&amp;#x03A3;</td><td>Шестнадцатиричный код</td></tr>
+                        <tr><td>&amp;#x3A3;</td><td>Шестнадцатиричный код. Ноль можно опустить</td></tr>
+                        <tr><td>&amp;#0931;</td><td>Десятичный код</td></tr>
+                        <tr><td>&amp;#931;</td><td>Десятичный код. Ноль можно опустить</td></tr>
+                    <tbody>
+                </table>
+            </article>
+
+            <article> <!-- ===================================================================================== -->
+                <h4>HTML разметка</h4>
+                <p>HTML разметку можно разбить на два типа:</p>
+                <ol>
+                    <li>
+                        <p>
+                            В теге &lt;head&gt; находится описательная часть.<br>
+                            Определяет мета информацию документа. Этой информацией пользуются браузеры, поисковики, социальные сети
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            В теге &lt;body&gt; находится структурная часть.<br>
+                            Это визуальная часть, которую видит пользователь.
+                        </p>
+                    </li>
+                </ol>
+            </article>
+        </section>
     </div>
 </div>

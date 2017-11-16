@@ -1,114 +1,116 @@
 <div class="row">
     <div class="col-8">
+        <section>
+            <header><h3>Встраиваемые элементы</h3></header>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Элемент &lt;img&gt;</h3>
-            <p>Элемент предназначен для отображения на веб-странице изображений в графическом формате (GIF, JPEG, SVG, PNG)</p>
-            <div class="card bg-light mb-3 p-3">
-                <!-- Количество элементов <code>:
-                    * Если один, то отображается исходный код и он же проигрывается на странице.
-                    * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
-                -->
-                <code class="html">
-                    <!--
-                        Атрибут alt должен быть всегда, если картинка не является декоративной когда,
-                        например, она используется в дизайне страницы
+            <article> <!-- ===================================================================================== -->
+                <h4>Элемент &lt;img&gt;</h4>
+                <p>Элемент предназначен для отображения на веб-странице изображений в графическом формате (GIF, JPEG, SVG, PNG)</p>
+                <div class="card bg-light mb-3 p-3">
+                    <!-- Количество элементов <code>:
+                        * Если один, то отображается исходный код и он же проигрывается на странице.
+                        * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
                     -->
-                    <img src="res/cat.jpg" title="cat" alt="image of cat">
-                    <img src="res/cat2.jpg" title="cat" alt="Картинка которая не была загружена">
-                </code>
-            </div>
+                    <code class="html">
+                        <!--
+                            Атрибут alt должен быть всегда, если картинка не является декоративной когда,
+                            например, она используется в дизайне страницы
+                        -->
+                        <img src="res/cat.jpg" title="cat" alt="image of cat">
+                        <img src="res/cat2.jpg" title="cat" alt="Картинка которая не была загружена">
+                    </code>
+                </div>
+    
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <!-- Картинка изменится пропорционально -->
+                        <img src="res/cat.jpg" height="300"><br>
+                        <!-- Картинка изменится пропорционально -->
+                        <img src="res/cat.jpg" width="300"><br>
+                        <!-- Картинка изменится НЕпропорционально, а так как указано в атрибутах -->
+                        <img src="res/cat.jpg" height="300" width="300">
+                    </code>
+                </div>
+            </article>
 
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <!-- Картинка изменится пропорционально -->
-                    <img src="res/cat.jpg" height="300"><br>
-                    <!-- Картинка изменится пропорционально -->
-                    <img src="res/cat.jpg" width="300"><br>
-                    <!-- Картинка изменится НЕпропорционально, а так как указано в атрибутах -->
-                    <img src="res/cat.jpg" height="300" width="300">
-                </code>
-            </div>
-        </article>
+            <article> <!-- ===================================================================================== -->
+                <h4>Элемент &lt;iframe&gt;</h4>
+                <p>Элемент позволяет загружать в область заданных размеров любые другие независимые документы.</p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <iframe src="payment.html" width="500" height="200" />
+                    </code>
+                </div>
+            </article>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Элемент &lt;iframe&gt;</h3>
-            <p>Элемент позволяет загружать в область заданных размеров любые другие независимые документы.</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <iframe src="payment.html" width="500" height="200" />
-                </code>
-            </div>
-        </article>
+            <article> <!-- ===================================================================================== -->
+                <h4>Элемент &lt;video&gt;</h4>
+                <p>Элемент добавляет, воспроизводит и управляет настройками видеоролика на веб-странице</p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <video src="res/video.mp4" poster="res/poster.png" height="300" width="400" controls muted autoplay />
+                    </code>
+                </div>
+    
+                <p>Но не все так просто. Не всякий браузер поддерживает вопроизведение того или иного формата видео, поэтому
+                можно указать разные версии/форматы видео. Какие браузер поддерживает форматы, можно узнать на странице
+                <a href="https://webref.ru/html/video" target="_blank">https://webref.ru/html/video</a></p>
+    
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <video poster="res/poster.png" height="400" width="720" controls muted autoplay loop>
+                            <source src="res/video.mp4" type="video/mp4">
+                            <source src="res/video.ogv" type="video/ogg">
+                            Элемент video не поддерживается вашим браузером, <a href="res/video.mp4">скачайте видео</a>
+                        </video>
+                    </code>
+                </div>
+            </article>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Элемент &lt;video&gt;</h3>
-            <p>Элемент добавляет, воспроизводит и управляет настройками видеоролика на веб-странице</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <video src="res/video.mp4" poster="res/poster.png" height="300" width="400" controls muted autoplay />
-                </code>
-            </div>
+            <article> <!-- ===================================================================================== -->
+                <h4>Элемент &lt;audio&gt;</h4>
+                <p>Элемент добавляет, воспроизводит и управляет настройками аудиозаписи на веб-странице</p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <audio src="res/music.mp3" controls />
+                    </code>
+                </div>
+    
+                <p>
+                    Так же как и тег video не каждый браузер поддерживает форматы аудио. Посмотреть какие поддерживает:
+                    <a href="https://webref.ru/html/audio" target="_blank">https://webref.ru/html/audio</a>
+                </p>
+    
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <audio controls autoplay loop>
+                            <source src="res/music.mp3" type="audio/mpeg">
+                            <source src="res/music.ogg" type="audio/ogg">
+                            Элемент audio не поддерживается вашим браузером, <a href="res/music.mp3">скачайте музыку</a>
+                        </audio>
+                    </code>
+                </div>
+            </article>
 
-            <p>Но не все так просто. Не всякий браузер поддерживает вопроизведение того или иного формата видео, поэтому
-            можно указать разные версии/форматы видео. Какие браузер поддерживает форматы, можно узнать на странице
-            <a href="https://webref.ru/html/video" target="_blank">https://webref.ru/html/video</a></p>
-
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <video poster="res/poster.png" height="400" width="720" controls muted autoplay loop>
-                        <source src="res/video.mp4" type="video/mp4">
-                        <source src="res/video.ogv" type="video/ogg">
-                        Элемент video не поддерживается вашим браузером, <a href="res/video.mp4">скачайте видео</a>
-                    </video>
-                </code>
-            </div>
-        </article>
-
-        <article> <!-- ===================================================================================== -->
-            <h3>Элемент &lt;audio&gt;</h3>
-            <p>Элемент добавляет, воспроизводит и управляет настройками аудиозаписи на веб-странице</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <audio src="res/music.mp3" controls />
-                </code>
-            </div>
-
-            <p>
-                Так же как и тег video не каждый браузер поддерживает форматы аудио. Посмотреть какие поддерживает:
-                <a href="https://webref.ru/html/audio" target="_blank">https://webref.ru/html/audio</a>
-            </p>
-
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <audio controls autoplay loop>
-                        <source src="res/music.mp3" type="audio/mpeg">
-                        <source src="res/music.ogg" type="audio/ogg">
-                        Элемент audio не поддерживается вашим браузером, <a href="res/music.mp3">скачайте музыку</a>
-                    </audio>
-                </code>
-            </div>
-        </article>
-
-        <article> <!-- ===================================================================================== -->
-            <h3>Элемент &lt;track&gt;</h3>
-            <p>
-               Элемент позволяет авторам указать текстовую дорожку для медийных элементов audio и video.
-               Формат файла VTT можно посмотреть в файле <a href="res/sampleSubtitles_ru.vtt" target="_blank">res/sampleSubtitles_ru.vtt</a>
-            </p>
-            <p>В плеере, на панели управления видео появляется дополнительный элемент [cc] с опциями выбора языков субтитров</p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <video height="400" width="720" controls muted autoplay loop>
-                        <track kind="subtitles" src="res/sampleSubtitles_en.vtt" srclang="en" label="English">
-                        <track kind="subtitles" src="res/sampleSubtitles_ru.vtt" srclang="ru" label="Русский" default>
-                        <source src="res/video.mp4" type="video/mp4">
-                        <source src="res/video.ogv" type="video/ogg">
-                        Элемент video не поддерживается вашим браузером
-                    </video>
-                </code>
-            </div>
-        </article>
-
+            <article> <!-- ===================================================================================== -->
+                <h4>Элемент &lt;track&gt;</h4>
+                <p>
+                   Элемент позволяет авторам указать текстовую дорожку для медийных элементов audio и video.
+                   Формат файла VTT можно посмотреть в файле <a href="res/sampleSubtitles_ru.vtt" target="_blank">res/sampleSubtitles_ru.vtt</a>
+                </p>
+                <p>В плеере, на панели управления видео появляется дополнительный элемент [cc] с опциями выбора языков субтитров</p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <video height="400" width="720" controls muted autoplay loop>
+                            <track kind="subtitles" src="res/sampleSubtitles_en.vtt" srclang="en" label="English">
+                            <track kind="subtitles" src="res/sampleSubtitles_ru.vtt" srclang="ru" label="Русский" default>
+                            <source src="res/video.mp4" type="video/mp4">
+                            <source src="res/video.ogv" type="video/ogg">
+                            Элемент video не поддерживается вашим браузером
+                        </video>
+                    </code>
+                </div>
+            </article>
+        </section>
     </div>
 </div>

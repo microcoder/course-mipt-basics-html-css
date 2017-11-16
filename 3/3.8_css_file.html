@@ -1,43 +1,74 @@
 <div class="row">
     <div class="col-8">
-
-        <article> <!-- ===================================================================================== -->
-            <h3>Пример подключения CSS файла и каскадность свойств</h3>
-            <p>
-                Содержимое CSS файла <a href="inc/master.css" target="_blank">inc/master.css</a>:
+        <section>
+            <header><h3>CSS файл</h3></header>
+            
+            <article> <!-- ===================================================================================== -->
+                <h4>Пример подключения CSS файла и каскадность свойств</h4>
+                <p>
+                    Содержимое CSS файла <a href="inc/master.css" target="_blank">inc/master.css</a>:
+                    <div class="card bg-light mb-3 p-3">
+                        <!-- Количество элементов <code>:
+                            * Если один, то отображается исходный код и он же проигрывается на странице.
+                            * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+                        -->
+                        <code class="css">
+                            * {
+                                background: #d9d9d9;
+                            }
+                            
+                            p {
+                                color: gray;
+                            }                        
+                        </code>
+                        <code>
+                            <!-- Запрещаем коду интерпретироваться на странице -->
+                        </code>
+                    </div>
+                    Пример HTML страницы:
+                </p>
+    
                 <div class="card bg-light mb-3 p-3">
-                    <!-- Количество элементов <code>:
-                        * Если один, то отображается исходный код и он же проигрывается на странице.
-                        * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
-                    -->
-                    <code class="css">
-                        * {
-                            background: #d9d9d9;
-                        }
-                        
-                        p {
-                            color: gray;
-                        }                        
+                    <code class="html">
+                        <htmltag>
+                            <headtag>
+                                <meta charset="utf-8">
+                                <title>Какой-нибудь заголовок</title>
+                                <link rel="stylesheet" href="inc/master.css">
+                            </headtag>
+                            <bodytag>
+                                <div>
+                                    <!-- Этот способ указания стиля является приоритетней, чем в теге <style> -->
+                                    <p style="color: red">Параграф 1</p>
+                                    <p>Параграф 2</p>
+                                    <ul>
+                                        <li>Список пункт 1</li>
+                                        <li>Список пункт 2</li>
+                                        <li>Список пункт 3</li>
+                                        <li>Список пункт 4</li>
+                                    </ul>
+                                </div>
+                                <style>
+                                    /* Все параграфы красим в зеленый цвет */
+                                    p {
+                                        color: green;
+                                    }
+                                    /* Четные элементы красим в красный цвет */
+                                    ul li:nth-child(2n){
+                                        color: red;
+                                    }
+                                    /* Нечетные элементы красим в оранжевый цвет */
+                                    ul li:nth-child(2n+1){
+                                        color: orange;
+                                    }
+                                </style>
+                            </bodytag>
+                        </htmltag>
                     </code>
                     <code>
-                        <!-- Запрещаем коду интерпретироваться на странице -->
-                    </code>
-                </div>
-                Пример HTML страницы:
-            </p>
-
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <htmltag>
-                        <headtag>
-                            <meta charset="utf-8">
-                            <title>Какой-нибудь заголовок</title>
-                            <link rel="stylesheet" href="inc/master.css">
-                        </headtag>
-                        <bodytag>
+                        <div id="ex1">
                             <div>
-                                <!-- Этот способ указания стиля является приоритетней, чем в теге <style> -->
-                                <p style="color: red">Параграф 1</p>
+                                <p style="color: red">Параграф 1</p> <!-- Этот способ указания стиля является приоритетней, чем в теге <style> -->
                                 <p>Параграф 2</p>
                                 <ul>
                                     <li>Список пункт 1</li>
@@ -47,63 +78,34 @@
                                 </ul>
                             </div>
                             <style>
+                                /* BEGIN. Имитация файла CSS */
+                                div#ex1 * {
+                                    background: #d9d9d9;
+                                }
+                                
+                                div#ex1 p {
+                                    color: gray;
+                                }
+                                /* END. Имитация файла CSS */
+        
+                                
                                 /* Все параграфы красим в зеленый цвет */
-                                p {
+                                div#ex1 p {
                                     color: green;
                                 }
                                 /* Четные элементы красим в красный цвет */
-                                ul li:nth-child(2n){
+                                div#ex1 ul li:nth-child(2n){
                                     color: red;
                                 }
                                 /* Нечетные элементы красим в оранжевый цвет */
-                                ul li:nth-child(2n+1){
+                                div#ex1 ul li:nth-child(2n+1){
                                     color: orange;
                                 }
                             </style>
-                        </bodytag>
-                    </htmltag>
-                </code>
-                <code>
-                    <div id="ex1">
-                        <div>
-                            <p style="color: red">Параграф 1</p> <!-- Этот способ указания стиля является приоритетней, чем в теге <style> -->
-                            <p>Параграф 2</p>
-                            <ul>
-                                <li>Список пункт 1</li>
-                                <li>Список пункт 2</li>
-                                <li>Список пункт 3</li>
-                                <li>Список пункт 4</li>
-                            </ul>
                         </div>
-                        <style>
-                            /* BEGIN. Имитация файла CSS */
-                            div#ex1 * {
-                                background: #d9d9d9;
-                            }
-                            
-                            div#ex1 p {
-                                color: gray;
-                            }
-                            /* END. Имитация файла CSS */
-    
-                            
-                            /* Все параграфы красим в зеленый цвет */
-                            div#ex1 p {
-                                color: green;
-                            }
-                            /* Четные элементы красим в красный цвет */
-                            div#ex1 ul li:nth-child(2n){
-                                color: red;
-                            }
-                            /* Нечетные элементы красим в оранжевый цвет */
-                            div#ex1 ul li:nth-child(2n+1){
-                                color: orange;
-                            }
-                        </style>
-                    </div>
-                </code>
-            </div>
-        </article>
-        
+                    </code>
+                </div>
+            </article>
+        </section>
     </div>
 </div>

@@ -1,225 +1,233 @@
 <div class="row">
     <div class="col-8">
+        <section>
+            <header><h3>Начертание шрифта</h3></header>
 
-        <article> <!-- ===================================================================================== -->
-            <style> .mymark1 { background-color: #7c9dff; border-radius: 5px; } </style>
-            <h3>Начертание шрифта</h3>
-            <p>
-                <strong>Гарнитура</strong> - типографский термин, объединяющий набор шрифтов, которые отличаются по размеру,
-                <mark class="mymark1">начертанию</mark>, наличию или отсутствию засечек на концах линий,
-                пропорциям символов, по соотношению размера высоты прописных и строчных знаков, величине верхних и
-                нижних выносных элементов, <mark class="mymark1">плотности</mark>, то есть близких по
-                характеру и отличительным знакам рисунка.
-            </p>
-            <p>
-                Характеристики одной гарнитуры:
+            <article> <!-- ===================================================================================== -->
+                <style>
+                    .mymark1 {
+                        background-color: #7c9dff;
+                        border-radius: 5px; 
+                    }
+                </style>
+                <h4></h4>
+                <p>
+                    <strong>Гарнитура</strong> - типографский термин, объединяющий набор шрифтов, которые отличаются по размеру,
+                    <mark class="mymark1">начертанию</mark>, наличию или отсутствию засечек на концах линий,
+                    пропорциям символов, по соотношению размера высоты прописных и строчных знаков, величине верхних и
+                    нижних выносных элементов, <mark class="mymark1">плотности</mark>, то есть близких по
+                    характеру и отличительным знакам рисунка.
+                </p>
+                <p>
+                    Характеристики одной гарнитуры:
+                    <div class="container" style="text-align: center;">
+                        <div class="row" style="font-weight: bold;">
+                            <div class="col-2">Наклон</div>
+                            <div class="col-2">Насыщенность</div>
+                            <div class="col-2">Плотность</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2" style="font-size: 40px; font-style: italic;">01</div>
+                            <div class="col-2" style="font-size: 40px; font-weight: bold;">02</div>
+                            <div class="col-2" style="font-size: 40px;">03</div>
+                        </div>
+                    </div>
+                </p>
+            </article>
+
+            <article> <!-- ===================================================================================== -->
+                <h4>Капитель</h4>
+                <p>
+                    <em>Капитель</em> - это такое начертание, в котором строчные знаки выглядят как уменьшенные прописные.
+                    Устанавливается с помощью свойства <em>font-variant</em>.
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <h3>Я Уже Не Текст, Я Рыба</h3>
+    
+                        <style>
+                            h3 {font-variant: normal;}
+                        </style>
+                    </code>
+                    <code class="html">
+                        <div id="ex1">
+                            <h3>Я Уже Не Текст, Я Рыба</h3>
+                        </div>
+                        
+                        <style>
+                            div#ex1 h3 {font-variant: normal;}
+                        </style>
+                    </code>
+                </div>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <h3>Я Уже Не Текст, Я Рыба</h3>
+    
+                        <style>
+                            h3 {font-variant: normal;}
+                        </style>
+                    </code>
+                    <code class="html">
+                        <div id="ex2">
+                            <h3>Я Уже Не Текст, Я Рыба</h3>
+                        </div>
+                        
+                        <style>
+                            div#ex2 h3 {font-variant: small-caps;}
+                        </style>
+                    </code>
+                </div>
+                <p>
+                    Как видно, во втором варианте, текст набран прописными маленькими буквами. Особенно это заметно на буквах А и Б.
+                    Данный приём часто использовался в газетах и иногда сейчас используется на сайтах.
+                </p>
+            </article>
+
+            <article> <!-- ===================================================================================== -->
+                <h4>Наклон</h4>
+                <p>
+                    Наклоном шрифта можно управлять с помощью CSS свойства <em>font-style</em>:
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <span style="font-size: 40px; font-style: normal;">П</span>
+                        <span style="font-size: 40px; font-style: oblique;">П</span>
+                        <span style="font-size: 40px; font-style: italic;">П</span>
+                    </code>
+                </div>
+    
                 <div class="container" style="text-align: center;">
                     <div class="row" style="font-weight: bold;">
-                        <div class="col-2">Наклон</div>
-                        <div class="col-2">Насыщенность</div>
-                        <div class="col-2">Плотность</div>
+                        <div class="col-2">Прямые</div>
+                        <div class="col-2">Наклонные</div>
+                        <div class="col-2">Курсивные</div>
                     </div>
                     <div class="row">
-                        <div class="col-2" style="font-size: 40px; font-style: italic;">01</div>
-                        <div class="col-2" style="font-size: 40px; font-weight: bold;">02</div>
-                        <div class="col-2" style="font-size: 40px;">03</div>
+                        <div class="col-2" style="font-size: 40px; font-style: normal;">П</div>
+                        <div class="col-2" style="font-size: 40px; font-style: oblique;">П</div>
+                        <div class="col-2" style="font-size: 40px; font-style: italic;">П</div>
                     </div>
                 </div>
-            </p>
-        </article>
+            </article>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Капитель</h3>
-            <p>
-                <em>Капитель</em> - это такое начертание, в котором строчные знаки выглядят как уменьшенные прописные.
-                Устанавливается с помощью свойства <em>font-variant</em>.
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <h3>Я Уже Не Текст, Я Рыба</h3>
-
-                    <style>
-                        h3 {font-variant: normal;}
-                    </style>
-                </code>
-                <code class="html">
-                    <div id="ex1">
-                        <h3>Я Уже Не Текст, Я Рыба</h3>
+            <article> <!-- ===================================================================================== -->
+                <h4>Насыщенность</h4>
+                <p>
+                    Чтобы управлять насыщенностью шрифта в CSS предусмотрено свойство <em>font-weight</em>:
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="html">
+                        <span style="font-size: 40px; font-weight: normal;">П</span>
+                        <span style="font-size: 40px; font-weight: bold;">П</span>
+                        <span style="font-size: 40px; font-weight: light;">П</span>
+                    </code>
+                </div>
+                <div class="container" style="text-align: center;">
+                    <div class="row" style="font-weight: bold;">
+                        <div class="col-2">Обычный</div>
+                        <div class="col-2">Жирный</div>
+                        <div class="col-2">Тонкий</div>
                     </div>
-                    
-                    <style>
-                        div#ex1 h3 {font-variant: normal;}
-                    </style>
-                </code>
-            </div>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <h3>Я Уже Не Текст, Я Рыба</h3>
-
-                    <style>
-                        h3 {font-variant: normal;}
-                    </style>
-                </code>
-                <code class="html">
-                    <div id="ex2">
-                        <h3>Я Уже Не Текст, Я Рыба</h3>
+                    <div class="row">
+                        <div class="col-2" style="font-size: 40px; font-style: normal;">П</div>
+                        <div class="col-2" style="font-size: 40px; font-style: bold;">П</div>
+                        <div class="col-2" style="font-size: 40px; font-style: light;">П</div>
                     </div>
-                    
-                    <style>
-                        div#ex2 h3 {font-variant: small-caps;}
-                    </style>
-                </code>
-            </div>
-            <p>
-                Как видно, во втором варианте, текст набран прописными маленькими буквами. Особенно это заметно на буквах А и Б.
-                Данный приём часто использовался в газетах и иногда сейчас используется на сайтах.
-            </p>
-        </article>
+                </div>
+                <p>
+                    Так же, значение можно установить числом:
+                </p>
+                <table class="table table-sm table-bordered w-50">
+                    <tbody>
+                        <tr>
+                            <td>100</td>
+                            <td>thin</td>
+                        </tr>
+                        <tr>
+                            <td>200</td>
+                            <td>extra light</td>
+                        </tr>
+                        <tr>
+                            <td>300</td>
+                            <td>light</td>
+                        </tr>
+                        <tr>
+                            <td>400</td>
+                            <td>normal</td>
+                        </tr>
+                        <tr>
+                            <td>500</td>
+                            <td>medium</td>
+                        </tr>
+                        <tr>
+                            <td>600</td>
+                            <td>semi-bold</td>
+                        </tr>
+                        <tr>
+                            <td>700</td>
+                            <td>bold</td>
+                        </tr>
+                        <tr>
+                            <td>800</td>
+                            <td>extra bold</td>
+                        </tr>
+                        <tr>
+                            <td>900</td>
+                            <td>black</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    Есть еще два относительных значения - <em>lighter</em> и <em>bolder</em>:
+                </p>
+                <table class="table table-sm table-bordered w-50">
+                    <tbody>
+                        <tr>
+                            <td>lighter</td>
+                            <td>Тоньше шрифта родителя на ~300</td>
+                        </tr>
+                        <tr>
+                            <td>bolder</td>
+                            <td>Жирнее шрифта родителя на ~300</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
 
-        <article> <!-- ===================================================================================== -->
-            <h3>Наклон</h3>
-            <p>
-                Наклоном шрифта можно управлять с помощью CSS свойства <em>font-style</em>:
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <span style="font-size: 40px; font-style: normal;">П</span>
-                    <span style="font-size: 40px; font-style: oblique;">П</span>
-                    <span style="font-size: 40px; font-style: italic;">П</span>
-                </code>
-            </div>
-
-            <div class="container" style="text-align: center;">
-                <div class="row" style="font-weight: bold;">
-                    <div class="col-2">Прямые</div>
-                    <div class="col-2">Наклонные</div>
-                    <div class="col-2">Курсивные</div>
+            <article> <!-- ===================================================================================== -->
+                <h4>Плотность</h4>
+                <p>
+                    Чтобы управлять плотностью шрифта в CSS существует свойство <em>font-stretch</em>.
+                </p>
+                <div class="container" style="text-align: center;">
+                    <div class="row" style="font-weight: bold;">
+                        <div class="col-2">Узкие</div>
+                        <div class="col-2">Нормальные</div>
+                        <div class="col-2">Широкие</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2" style="font-size: 40px; font-stretch: ultra-condensed;">П</div>
+                        <div class="col-2" style="font-size: 40px; font-stretch: normal;">П</div>
+                        <div class="col-2" style="font-size: 40px; font-stretch: ultra-expanded;">П</div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-2" style="font-size: 40px; font-style: normal;">П</div>
-                    <div class="col-2" style="font-size: 40px; font-style: oblique;">П</div>
-                    <div class="col-2" style="font-size: 40px; font-style: italic;">П</div>
+                <p>
+                    Данное свойство не поддерживается в браузере Safari, а также совсем недавно появилось в Chrome.
+                    Если нужен, например, узкий шрифт, то его нужно подключать отдельно, например с помощью этой записи:
+                </p>
+                <div class="card bg-light mb-3 p-3">
+                    <code class="css">
+                        .block {
+                            font-famaly: 'My font Сondensed'
+                        }
+                        /* Или такой: */
+                        .block {
+                            font-famaly: 'My font Expanded'
+                        }
+                    </code>
+                    <code></code>
                 </div>
-            </div>
-        </article>
-
-        <article> <!-- ===================================================================================== -->
-            <h3>Насыщенность</h3>
-            <p>
-                Чтобы управлять насыщенностью шрифта в CSS предусмотрено свойство <em>font-weight</em>:
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <span style="font-size: 40px; font-weight: normal;">П</span>
-                    <span style="font-size: 40px; font-weight: bold;">П</span>
-                    <span style="font-size: 40px; font-weight: light;">П</span>
-                </code>
-            </div>
-            <div class="container" style="text-align: center;">
-                <div class="row" style="font-weight: bold;">
-                    <div class="col-2">Обычный</div>
-                    <div class="col-2">Жирный</div>
-                    <div class="col-2">Тонкий</div>
-                </div>
-                <div class="row">
-                    <div class="col-2" style="font-size: 40px; font-style: normal;">П</div>
-                    <div class="col-2" style="font-size: 40px; font-style: bold;">П</div>
-                    <div class="col-2" style="font-size: 40px; font-style: light;">П</div>
-                </div>
-            </div>
-            <p>
-                Так же, значение можно установить числом:
-            </p>
-            <table class="table table-sm table-bordered w-50">
-                <tbody>
-                    <tr>
-                        <td>100</td>
-                        <td>thin</td>
-                    </tr>
-                    <tr>
-                        <td>200</td>
-                        <td>extra light</td>
-                    </tr>
-                    <tr>
-                        <td>300</td>
-                        <td>light</td>
-                    </tr>
-                    <tr>
-                        <td>400</td>
-                        <td>normal</td>
-                    </tr>
-                    <tr>
-                        <td>500</td>
-                        <td>medium</td>
-                    </tr>
-                    <tr>
-                        <td>600</td>
-                        <td>semi-bold</td>
-                    </tr>
-                    <tr>
-                        <td>700</td>
-                        <td>bold</td>
-                    </tr>
-                    <tr>
-                        <td>800</td>
-                        <td>extra bold</td>
-                    </tr>
-                    <tr>
-                        <td>900</td>
-                        <td>black</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>
-                Есть еще два относительных значения - <em>lighter</em> и <em>bolder</em>:
-            </p>
-            <table class="table table-sm table-bordered w-50">
-                <tbody>
-                    <tr>
-                        <td>lighter</td>
-                        <td>Тоньше шрифта родителя на ~300</td>
-                    </tr>
-                    <tr>
-                        <td>bolder</td>
-                        <td>Жирнее шрифта родителя на ~300</td>
-                    </tr>
-                </tbody>
-            </table>
-        </article>
-        
-        <article> <!-- ===================================================================================== -->
-            <h3>Плотность</h3>
-            <p>
-                Чтобы управлять плотностью шрифта в CSS существует свойство <em>font-stretch</em>.
-            </p>
-            <div class="container" style="text-align: center;">
-                <div class="row" style="font-weight: bold;">
-                    <div class="col-2">Узкие</div>
-                    <div class="col-2">Нормальные</div>
-                    <div class="col-2">Широкие</div>
-                </div>
-                <div class="row">
-                    <div class="col-2" style="font-size: 40px; font-stretch: ultra-condensed;">П</div>
-                    <div class="col-2" style="font-size: 40px; font-stretch: normal;">П</div>
-                    <div class="col-2" style="font-size: 40px; font-stretch: ultra-expanded;">П</div>
-                </div>
-            </div>
-            <p>
-                Данное свойство не поддерживается в браузере Safari, а также совсем недавно появилось в Chrome.
-                Если нужен, например, узкий шрифт, то его нужно подключать отдельно, например с помощью этой записи:
-            </p>
-            <div class="card bg-light mb-3 p-3">
-                <code class="css">
-                    .block {
-                        font-famaly: 'My font Сondensed'
-                    }
-                    /* Или такой: */
-                    .block {
-                        font-famaly: 'My font Expanded'
-                    }
-                </code>
-                <code></code>
-            </div>
-        </article>
+            </article>
+        </section>
     </div>
 </div>
