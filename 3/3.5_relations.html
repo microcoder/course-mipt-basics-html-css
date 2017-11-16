@@ -1,369 +1,365 @@
-<div class="row">
-    <div class="col-8">
-        <section>
-            <header><h3>Отношения</h3></header>
+<section>
+    <header><h3>Отношения</h3></header>
 
-            <article> <!-- ===================================================================================== -->
-                <h4></h4>
-                <p>
-                    <em>div div</em> - Если мы запишем div<пробел>div, то мы выберем все div'ы на странице, а затем выберем все div'ы
-                                       которые являются потомками ранее выбранных div'ов. <br>
-                    В спецификации CSS Selectors Level 4 (CSS4) планируется закрепить явно:
-    
-                    <table class="table table-bordered table-sm">
-                        <thead class="table-active">
-                            <tr>
-                                <th>Selector</th>
-                                <th>Relation</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>div >> div</td>
-                                <td>Потомок</td>
-                                <td>Выбираем все div'ы, затем все div'ы которые являются потомками ранее выбранных div'ов</td>
-                            </tr>
-                            <tr>
-                                <td>div > div</td>
-                                <td>Сын</td>
-                                <td>Выбираем все div'ы, затем внутри этих div'ов выбираем только тех, которые являются div'ами</td>
-                            </tr>
-                            <tr>
-                                <td>div + div</td>
-                                <td>Брат</td>
-                                <td>Выбираем все div'ы, затем только первый элемент следующий за данным div'ом</td>
-                            </tr>
-                            <tr>
-                                <td>div ~ div</td>
-                                <td>Братья</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </p>
-                <div class="card bg-light mb-3 p-3">
-                    <!-- Количество элементов <code>:
-                        * Если один, то отображается исходный код и он же проигрывается на странице.
-                        * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
-                    -->
-                    <code class="html">
-                        <!-- Выбираются все элементы <ul>, а затем в них выбираются все потомки <li> -->
-                        <htmltag>
-                            <div>
+    <article> <!-- ===================================================================================== -->
+        <h4></h4>
+        <p>
+            <em>div div</em> - Если мы запишем div<пробел>div, то мы выберем все div'ы на странице, а затем выберем все div'ы
+                                которые являются потомками ранее выбранных div'ов. <br>
+            В спецификации CSS Selectors Level 4 (CSS4) планируется закрепить явно:
+
+            <table class="table table-bordered table-sm">
+                <thead class="table-active">
+                    <tr>
+                        <th>Selector</th>
+                        <th>Relation</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>div >> div</td>
+                        <td>Потомок</td>
+                        <td>Выбираем все div'ы, затем все div'ы которые являются потомками ранее выбранных div'ов</td>
+                    </tr>
+                    <tr>
+                        <td>div > div</td>
+                        <td>Сын</td>
+                        <td>Выбираем все div'ы, затем внутри этих div'ов выбираем только тех, которые являются div'ами</td>
+                    </tr>
+                    <tr>
+                        <td>div + div</td>
+                        <td>Брат</td>
+                        <td>Выбираем все div'ы, затем только первый элемент следующий за данным div'ом</td>
+                    </tr>
+                    <tr>
+                        <td>div ~ div</td>
+                        <td>Братья</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <!-- Количество элементов <code>:
+                * Если один, то отображается исходный код и он же проигрывается на странице.
+                * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+            -->
+            <code class="html">
+                <!-- Выбираются все элементы <ul>, а затем в них выбираются все потомки <li> -->
+                <htmltag>
+                    <div>
+                        <ul>
+                            <li>1</li>           <!-- Будет выбран -->
+                            <li>2</li>           <!-- Будет выбран -->
+                            <li>                 <!-- Будет выбран -->
                                 <ul>
-                                    <li>1</li>           <!-- Будет выбран -->
-                                    <li>2</li>           <!-- Будет выбран -->
-                                    <li>                 <!-- Будет выбран -->
-                                        <ul>
-                                            <li>1</li>   <!-- Будет выбран -->
-                                            <li>2</li>   <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>   <!-- Будет выбран -->
-                                        </ul>
-                                    </li>
+                                    <li>1</li>   <!-- Будет выбран -->
+                                    <li>2</li>   <!-- Будет выбран -->
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div ul li {color: red;}
-                            </style>
-                        </htmltag>
-                    </code>
-                    <code class="html">
-                        <!-- Выбираются все элементы <ul>, а затем в них выбираются все потомки <li> -->
-                        <div id="ex1">
-                            <div>
                                 <ul>
-                                    <li>1</li>           <!-- Будет выбран -->
-                                    <li>2</li>           <!-- Будет выбран -->
-                                    <li>                 <!-- Будет выбран -->
-                                        <ul>
-                                            <li>1</li>   <!-- Будет выбран -->
-                                            <li>2</li>   <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>   <!-- Будет выбран -->
-                                        </ul>
-                                    </li>
+                                    <li>1</li>   <!-- Будет выбран -->
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div#ex1 div ul li {color: red;}
-                            </style>
-                        </div>
-                    </code>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div ul li {color: red;}
+                    </style>
+                </htmltag>
+            </code>
+            <code class="html">
+                <!-- Выбираются все элементы <ul>, а затем в них выбираются все потомки <li> -->
+                <div id="ex1">
+                    <div>
+                        <ul>
+                            <li>1</li>           <!-- Будет выбран -->
+                            <li>2</li>           <!-- Будет выбран -->
+                            <li>                 <!-- Будет выбран -->
+                                <ul>
+                                    <li>1</li>   <!-- Будет выбран -->
+                                    <li>2</li>   <!-- Будет выбран -->
+                                </ul>
+                                <ul>
+                                    <li>1</li>   <!-- Будет выбран -->
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div#ex1 div ul li {color: red;}
+                    </style>
                 </div>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <!-- Выбираются все элементы <li>, а затем в них выбираются все потомки <li> -->
-                        <htmltag>
-                            <div>
+            </code>
+        </div>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <!-- Выбираются все элементы <li>, а затем в них выбираются все потомки <li> -->
+                <htmltag>
+                    <div>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>
                                 <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                            <li>2</li>    <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                        </ul>
-                                    </li>
+                                    <li>1</li>    <!-- Будет выбран -->
+                                    <li>2</li>    <!-- Будет выбран -->
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div li li {color: red;}
-                            </style>
-                        </htmltag>
-                    </code>
-                    <code class="html">
-                        <!-- Выбираются все элементы <li>, а затем в них выбираются все потомки <li> -->
-                        <div id="ex2">
-                            <div>
                                 <ul>
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                            <li>2</li>    <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                        </ul>
-                                    </li>
+                                    <li>1</li>    <!-- Будет выбран -->
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div#ex2 div li li {color: red;}
-                            </style>
-                        </div>
-                    </code>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div li li {color: red;}
+                    </style>
+                </htmltag>
+            </code>
+            <code class="html">
+                <!-- Выбираются все элементы <li>, а затем в них выбираются все потомки <li> -->
+                <div id="ex2">
+                    <div>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>
+                                <ul>
+                                    <li>1</li>    <!-- Будет выбран -->
+                                    <li>2</li>    <!-- Будет выбран -->
+                                </ul>
+                                <ul>
+                                    <li>1</li>    <!-- Будет выбран -->
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div#ex2 div li li {color: red;}
+                    </style>
                 </div>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <!-- Выбираются все элементы <li>, а затем в них будет выбран 2-ой элемент-потомк <li> -->
-                        <htmltag>
-                            <div>
+            </code>
+        </div>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <!-- Выбираются все элементы <li>, а затем в них будет выбран 2-ой элемент-потомк <li> -->
+                <htmltag>
+                    <div>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>
                                 <ul>
                                     <li>1</li>
-                                    <li>2</li>
-                                    <li>
-                                        <ul>
-                                            <li>1</li>
-                                            <li>2</li>    <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>
-                                        </ul>
-                                    </li>
+                                    <li>2</li>    <!-- Будет выбран -->
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div li li:nth-child(2n) {color: red;}
-                            </style>
-                        </htmltag>
-                    </code>
-                    <code class="html">
-                        <!-- Выбираются все элементы <li>, а затем в них будет выбран 2-ой элемент-потомк <li> -->
-                        <div id="ex3">
-                            <div>
                                 <ul>
                                     <li>1</li>
-                                    <li>2</li>
-                                    <li>
-                                        <ul>
-                                            <li>1</li>
-                                            <li>2</li>    <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>
-                                        </ul>
-                                    </li>
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div#ex3 div li li:nth-child(2n) {color: red;}
-                            </style>
-                        </div>
-                    </code>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div li li:nth-child(2n) {color: red;}
+                    </style>
+                </htmltag>
+            </code>
+            <code class="html">
+                <!-- Выбираются все элементы <li>, а затем в них будет выбран 2-ой элемент-потомк <li> -->
+                <div id="ex3">
+                    <div>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>
+                                <ul>
+                                    <li>1</li>
+                                    <li>2</li>    <!-- Будет выбран -->
+                                </ul>
+                                <ul>
+                                    <li>1</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div#ex3 div li li:nth-child(2n) {color: red;}
+                    </style>
                 </div>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <!-- Выбираются все элементы <li> которые следуют после первого элемента <li> -->
-                        <htmltag>
-                            <div>
+            </code>
+        </div>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <!-- Выбираются все элементы <li> которые следуют после первого элемента <li> -->
+                <htmltag>
+                    <div>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>            <!-- Будет выбран -->
+                            <li>
                                 <ul>
                                     <li>1</li>
-                                    <li>2</li>            <!-- Будет выбран -->
-                                    <li>
-                                        <ul>
-                                            <li>1</li>
-                                            <li>2</li>    <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>
-                                        </ul>
-                                    </li>
+                                    <li>2</li>    <!-- Будет выбран -->
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div li:first-child + li {color: red;}
-                            </style>
-                        </htmltag>
-                    </code>
-                    <code class="html">
-                        <!-- Выбираются все элементы <li> которые следуют после первого элемента <li> -->
-                        <div id="ex4">
-                            <div>
                                 <ul>
                                     <li>1</li>
-                                    <li>2</li>            <!-- Будет выбран -->
-                                    <li>
-                                        <ul>
-                                            <li>1</li>
-                                            <li>2</li>    <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>
-                                        </ul>
-                                    </li>
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div#ex4 div li:first-child + li {color: red;}
-                            </style>
-                        </div>
-                    </code>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div li:first-child + li {color: red;}
+                    </style>
+                </htmltag>
+            </code>
+            <code class="html">
+                <!-- Выбираются все элементы <li> которые следуют после первого элемента <li> -->
+                <div id="ex4">
+                    <div>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>            <!-- Будет выбран -->
+                            <li>
+                                <ul>
+                                    <li>1</li>
+                                    <li>2</li>    <!-- Будет выбран -->
+                                </ul>
+                                <ul>
+                                    <li>1</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div#ex4 div li:first-child + li {color: red;}
+                    </style>
                 </div>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <!-- Выбираются все элементы <li> которые следуют за первым элементом <li> -->
-                        <htmltag>
-                            <div>
+            </code>
+        </div>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <!-- Выбираются все элементы <li> которые следуют за первым элементом <li> -->
+                <htmltag>
+                    <div>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>            <!-- Будет выбран -->
+                            <li>                  <!-- Будет выбран -->
                                 <ul>
-                                    <li>1</li>
-                                    <li>2</li>            <!-- Будет выбран -->
-                                    <li>                  <!-- Будет выбран -->
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                            <li>2</li>    <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                        </ul>
-                                    </li>
+                                    <li>1</li>    <!-- Будет выбран -->
+                                    <li>2</li>    <!-- Будет выбран -->
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div li:first-child ~ li {color: red;}
-                            </style>
-                        </htmltag>
-                    </code>
-                    <code class="html">
-                        <!-- Выбираются все элементы <li> которые следуют за первым элементом <li> -->
-                        <div id="ex5">
-                            <div>
                                 <ul>
-                                    <li>1</li>
-                                    <li>2</li>            <!-- Будет выбран -->
-                                    <li>                  <!-- Будет выбран -->
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                            <li>2</li>    <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                        </ul>
-                                    </li>
+                                    <li>1</li>    <!-- Будет выбран -->
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div#ex5 div li:first-child ~ li {color: red;}
-                            </style>
-                        </div>
-                    </code>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div li:first-child ~ li {color: red;}
+                    </style>
+                </htmltag>
+            </code>
+            <code class="html">
+                <!-- Выбираются все элементы <li> которые следуют за первым элементом <li> -->
+                <div id="ex5">
+                    <div>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>            <!-- Будет выбран -->
+                            <li>                  <!-- Будет выбран -->
+                                <ul>
+                                    <li>1</li>    <!-- Будет выбран -->
+                                    <li>2</li>    <!-- Будет выбран -->
+                                </ul>
+                                <ul>
+                                    <li>1</li>    <!-- Будет выбран -->
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div#ex5 div li:first-child ~ li {color: red;}
+                    </style>
                 </div>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <!-- Выбираются все элементы <li> кроме первого элемента <li> -->
-                        <htmltag>
-                            <div>
+            </code>
+        </div>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <!-- Выбираются все элементы <li> кроме первого элемента <li> -->
+                <htmltag>
+                    <div>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>            <!-- Будет выбран -->
+                            <li>                  <!-- Будет выбран -->
                                 <ul>
-                                    <li>1</li>
-                                    <li>2</li>            <!-- Будет выбран -->
-                                    <li>                  <!-- Будет выбран -->
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                            <li>2</li>    <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                        </ul>
-                                    </li>
+                                    <li>1</li>    <!-- Будет выбран -->
+                                    <li>2</li>    <!-- Будет выбран -->
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div li:not(:first-child) {color: red;}
-                            </style>
-                        </htmltag>
-                    </code>
-                    <code class="html">
-                        <!-- Выбираются все элементы <li> кроме первого элемента <li> -->
-                        <div id="ex6">
-                            <div>
                                 <ul>
-                                    <li>1</li>
-                                    <li>2</li>            <!-- Будет выбран -->
-                                    <li>                  <!-- Будет выбран -->
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                            <li>2</li>    <!-- Будет выбран -->
-                                        </ul>
-                                        <ul>
-                                            <li>1</li>    <!-- Будет выбран -->
-                                        </ul>
-                                    </li>
+                                    <li>1</li>    <!-- Будет выбран -->
                                 </ul>
-                                <p>Текст в параграфе</p>
-                            </div>
-    
-                            <style type="text/css">
-                                div#ex6 div li:not(:first-child) {color: red;}
-                            </style>
-                        </div>
-                    </code>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div li:not(:first-child) {color: red;}
+                    </style>
+                </htmltag>
+            </code>
+            <code class="html">
+                <!-- Выбираются все элементы <li> кроме первого элемента <li> -->
+                <div id="ex6">
+                    <div>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>            <!-- Будет выбран -->
+                            <li>                  <!-- Будет выбран -->
+                                <ul>
+                                    <li>1</li>    <!-- Будет выбран -->
+                                    <li>2</li>    <!-- Будет выбран -->
+                                </ul>
+                                <ul>
+                                    <li>1</li>    <!-- Будет выбран -->
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>Текст в параграфе</p>
+                    </div>
+
+                    <style type="text/css">
+                        div#ex6 div li:not(:first-child) {color: red;}
+                    </style>
                 </div>
-            </article>
-        </section>
-    </div>
-</div>
+            </code>
+        </div>
+    </article>
+</section>

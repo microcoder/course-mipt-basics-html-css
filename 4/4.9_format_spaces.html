@@ -1,344 +1,340 @@
-<div class="row">
-    <div class="col-8">
-        <section>
-            <header><h3>Форматирование пробелов и переносов в тексте</h3></header>
+<section>
+    <header><h3>Форматирование пробелов и переносов в тексте</h3></header>
 
-            <article> <!-- ===================================================================================== -->    
-                <h4>Перенос текста</h4>
-                <p>Перенос текста осуществляется с помощью тега <em>&lt;br&gt;</em></p>
-                <div class="card bg-light mb-3 p-3">
-                    <!-- Количество элементов <code>:
-                        * Если один, то отображается исходный код и он же проигрывается на странице.
-                        * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
-                    -->
-                    <code class="html">
-                        <p>
-                            Далеко-далеко за<br>словесными горами в
-                            стране гласных<br> и согласных живут рыбные тексты.
-                        </p>
-                    </code>
-                </div>
+    <article> <!-- ===================================================================================== -->    
+        <h4>Перенос текста</h4>
+        <p>Перенос текста осуществляется с помощью тега <em>&lt;br&gt;</em></p>
+        <div class="card bg-light mb-3 p-3">
+            <!-- Количество элементов <code>:
+                * Если один, то отображается исходный код и он же проигрывается на странице.
+                * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+            -->
+            <code class="html">
                 <p>
-                    Как видно из примера, ничего сложного в этом нет, текст переносится именно там, где мы его указали.
+                    Далеко-далеко за<br>словесными горами в
+                    стране гласных<br> и согласных живут рыбные тексты.
                 </p>
-            </article>
+            </code>
+        </div>
+        <p>
+            Как видно из примера, ничего сложного в этом нет, текст переносится именно там, где мы его указали.
+        </p>
+    </article>
 
-            <article> <!-- ===================================================================================== -->
-                <h4>Переносы внутри слов</h4>
-                <p>
-                    Данный тип переноса избавляет от "лесенок" справа при выравнивании по левому краю, а так же сводят
-                    к минимуму разброс ширины пробелов при выравнивании по всей ширине. <br>
-                </p>
-                <p>
-                    Как же этого добиться?
-                    <ol>
-                        <li>Указываем <em>lang</em> для параграфа</li>
-                        <li>Устанавливаем автопереносы с помощью CSS свойства <em>hyphens</em></li>
-                    </ol>
-                </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <style>
-                            p { hyphens: auto; }
-                        </style>
-    
-                        <p lang="ru">
-                            Далеко-далеко за словесными горами в стране гласных и согласных
-                            букв живут рыбные тексты. Вдали от всех живут они в буквенных
-                            домах на берегу Семантика большого языкового океана.
-                        </p>
-                    </code>
-                    <code>
-                        <p lang="ru" class="mx-auto p-2" style="hyphens: auto; width: 600px; border: 1px solid #d3d3d3; border-radius: 5px;">
-                            Далеко-далеко за словесными горами в стране гласных и согласных
-                            букв живут рыбные тексты. Вдали от всех живут они в буквенных
-                            домах на берегу Семантика большого языкового океана.
-                        </p>
-                    </code>
-                </div>
-                <p>
-                    Далеко не каждый браузер поддерживает эту возможность. Поэтому, существуют мягкие переносы:
-                </p>
-            </article>
+    <article> <!-- ===================================================================================== -->
+        <h4>Переносы внутри слов</h4>
+        <p>
+            Данный тип переноса избавляет от "лесенок" справа при выравнивании по левому краю, а так же сводят
+            к минимуму разброс ширины пробелов при выравнивании по всей ширине. <br>
+        </p>
+        <p>
+            Как же этого добиться?
+            <ol>
+                <li>Указываем <em>lang</em> для параграфа</li>
+                <li>Устанавливаем автопереносы с помощью CSS свойства <em>hyphens</em></li>
+            </ol>
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    p { hyphens: auto; }
+                </style>
 
-            <article>
-                <h4>Мягкие переносы</h4>
-                <p>
-                    Мягкие переносы позволяют браузеру понять, где переносить слово по слогам. Указываются они с
-                    помощью символа мнемоники <em>&amp;shy;</em> и работают при <em>hyphens: manual</em>. Так как
-                    значение <em>manual</em> является значением по умолчанию, то можно не указывать его явно в CSS:
+                <p lang="ru">
+                    Далеко-далеко за словесными горами в стране гласных и согласных
+                    букв живут рыбные тексты. Вдали от всех живут они в буквенных
+                    домах на берегу Семантика большого языкового океана.
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <p>
-                            Да&amp;shy;ле&amp;shy;ко-да&amp;shy;ле&amp;shy;ко за сло&amp;shy;вес&amp;shy;ны&amp;shy;ми го&amp;shy;ра&amp;shy;ми
-                            в стра&amp;shy;не глас&amp;shy;ных и со&amp;shy;глас&amp;shy;ных
-                            букв жи&amp;shy;вут рыб&amp;shy;ные тексты. Вда&amp;shy;ли от всех жи&amp;shy;вут они в бук&amp;shy;вен&amp;shy;ных
-                            до&amp;shy;мах на бе&amp;shy;ре&amp;shy;гу Се&amp;shy;ман&amp;shy;ти&amp;shy;ка
-                            боль&amp;shy;шо&amp;shy;го язы&amp;shy;ко&amp;shy;во&amp;shy;го оке&amp;shy;ана.
-                        </p>
-                    </code>
-                    <code>
-                        <p class="mx-auto p-2" style="width: 600px; border: 1px solid #d3d3d3; border-radius: 5px;">
-                            Да&shy;ле&shy;ко-да&shy;ле&shy;ко за сло&shy;вес&shy;ны&shy;ми го&shy;ра&shy;ми в стра&shy;не глас&shy;ных и со&shy;глас&shy;ных
-                            букв жи&shy;вут рыб&shy;ные тексты. Вда&shy;ли от всех жи&shy;вут они в бук&shy;вен&shy;ных
-                            до&shy;мах на бе&shy;ре&shy;гу Се&shy;ман&shy;ти&shy;ка боль&shy;шо&shy;го язы&shy;ко&shy;во&shy;го оке&shy;ана.
-                        </p>
-                    </code>
-                </div>
-                <p>
-                    Для вставки символа мнемоники <em>&amp;shy;</em> существуют сервисы, которые сделают это за вас. Один из таких сервисов,
-                    будет указан в дополнительных материалах к данной статье. 
+            </code>
+            <code>
+                <p lang="ru" class="mx-auto p-2" style="hyphens: auto; width: 600px; border: 1px solid #d3d3d3; border-radius: 5px;">
+                    Далеко-далеко за словесными горами в стране гласных и согласных
+                    букв живут рыбные тексты. Вдали от всех живут они в буквенных
+                    домах на берегу Семантика большого языкового океана.
                 </p>
-            </article>
+            </code>
+        </div>
+        <p>
+            Далеко не каждый браузер поддерживает эту возможность. Поэтому, существуют мягкие переносы:
+        </p>
+    </article>
 
-            <article>
-                <h4>Переносы без дефиса</h4>
+    <article>
+        <h4>Мягкие переносы</h4>
+        <p>
+            Мягкие переносы позволяют браузеру понять, где переносить слово по слогам. Указываются они с
+            помощью символа мнемоники <em>&amp;shy;</em> и работают при <em>hyphens: manual</em>. Так как
+            значение <em>manual</em> является значением по умолчанию, то можно не указывать его явно в CSS:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
                 <p>
-                    В некоторых случаях могут потребоваться переносы без дефисов. Для того, чтобы их установить, используется тек <em>&lt;wbr&gt;</em>.<br>
-                    Если вместо символов мнемоники <em>&amp;shy;</em> в предыдущем тексте заменим на тег <em>&lt;wbr&gt;</em>, то получим тот же
-                    результат с одним исключением, при переносе слог никакой дефис подставляться не будет.
+                    Да&amp;shy;ле&amp;shy;ко-да&amp;shy;ле&amp;shy;ко за сло&amp;shy;вес&amp;shy;ны&amp;shy;ми го&amp;shy;ра&amp;shy;ми
+                    в стра&amp;shy;не глас&amp;shy;ных и со&amp;shy;глас&amp;shy;ных
+                    букв жи&amp;shy;вут рыб&amp;shy;ные тексты. Вда&amp;shy;ли от всех жи&amp;shy;вут они в бук&amp;shy;вен&amp;shy;ных
+                    до&amp;shy;мах на бе&amp;shy;ре&amp;shy;гу Се&amp;shy;ман&amp;shy;ти&amp;shy;ка
+                    боль&amp;shy;шо&amp;shy;го язы&amp;shy;ко&amp;shy;во&amp;shy;го оке&amp;shy;ана.
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <p>
-                            Да<wbr>ле<wbr>ко-да<wbr>ле<wbr>ко за сло<wbr>вес<wbr>ны<wbr>ми го<wbr>ра<wbr>ми в стра<wbr>не глас<wbr>ных
-                            и со<wbr>глас<wbr>ных букв жи<wbr>вут рыб<wbr>ные тексты. Вда<wbr>ли от всех жи<wbr>вут они в бук<wbr>вен<wbr>ных
-                            до<wbr>мах на бе<wbr>ре<wbr>гу Се<wbr>ман<wbr>ти<wbr>ка боль<wbr>шо<wbr>го язы<wbr>ко<wbr>во<wbr>го оке<wbr>ана.
-                        </p>
-                    </code>
-                    <code>
-                        <p class="mx-auto p-2" style="width: 600px; border: 1px solid #d3d3d3; border-radius: 5px;">
-                            Да<wbr>ле<wbr>ко-да<wbr>ле<wbr>ко за сло<wbr>вес<wbr>ны<wbr>ми го<wbr>ра<wbr>ми в стра<wbr>не глас<wbr>ных и со<wbr>глас<wbr>ных
-                            букв жи<wbr>вут рыб<wbr>ные тексты. Вда<wbr>ли от всех жи<wbr>вут они в бук<wbr>вен<wbr>ных
-                            до<wbr>мах на бе<wbr>ре<wbr>гу Се<wbr>ман<wbr>ти<wbr>ка боль<wbr>шо<wbr>го язы<wbr>ко<wbr>во<wbr>го оке<wbr>ана.
-                        </p>
-                    </code>
-                </div>
-            </article>
+            </code>
+            <code>
+                <p class="mx-auto p-2" style="width: 600px; border: 1px solid #d3d3d3; border-radius: 5px;">
+                    Да&shy;ле&shy;ко-да&shy;ле&shy;ко за сло&shy;вес&shy;ны&shy;ми го&shy;ра&shy;ми в стра&shy;не глас&shy;ных и со&shy;глас&shy;ных
+                    букв жи&shy;вут рыб&shy;ные тексты. Вда&shy;ли от всех жи&shy;вут они в бук&shy;вен&shy;ных
+                    до&shy;мах на бе&shy;ре&shy;гу Се&shy;ман&shy;ти&shy;ка боль&shy;шо&shy;го язы&shy;ко&shy;во&shy;го оке&shy;ана.
+                </p>
+            </code>
+        </div>
+        <p>
+            Для вставки символа мнемоники <em>&amp;shy;</em> существуют сервисы, которые сделают это за вас. Один из таких сервисов,
+            будет указан в дополнительных материалах к данной статье. 
+        </p>
+    </article>
 
-            <article>
-                <h4>Разрыв слов</h4>
+    <article>
+        <h4>Переносы без дефиса</h4>
+        <p>
+            В некоторых случаях могут потребоваться переносы без дефисов. Для того, чтобы их установить, используется тек <em>&lt;wbr&gt;</em>.<br>
+            Если вместо символов мнемоники <em>&amp;shy;</em> в предыдущем тексте заменим на тег <em>&lt;wbr&gt;</em>, то получим тот же
+            результат с одним исключением, при переносе слог никакой дефис подставляться не будет.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
                 <p>
-                    Мы можем заставить текст всегда разрываться в любом месте. Для этого используется свойство <em>word-break</em> со
-                    значением <em>break-all</em>.<br>
-                    <small style="color: gray;">* Есть еще значение <em>keep-all</em>, но работает оно только для китайского, корейского и японского языков.</small>
+                    Да<wbr>ле<wbr>ко-да<wbr>ле<wbr>ко за сло<wbr>вес<wbr>ны<wbr>ми го<wbr>ра<wbr>ми в стра<wbr>не глас<wbr>ных
+                    и со<wbr>глас<wbr>ных букв жи<wbr>вут рыб<wbr>ные тексты. Вда<wbr>ли от всех жи<wbr>вут они в бук<wbr>вен<wbr>ных
+                    до<wbr>мах на бе<wbr>ре<wbr>гу Се<wbr>ман<wbr>ти<wbr>ка боль<wbr>шо<wbr>го язы<wbr>ко<wbr>во<wbr>го оке<wbr>ана.
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <style>
-                            p#1 { word-break: normal; }
-                            p#2 { word-break: break-all; }
-                        </style>
-                        
-                        <p id="1">
-                            Этот текст будет переносится по словам, чисто, чинно, благородно. Всё в столбец, как он это делает?
-                        </p>
-                        <p id="2">
-                            Этому тексту плевать вообще, он такой теряет буквы, ничего толком не прочесть, беда совсем, еще дерагается
-                            как монстры из Silent Hill.
-                        </p>
-                    </code>
-                    <code>
-                        <p class="mx-auto p-2" style="word-break: normal; width: 200px; border: 1px solid #d3d3d3; border-radius: 5px;">
-                            Этот текст будет переносится по словам, чисто, чинно, благородно. Всё в столбец, как он это делает?
-                        </p>
-                        <p class="mx-auto p-2" style="word-break: break-all; width: 200px; border: 1px solid #d3d3d3; border-radius: 5px;">
-                            Этому тексту плевать вообще, он такой теряет буквы, ничего толком не прочесть, беда совсем, еще дерагается
-                            как монстры из Silent Hill.
-                        </p>
-                    </code>
-                </div>
-            </article>
+            </code>
+            <code>
+                <p class="mx-auto p-2" style="width: 600px; border: 1px solid #d3d3d3; border-radius: 5px;">
+                    Да<wbr>ле<wbr>ко-да<wbr>ле<wbr>ко за сло<wbr>вес<wbr>ны<wbr>ми го<wbr>ра<wbr>ми в стра<wbr>не глас<wbr>ных и со<wbr>глас<wbr>ных
+                    букв жи<wbr>вут рыб<wbr>ные тексты. Вда<wbr>ли от всех жи<wbr>вут они в бук<wbr>вен<wbr>ных
+                    до<wbr>мах на бе<wbr>ре<wbr>гу Се<wbr>ман<wbr>ти<wbr>ка боль<wbr>шо<wbr>го язы<wbr>ко<wbr>во<wbr>го оке<wbr>ана.
+                </p>
+            </code>
+        </div>
+    </article>
 
-            <article>
-                <h4>Запрет переноса</h4>
-                <p>
-                    Существуют ситуации, когда слово или словосочетание не нужно разрывать ни при каких обстоятельствах.
-                    Простейший пример, когда инструкция-правило не разрывалось на строки:
+    <article>
+        <h4>Разрыв слов</h4>
+        <p>
+            Мы можем заставить текст всегда разрываться в любом месте. Для этого используется свойство <em>word-break</em> со
+            значением <em>break-all</em>.<br>
+            <small style="color: gray;">* Есть еще значение <em>keep-all</em>, но работает оно только для китайского, корейского и японского языков.</small>
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    p#1 { word-break: normal; }
+                    p#2 { word-break: break-all; }
+                </style>
+                
+                <p id="1">
+                    Этот текст будет переносится по словам, чисто, чинно, благородно. Всё в столбец, как он это делает?
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <p>
-                            Тут нужно что-то написать, чтобы текст сдвинул "mark" в неудобное положение.
-                            Правило <mark>hyphens: auto;</mark> использует примерно никто,
-                            ибо пока оно не работает нормально.
-                        </p>
-                    </code>
-                    <code>
-                        <p class="mx-auto p-2" style="width: 280px; border: 1px solid #d3d3d3; border-radius: 5px;">
-                            Тут нужно что-то написать, чтобы текст сдвинул "mark" в неудобное положение.
-                            Правило <mark>hyphens: auto;</mark> использует примерно никто,
-                            ибо пока оно не работает нормально.
-                        </p>
-                    </code>
-                </div>
-                <p>
-                    Так как это некрасиво и читается довольно сложно. Всё что нужно сделать, это запретить перенос:
+                <p id="2">
+                    Этому тексту плевать вообще, он такой теряет буквы, ничего толком не прочесть, беда совсем, еще дерагается
+                    как монстры из Silent Hill.
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <style>
-                            mark { white-space: nowrap; }
-                        </style>
-                        <p>
-                            Тут нужно что-то написать, чтобы текст сдвинул "mark" в неудобное положение.
-                            Правило <mark>hyphens: auto;</mark> использует примерно никто,
-                            ибо пока оно не работает нормально.
-                        </p>
-                    </code>
-                    <code>
-                        <style>
-                            p#ex1 mark { white-space: nowrap; }
-                        </style>
-                        <p id="ex1" class="mx-auto p-2" style="width: 280px; border: 1px solid #d3d3d3; border-radius: 5px;">
-                            Тут нужно что-то написать, чтобы текст сдвинул "mark" в неудобное положение.
-                            Правило <mark>hyphens: auto;</mark> использует примерно никто,
-                            ибо пока оно не работает нормально.
-                        </p>
-                    </code>
-                </div>
-                <p>
-                    И <em>white-space</em> умеет еще много чего. Возьмем, например, такую разметку:
+            </code>
+            <code>
+                <p class="mx-auto p-2" style="word-break: normal; width: 200px; border: 1px solid #d3d3d3; border-radius: 5px;">
+                    Этот текст будет переносится по словам, чисто, чинно, благородно. Всё в столбец, как он это делает?
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <p>
-                            We ache to be transparent
-                                We run from the "open" arms;
-                                    The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
-                                        And we're left to coexists with infestation
-                            
-                            Our history is cursed
-                            
-                                        Through the past, present, and future
-                                    If they're created in his image
-                                Then his image is disgusting...
-                            And even he can't wipe you clean
-                        </p>
-                    </code>
-                </div>
-                <p>
-                    В браузере разметка теряется. Если мы установим <em>white-space</em> со значением <em>pre</em> (preformated),
-                    что является аналогом тега &lt;pre&gt;, то мы можем увидеть совсем другой результат:
+                <p class="mx-auto p-2" style="word-break: break-all; width: 200px; border: 1px solid #d3d3d3; border-radius: 5px;">
+                    Этому тексту плевать вообще, он такой теряет буквы, ничего толком не прочесть, беда совсем, еще дерагается
+                    как монстры из Silent Hill.
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <style>
-                            p { white-space: pre; }
-                        </style>
-                        <p>
-                            We ache to be transparent
-                                We run from the "open" arms;
-                                    The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
-                                        And we're left to coexists with infestation
-                            
-                            Our history is cursed
-                            
-                                        Through the past, present, and future
-                                    If they're created in his image
-                                Then his image is disgusting...
-                            And even he can't wipe you clean
-                        </p>
-                    </code>
-                    <code>
-                        <p style="white-space: pre;">
-                            We ache to be transparent
-                                We run from the "open" arms;
-                                    The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
-                                        And we're left to coexists with infestation
-                            
-                            Our history is cursed
-                            
-                                        Through the past, present, and future
-                                    If they're created in his image
-                                Then his image is disgusting...
-                            And even he can't wipe you clean
-                        </p>
-                    </code>
-                </div>
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Запрет переноса</h4>
+        <p>
+            Существуют ситуации, когда слово или словосочетание не нужно разрывать ни при каких обстоятельствах.
+            Простейший пример, когда инструкция-правило не разрывалось на строки:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
                 <p>
-                    Всё наше форматирование сохранилось. Если мы установим значение <em>pre-line</em>, то
-                    получим такой результат:
+                    Тут нужно что-то написать, чтобы текст сдвинул "mark" в неудобное положение.
+                    Правило <mark>hyphens: auto;</mark> использует примерно никто,
+                    ибо пока оно не работает нормально.
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <style>
-                            p { white-space: pre-line; }
-                        </style>
-                        <p>
-                            We ache to be transparent
-                                We run from the "open" arms;
-                                    The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
-                                        And we're left to coexists with infestation
-                            
-                            Our history is cursed
-                            
-                                        Through the past, present, and future
-                                    If they're created in his image
-                                Then his image is disgusting...
-                            And even he can't wipe you clean
-                        </p>
-                    </code>
-                    <code>
-                        <p style="white-space: pre-line;">
-                            We ache to be transparent
-                                We run from the "open" arms;
-                                    The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
-                                        And we're left to coexists with infestation
-                            
-                            Our history is cursed
-                            
-                                        Through the past, present, and future
-                                    If they're created in his image
-                                Then his image is disgusting...
-                            And even he can't wipe you clean
-                        </p>
-                    </code>
-                </div>
+            </code>
+            <code>
+                <p class="mx-auto p-2" style="width: 280px; border: 1px solid #d3d3d3; border-radius: 5px;">
+                    Тут нужно что-то написать, чтобы текст сдвинул "mark" в неудобное положение.
+                    Правило <mark>hyphens: auto;</mark> использует примерно никто,
+                    ибо пока оно не работает нормально.
+                </p>
+            </code>
+        </div>
+        <p>
+            Так как это некрасиво и читается довольно сложно. Всё что нужно сделать, это запретить перенос:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    mark { white-space: nowrap; }
+                </style>
                 <p>
-                    Если установить значение свойства в <em>pre-wrap</em>, то получим немного другой результат:
+                    Тут нужно что-то написать, чтобы текст сдвинул "mark" в неудобное положение.
+                    Правило <mark>hyphens: auto;</mark> использует примерно никто,
+                    ибо пока оно не работает нормально.
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <style>
-                            p { white-space: pre-wrap; }
-                        </style>
-                        <p>
-                            We ache to be transparent
-                                We run from the "open" arms;
-                                    The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
-                                        And we're left to coexists with infestation
-                            
-                            Our history is cursed
-                            
-                                        Through the past, present, and future
-                                    If they're created in his image
-                                Then his image is disgusting...
-                            And even he can't wipe you clean
-                        </p>
-                    </code>
-                    <code>
-                        <p style="white-space: pre-wrap;">
-                            We ache to be transparent
-                                We run from the "open" arms;
-                                    The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
-                                        And we're left to coexists with infestation
-                            
-                            Our history is cursed
-                            
-                                        Through the past, present, and future
-                                    If they're created in his image
-                                Then his image is disgusting...
-                            And even he can't wipe you clean
-                        </p>
-                    </code>
-                </div>
+            </code>
+            <code>
+                <style>
+                    p#ex1 mark { white-space: nowrap; }
+                </style>
+                <p id="ex1" class="mx-auto p-2" style="width: 280px; border: 1px solid #d3d3d3; border-radius: 5px;">
+                    Тут нужно что-то написать, чтобы текст сдвинул "mark" в неудобное положение.
+                    Правило <mark>hyphens: auto;</mark> использует примерно никто,
+                    ибо пока оно не работает нормально.
+                </p>
+            </code>
+        </div>
+        <p>
+            И <em>white-space</em> умеет еще много чего. Возьмем, например, такую разметку:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
                 <p>
-                    И последннее значение, это <em>nowrap</em>. Никаких переносов и множественных пробелов оно не сохраняет в тексте,
-                    выстроит всё в один ряд и не перенесет на новую строку даже, если текст вылезает за края своего родителя.
+                    We ache to be transparent
+                        We run from the "open" arms;
+                            The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
+                                And we're left to coexists with infestation
+                    
+                    Our history is cursed
+                    
+                                Through the past, present, and future
+                            If they're created in his image
+                        Then his image is disgusting...
+                    And even he can't wipe you clean
                 </p>
-            </article>
-        </section>
-    </div>
-</div>
+            </code>
+        </div>
+        <p>
+            В браузере разметка теряется. Если мы установим <em>white-space</em> со значением <em>pre</em> (preformated),
+            что является аналогом тега &lt;pre&gt;, то мы можем увидеть совсем другой результат:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    p { white-space: pre; }
+                </style>
+                <p>
+                    We ache to be transparent
+                        We run from the "open" arms;
+                            The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
+                                And we're left to coexists with infestation
+                    
+                    Our history is cursed
+                    
+                                Through the past, present, and future
+                            If they're created in his image
+                        Then his image is disgusting...
+                    And even he can't wipe you clean
+                </p>
+            </code>
+            <code>
+                <p style="white-space: pre;">
+                    We ache to be transparent
+                        We run from the "open" arms;
+                            The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
+                                And we're left to coexists with infestation
+                    
+                    Our history is cursed
+                    
+                                Through the past, present, and future
+                            If they're created in his image
+                        Then his image is disgusting...
+                    And even he can't wipe you clean
+                </p>
+            </code>
+        </div>
+        <p>
+            Всё наше форматирование сохранилось. Если мы установим значение <em>pre-line</em>, то
+            получим такой результат:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    p { white-space: pre-line; }
+                </style>
+                <p>
+                    We ache to be transparent
+                        We run from the "open" arms;
+                            The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
+                                And we're left to coexists with infestation
+                    
+                    Our history is cursed
+                    
+                                Through the past, present, and future
+                            If they're created in his image
+                        Then his image is disgusting...
+                    And even he can't wipe you clean
+                </p>
+            </code>
+            <code>
+                <p style="white-space: pre-line;">
+                    We ache to be transparent
+                        We run from the "open" arms;
+                            The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
+                                And we're left to coexists with infestation
+                    
+                    Our history is cursed
+                    
+                                Through the past, present, and future
+                            If they're created in his image
+                        Then his image is disgusting...
+                    And even he can't wipe you clean
+                </p>
+            </code>
+        </div>
+        <p>
+            Если установить значение свойства в <em>pre-wrap</em>, то получим немного другой результат:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    p { white-space: pre-wrap; }
+                </style>
+                <p>
+                    We ache to be transparent
+                        We run from the "open" arms;
+                            The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
+                                And we're left to coexists with infestation
+                    
+                    Our history is cursed
+                    
+                                Through the past, present, and future
+                            If they're created in his image
+                        Then his image is disgusting...
+                    And even he can't wipe you clean
+                </p>
+            </code>
+            <code>
+                <p style="white-space: pre-wrap;">
+                    We ache to be transparent
+                        We run from the "open" arms;
+                            The facade of something greater than ourselves <span>(здесь просто дополнительный длинный-придлинный текст для того, чтобы он не помещался в строку)</span>
+                                And we're left to coexists with infestation
+                    
+                    Our history is cursed
+                    
+                                Through the past, present, and future
+                            If they're created in his image
+                        Then his image is disgusting...
+                    And even he can't wipe you clean
+                </p>
+            </code>
+        </div>
+        <p>
+            И последннее значение, это <em>nowrap</em>. Никаких переносов и множественных пробелов оно не сохраняет в тексте,
+            выстроит всё в один ряд и не перенесет на новую строку даже, если текст вылезает за края своего родителя.
+        </p>
+    </article>
+</section>

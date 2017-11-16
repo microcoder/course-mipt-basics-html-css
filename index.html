@@ -41,7 +41,7 @@
                                     </div>');
 
                     // Загружаем документ в HTML элемент
-                    $('div.contents').load(filepath, function(response, status, xhr){
+                    $('div.content').load(filepath, function(response, status, xhr){
                         // Disable CSS loading animation
                         $('div.sk-circle').remove();
                         
@@ -75,7 +75,7 @@
                         }
 
                         // Вставляем исходный код
-                        $('div.contents div.card').each(function(i, block) {
+                        $('div.content div.card').each(function(i, block) {
                             if ($(this).children('code').length > -1){      // Если есть хоть один дочерний элемент <code>
                                 // var - объявления доступны во всей текущей функции
                                 // let - объявления доступны в блоке {}
@@ -119,7 +119,7 @@
                         });
                         
                         // Отрисовка подсветки. https://highlightjs.org/usage/ Custom Initialization
-                        $('div.contents pre code').each(function(i, block) {
+                        $('div.content pre code').each(function(i, block) {
                             hljs.highlightBlock(block);
                         });
                     });
@@ -134,7 +134,7 @@
                     $('div.card div#week' + hash.substr(3,1)).addClass('show');  // Показываем accordion с определенным id
 
                     let element = $('div.list-group a[href="'+ hash +'"]');      // Поиск элемента типа 'a' в котором содержится id с именем/путем к файлу
-                    loadContent(element);                                        // Загружаем файл в элемент div.contents
+                    loadContent(element);                                        // Загружаем файл в элемент div.content
                 }else{
                     // Здесь реализация загрузки дефолтной страницы
                     $('div.card div#week1').addClass('show');                    // Разворачиваем дефолтный accordion слева
@@ -172,7 +172,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-2">
+                <div class="col-xl-2">
 
                     <div id="accordion" role="tablist">
                         <div class="card">
@@ -297,8 +297,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="col contents">
+                <div class="col-xl-8 content">
                     <!-- ================= Content Content Content ==================== -->
                 </div>
             </div>

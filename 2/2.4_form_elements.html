@@ -1,170 +1,166 @@
-<div class="row">
-    <div class="col-8">
-        <section>
-            <header><h3>Элементы форм</h3></header>
+<section>
+    <header><h3>Элементы форм</h3></header>
 
-            <article> <!-- ===================================================================================== -->
-                <h4>Элемент &lt;input&gt;</h4>
-                <p>
-                    Элемент позволяет создавать разные части интерфейса и обеспечивать взаимодействие с пользователем.<br>
-                    Более подробно об элементе на странице <a href="https://webref.ru/html/input" target="_blank">https://webref.ru/html/input</a>
-                </p>
-                <div class="card bg-light mb-3 p-3">
-                    <!-- Количество элементов <code>:
-                        * Если один, то отображается исходный код и он же проигрывается на странице.
-                        * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
-                    -->
-                    <code class="html">
-                        <input type="text" name="" value="Текстовое поле">
-                    </code>
-                </div>
-    
-                <p>
-                    Атрибут <em>type</em> - сообщает браузеру, к какому типу относится элемент формы.<br>
-                    Тип бывает: <em>button, reset, submit, password, text, file, checkbox, radio, hidden, image</em>
-                </p>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <input type="button" value="Это button элемента input">
-                        <input type="reset" value="Это reset элемента input">
-                        <input type="submit" value="Это submit элемента input"><br>
-                        <input type="password" placeholder="Полее ввода пароля">
-                        <input type="text" placeholder="Текстовое поле">
-                        <input type="file">                    
-                    </code>
-                </div>
-    
-                <p>Позволяют выбрать более одного варианта из предложенных</p>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <input type="checkbox" checked> Хлеб
-                        <input type="checkbox"> Молоко                    
-                    </code>
-                </div>
-    
-                <p>Используется, когда следует выбрать один вариант из предложенных. Элементы группируются по атрибуту <em>name</em></p>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <input type="radio" name="drink"> Вода
-                        <input type="radio" name="drink" checked> Сок
-                    </code>
-                </div>
-    
-                <p>
-                    В HTML5 появились новые типы input'ов.<br>
-                    Такие типы как <em>date, email, url, number</em> чаще всего используются для удобства ввода на планшетах, смартфонах.
-                </p>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <!-- Поле для выбора календарной даты. Некоторые браузеры поддерживают ввод даты, для остальных это простое тектовое поле -->
-                        <input type="date" placeholder="date">
-                        <!-- Для адресов электронной почты -->
-                        <input type="email" placeholder="e-mail">
-                        <!-- Для веб адресов -->
-                        <input type="url" placeholder="URL"><br>
-                        <!-- Ввод чисел -->
-                        <input type="number" min="-10" max="10" placeholder="range: -10..10" width="200">
-                        <!-- Виджет для выбора цвета -->
-                        <input type="color">
-                        <!-- Ползунок для выбора чисел в указанном диапазоне -->
-                        <input type="range" min="0" max="100" value="0">
-                    </code>
-                </div>
-    
-                <p>Атрибут <em>placeholder</em> - выводит текст внутри поля формы, который исчезает при получении фокуса или при наборе текста</p>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <input type="text" placeholder="Ваше Ф.И.О.">
-                    </code>
-                </div>
-    
-                <p>Атрибут <em>disabled</em> - блокирует доступ и изменение элемента</p>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <input type="text" value="Вы человек" disabled>
-                    </code>
-                </div>
-    
-            </article>
+    <article> <!-- ===================================================================================== -->
+        <h4>Элемент &lt;input&gt;</h4>
+        <p>
+            Элемент позволяет создавать разные части интерфейса и обеспечивать взаимодействие с пользователем.<br>
+            Более подробно об элементе на странице <a href="https://webref.ru/html/input" target="_blank">https://webref.ru/html/input</a>
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <!-- Количество элементов <code>:
+                * Если один, то отображается исходный код и он же проигрывается на странице.
+                * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+            -->
+            <code class="html">
+                <input type="text" name="" value="Текстовое поле">
+            </code>
+        </div>
 
-            <article> <!-- ===================================================================================== -->
-                <h4>Элемент &lt;select&gt;</h4>
-                <p>Элемент интерфейса в виде списка, позволяющий выбрать одно или несколько значений</p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <select name="hero">
-                            <option selected>Выберите героя:</option>
-                            <option value="Чебурашка">Чебурашка</option>
-                            <option value="Крокодил Гена">Крокодил Гена</option>
-                            <option value="Шапокляк">Шапокляк</option>
-                            <option value="Крыса Лариса">Крыса Лариса</option>
-                        </select>
-                    </code>
-                </div>
-    
-                <p>Атрибут <em>multiple</em> - позволяет одновременно выбирать сразу несколько элементов списка</p>
-    
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <select name="hero" multiple size="3">
-                            <option selected>Выберите героя:</option>
-                            <option value="Чебурашка">Чебурашка</option>
-                            <option value="Крокодил Гена">Крокодил Гена</option>
-                            <option value="Шапокляк">Шапокляк</option>
-                            <option value="Крыса Лариса">Крыса Лариса</option>
-                        </select>
-                    </code>
-                </div>
-            </article>
+        <p>
+            Атрибут <em>type</em> - сообщает браузеру, к какому типу относится элемент формы.<br>
+            Тип бывает: <em>button, reset, submit, password, text, file, checkbox, radio, hidden, image</em>
+        </p>
 
-            <article> <!-- ===================================================================================== -->
-                <h4>Элемент &lt;textarea&gt;</h4>
-                <p>Элемент представляет собой элемент формы для создания области, в которую можно вводить несколько строк текста</p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <textarea name="name" rows="7" cols="35" placeholder="Введите текст">Текст</textarea>
-                    </code>
-                </div>
-            </article>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <input type="button" value="Это button элемента input">
+                <input type="reset" value="Это reset элемента input">
+                <input type="submit" value="Это submit элемента input"><br>
+                <input type="password" placeholder="Полее ввода пароля">
+                <input type="text" placeholder="Текстовое поле">
+                <input type="file">                    
+            </code>
+        </div>
 
-            <article> <!-- ===================================================================================== -->
-                <h4>Элемент &lt;button&gt;</h4>
-                <p></p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <button>Это кнопка</button>
-                        <button type="button">Это кнопка button</button>
-                        <button type="reset">Это кнопка reset</button>
-                        <button type="submit">Это кнопка submit</button>
-                    </code>
-                </div>
-            </article>
+        <p>Позволяют выбрать более одного варианта из предложенных</p>
 
-            <article> <!-- ===================================================================================== -->
-                <h4>Элемент &lt;label&gt;</h4>
-                <p>Элемент устанавливает связь между определенной меткой, в качестве которой обычно выступает текст,
-                   и элементом формы (input, textarea, select)</p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <p>Выберите напиток:</p>
-                        
-                        <!-- При нажатии на label отметится checkbox -->
-                        <input type="checkbox" id="check1"><label for="check1">Коньяк</label><br>
-                        <label><input type="checkbox">Арманьяк</label><br>
-                        <input type="checkbox" id="check3"><label for="check3">Кальвадос</label><br>
-    
-                        <!-- При нажатии на label установится фокус в textarea -->
-                        <label for="comment">Комментарий:</label><br>
-                        <textarea id="comment" placeholder="Введите комментарий"></textarea>
-                    </code>
-                </div>
-            </article>
-        </section>
-    </div>
-</div>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <input type="checkbox" checked> Хлеб
+                <input type="checkbox"> Молоко                    
+            </code>
+        </div>
+
+        <p>Используется, когда следует выбрать один вариант из предложенных. Элементы группируются по атрибуту <em>name</em></p>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <input type="radio" name="drink"> Вода
+                <input type="radio" name="drink" checked> Сок
+            </code>
+        </div>
+
+        <p>
+            В HTML5 появились новые типы input'ов.<br>
+            Такие типы как <em>date, email, url, number</em> чаще всего используются для удобства ввода на планшетах, смартфонах.
+        </p>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <!-- Поле для выбора календарной даты. Некоторые браузеры поддерживают ввод даты, для остальных это простое тектовое поле -->
+                <input type="date" placeholder="date">
+                <!-- Для адресов электронной почты -->
+                <input type="email" placeholder="e-mail">
+                <!-- Для веб адресов -->
+                <input type="url" placeholder="URL"><br>
+                <!-- Ввод чисел -->
+                <input type="number" min="-10" max="10" placeholder="range: -10..10" width="200">
+                <!-- Виджет для выбора цвета -->
+                <input type="color">
+                <!-- Ползунок для выбора чисел в указанном диапазоне -->
+                <input type="range" min="0" max="100" value="0">
+            </code>
+        </div>
+
+        <p>Атрибут <em>placeholder</em> - выводит текст внутри поля формы, который исчезает при получении фокуса или при наборе текста</p>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <input type="text" placeholder="Ваше Ф.И.О.">
+            </code>
+        </div>
+
+        <p>Атрибут <em>disabled</em> - блокирует доступ и изменение элемента</p>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <input type="text" value="Вы человек" disabled>
+            </code>
+        </div>
+
+    </article>
+
+    <article> <!-- ===================================================================================== -->
+        <h4>Элемент &lt;select&gt;</h4>
+        <p>Элемент интерфейса в виде списка, позволяющий выбрать одно или несколько значений</p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <select name="hero">
+                    <option selected>Выберите героя:</option>
+                    <option value="Чебурашка">Чебурашка</option>
+                    <option value="Крокодил Гена">Крокодил Гена</option>
+                    <option value="Шапокляк">Шапокляк</option>
+                    <option value="Крыса Лариса">Крыса Лариса</option>
+                </select>
+            </code>
+        </div>
+
+        <p>Атрибут <em>multiple</em> - позволяет одновременно выбирать сразу несколько элементов списка</p>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <select name="hero" multiple size="3">
+                    <option selected>Выберите героя:</option>
+                    <option value="Чебурашка">Чебурашка</option>
+                    <option value="Крокодил Гена">Крокодил Гена</option>
+                    <option value="Шапокляк">Шапокляк</option>
+                    <option value="Крыса Лариса">Крыса Лариса</option>
+                </select>
+            </code>
+        </div>
+    </article>
+
+    <article> <!-- ===================================================================================== -->
+        <h4>Элемент &lt;textarea&gt;</h4>
+        <p>Элемент представляет собой элемент формы для создания области, в которую можно вводить несколько строк текста</p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <textarea name="name" rows="7" cols="35" placeholder="Введите текст">Текст</textarea>
+            </code>
+        </div>
+    </article>
+
+    <article> <!-- ===================================================================================== -->
+        <h4>Элемент &lt;button&gt;</h4>
+        <p></p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <button>Это кнопка</button>
+                <button type="button">Это кнопка button</button>
+                <button type="reset">Это кнопка reset</button>
+                <button type="submit">Это кнопка submit</button>
+            </code>
+        </div>
+    </article>
+
+    <article> <!-- ===================================================================================== -->
+        <h4>Элемент &lt;label&gt;</h4>
+        <p>Элемент устанавливает связь между определенной меткой, в качестве которой обычно выступает текст,
+            и элементом формы (input, textarea, select)</p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <p>Выберите напиток:</p>
+                
+                <!-- При нажатии на label отметится checkbox -->
+                <input type="checkbox" id="check1"><label for="check1">Коньяк</label><br>
+                <label><input type="checkbox">Арманьяк</label><br>
+                <input type="checkbox" id="check3"><label for="check3">Кальвадос</label><br>
+
+                <!-- При нажатии на label установится фокус в textarea -->
+                <label for="comment">Комментарий:</label><br>
+                <textarea id="comment" placeholder="Введите комментарий"></textarea>
+            </code>
+        </div>
+    </article>
+</section>

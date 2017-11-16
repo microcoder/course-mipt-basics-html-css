@@ -1,123 +1,119 @@
-<div class="row">
-    <div class="col-8">
-        <section>
-            <header><h3>Псевдоэлементы</h3></header>
-            
-            <article> <!-- ===================================================================================== -->
-                <h4>::first-line</h4>
+<section>
+    <header><h3>Псевдоэлементы</h3></header>
+    
+    <article> <!-- ===================================================================================== -->
+        <h4>::first-line</h4>
+        <p>
+            Оформить первую строку текста можно с помощью псевдоэлемента <em>::first-line</em>.
+            Он позволяет оформить первую строку используя некоторые свойства:
+            <ul>
+                <li>font</li>
+                <li>word / letter-spacing</li>
+                <li>text</li>
+                <li>color</li>
+                <li>background</li>
+                <li>vertical-align</li>
+            </ul>
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <!-- Количество элементов <code>:
+                * Если один, то отображается исходный код и он же проигрывается на странице.
+                * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+            -->
+            <code class="html">
+                <style>
+                    p::first-line {
+                        font: 25px Courier New;
+                        letter-spacing: 6px;
+                    }
+                </style>
                 <p>
-                    Оформить первую строку текста можно с помощью псевдоэлемента <em>::first-line</em>.
-                    Он позволяет оформить первую строку используя некоторые свойства:
-                    <ul>
-                        <li>font</li>
-                        <li>word / letter-spacing</li>
-                        <li>text</li>
-                        <li>color</li>
-                        <li>background</li>
-                        <li>vertical-align</li>
-                    </ul>
+                    Like frantically rifling through all of your keys.
+                    There's no wind behind you but something's moving the leaves.
+                    This place is familiar.
+                    You used to call it your own.
+                    Now there's nobody home.
+                    No, there's nobody home.
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <!-- Количество элементов <code>:
-                        * Если один, то отображается исходный код и он же проигрывается на странице.
-                        * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
-                    -->
-                    <code class="html">
-                        <style>
-                            p::first-line {
-                                font: 25px Courier New;
-                                letter-spacing: 6px;
-                            }
-                        </style>
-                        <p>
-                            Like frantically rifling through all of your keys.
-                            There's no wind behind you but something's moving the leaves.
-                            This place is familiar.
-                            You used to call it your own.
-                            Now there's nobody home.
-                            No, there's nobody home.
-                        </p>
-                    </code>
-                    <code>
-                        <style>
-                            p#ex1::first-line {
-                                font: 25px Courier New;
-                                letter-spacing: 6px;
-                            }
-                        </style>
-                        <p id="ex1">
-                            Like frantically rifling through all of your keys.
-                            There's no wind behind you but something's moving the leaves.
-                            This place is familiar.
-                            You used to call it your own.
-                            Now there's nobody home.
-                            No, there's nobody home.
-                        </p>
-                    </code>
-                </div>
-            </article>
+            </code>
+            <code>
+                <style>
+                    p#ex1::first-line {
+                        font: 25px Courier New;
+                        letter-spacing: 6px;
+                    }
+                </style>
+                <p id="ex1">
+                    Like frantically rifling through all of your keys.
+                    There's no wind behind you but something's moving the leaves.
+                    This place is familiar.
+                    You used to call it your own.
+                    Now there's nobody home.
+                    No, there's nobody home.
+                </p>
+            </code>
+        </div>
+    </article>
 
-            <article>
-                <h4>::first-letter</h4>
+    <article>
+        <h4>::first-letter</h4>
+        <p>
+            Псевдоэлемент <em>::first-letter</em> позволяет оформить первую букву. Список того, что можно сделать,
+            в отличии от псевдоэлемента первой строки <em>::first-line</em> пополнился еще тремя свойствами:
+            <ul>
+                <li>margin</li>
+                <li>padding</li>
+                <li>border</li>
+            </ul>
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    p::first-letter {
+                        font: italic 50px Time New Roman;
+                        margin: 5px;
+                        color: #0b0;
+                    }
+                </style>
                 <p>
-                    Псевдоэлемент <em>::first-letter</em> позволяет оформить первую букву. Список того, что можно сделать,
-                    в отличии от псевдоэлемента первой строки <em>::first-line</em> пополнился еще тремя свойствами:
-                    <ul>
-                        <li>margin</li>
-                        <li>padding</li>
-                        <li>border</li>
-                    </ul>
+                    Once a room is empty it has no need for a name
+                    or title and when a glass is empty someone fills it up or puts it away.
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <style>
-                            p::first-letter {
-                                font: italic 50px Time New Roman;
-                                margin: 5px;
-                                color: #0b0;
-                            }
-                        </style>
-                        <p>
-                            Once a room is empty it has no need for a name
-                            or title and when a glass is empty someone fills it up or puts it away.
-                        </p>
-                        <p>
-                            But when the glass broke, the room spoke in dangerous tones,
-                            "If it's broken just leave it alone!"
-                        </p>
-                    </code>
-                    <code>
-                        <style>
-                            p#ex2::first-letter {
-                                font: italic 50px Time New Roman;
-                                margin: 5px;
-                                color: #0b0;
-                            }
-                        </style>
-                        <p id="ex2">
-                            Once a room is empty it has no need for a name
-                            or title and when a glass is empty someone fills it up or puts it away.
-                        </p>
-                        <p id="ex2">
-                            But when the glass broke, the room spoke in dangerous tones,
-                            "If it's broken just leave it alone!"
-                        </p>
-                    </code>
-                </div>
                 <p>
-                    В Яндексе частенько используется первая красная буква. Для этого используется псевдоэлемент первой буквы:
+                    But when the glass broke, the room spoke in dangerous tones,
+                    "If it's broken just leave it alone!"
                 </p>
-                <div class="card bg-light mb-3 p-3">
-                    <code class="html">
-                        <style>
-                            .ya::first-letter {
-                                color: #f00;
-                            }
-                        </style>
-                        <p class="ya">Яндекс</p>
-                    </code>
-                </div>
-            </article>
-        </section>
-    </div>
-</div>
+            </code>
+            <code>
+                <style>
+                    p#ex2::first-letter {
+                        font: italic 50px Time New Roman;
+                        margin: 5px;
+                        color: #0b0;
+                    }
+                </style>
+                <p id="ex2">
+                    Once a room is empty it has no need for a name
+                    or title and when a glass is empty someone fills it up or puts it away.
+                </p>
+                <p id="ex2">
+                    But when the glass broke, the room spoke in dangerous tones,
+                    "If it's broken just leave it alone!"
+                </p>
+            </code>
+        </div>
+        <p>
+            В Яндексе частенько используется первая красная буква. Для этого используется псевдоэлемент первой буквы:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .ya::first-letter {
+                        color: #f00;
+                    }
+                </style>
+                <p class="ya">Яндекс</p>
+            </code>
+        </div>
+    </article>
+</section>
