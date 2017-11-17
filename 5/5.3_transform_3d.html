@@ -1,0 +1,446 @@
+<section>
+    <header><h3>Преобразования в трёхмерном пространстве</h3></header>
+    <article> <!-- ===================================================================================== -->
+        <h3>Функции rotateX(), rotateY() и rotateZ()</h3>
+        <p>
+            Для поворота по осям <em>X</em>, <em>Y</em> и <em>Z</em> используются соответствующие функции
+            <em>rotateX()</em>, <em>rotateY()</em> и <em>rotateZ()</em>. В отличии от двумерного пространства,
+            где поворот происходил вокруг точки, то в трехмерном пространстве поворот происходит вокруг прямой.
+        </p>
+
+        <div class="card bg-light mb-3 p-3">
+            <!-- Количество элементов <code>:
+                * Если один, то отображается исходный код и он же проигрывается на странице.
+                * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+            -->
+            <code class="html">
+                <style>
+                    .box-container {
+                        position: relative;
+                        padding: 15px;
+                        border: 1px solid lightgrey;
+                        /* overflow: hidden;    Скрыть элементы за пределами контейнера */
+                    }
+                    .base-box {
+                        position: relative;
+                        display: inline-block;
+                        height: 100px; width: 200px;
+                        margin-right: 50px;
+                    }
+                    .fake-box {
+                        background-color: lightgray;
+                    }
+                    .fake-box::before {
+                        position: absolute;
+                        content: 'y';
+                        font: bold 12px / 12px monospace;
+                        text-align: center;
+                        left: -10px; bottom: -10px;
+                    }
+                    .fake-box::after {
+                        position: absolute;
+                        content: 'x';
+                        font: bold 12px / 12px monospace;
+                        text-align: center;
+                        right: -10px; top: -10px;
+                    }
+                    .box-1 {
+                        position: absolute;
+                        text-align: center;
+                        line-height: 100px;
+                        top: 0px; left: 0px;
+                        background-color: rgba(95, 159, 160, 0.5);
+                        transform: rotateX(45deg);
+                    }
+                    .box-2 {
+                        position: absolute;
+                        text-align: center;
+                        line-height: 100px;
+                        top: 0px; left: 0px;
+                        background-color: rgba(95, 159, 160, 0.5);
+                        transform: rotateY(45deg);
+                    }
+                    .box-3 {
+                        position: absolute;
+                        text-align: center;
+                        line-height: 100px;
+                        top: 0px; left: 0px;
+                        background-color: rgba(95, 159, 160, 0.5);
+                        transform: rotateZ(45deg);
+                    }
+                </style>
+
+                <div class="box-container">
+                    <div class="base-box fake-box">
+                        <div class="base-box box-1">rotateX()</div>
+                    </div>
+                    <div class="base-box fake-box">
+                        <div class="base-box box-2">rotateY()</div>
+                    </div>
+                    <div class="base-box fake-box">
+                        <div class="base-box box-3">rotateZ()</div>
+                    </div>
+                </div>
+            </code>
+        </div>
+    </article>
+    
+    <article> <!-- ===================================================================================== -->
+        <h3>Перемещение</h3>
+        <p>
+            Для перемещения по осям <em>X</em>, <em>Y</em> и <em>Z</em> используются соответствующие функции
+            <em>translateX()</em>, <em>translateY()</em> и <em>translateZ()</em>.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .box-4 {
+                        position: absolute;
+                        text-align: center;
+                        line-height: 100px;
+                        top: 0px; left: 0px;
+                        background-color: rgba(95, 159, 160, 0.5);
+                        transform: translateX(25%);
+                    }
+                    .box-5 {
+                        position: absolute;
+                        text-align: center;
+                        line-height: 100px;
+                        top: 0px; left: 0px;
+                        background-color: rgba(95, 159, 160, 0.5);
+                        transform: translateY(25%);
+                    }
+                    .box-6 {
+                        position: absolute;
+                        text-align: center;
+                        line-height: 100px;
+                        top: 0px; left: 0px;
+                        background-color: rgba(95, 159, 160, 0.5);
+                        transform: translateZ(200px);
+                    }
+                </style>
+
+                <div class="box-container">
+                    <div class="base-box fake-box">
+                        <div class="base-box box-4">translateX(25%)</div>
+                    </div>
+                    <div class="base-box fake-box">
+                        <div class="base-box box-5">translateY(25%)</div>
+                    </div>
+                    <div class="base-box fake-box">
+                        <div class="base-box box-6">translateZ(200px)</div> <!-- В Firefox 57 эта функция не сработала -->
+                    </div>
+                </div>
+            </code>
+        </div>
+    </article>
+
+    <article> <!-- ===================================================================================== -->
+        <h3>Масштабирование</h3>
+        <p>
+            Функция scale() осталась неизменной, т.е, как для двумерного пространства, так и трехмерного пространства.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .box-7 {
+                        position: absolute;
+                        text-align: center;
+                        line-height: 100px;
+                        top: 0px; left: 0px;
+                        background-color: rgba(95, 159, 160, 0.5);
+                        transform: scale(0.5);
+                    }
+                    .box-8 {
+                        position: absolute;
+                        text-align: center;
+                        line-height: 100px;
+                        top: 0px; left: 0px;
+                        background-color: rgba(95, 159, 160, 0.5);
+                        transform: scale(0.75);
+                    }
+                    .box-9 {
+                        position: absolute;
+                        text-align: center;
+                        line-height: 100px;
+                        top: 0px; left: 0px;
+                        background-color: rgba(95, 159, 160, 0.5);
+                        transform: scale(1.2);
+                    }
+                </style>
+
+                <div class="box-container">
+                    <div class="base-box fake-box">
+                        <div class="base-box box-7">scale(0.5)</div>
+                    </div>
+                    <div class="base-box fake-box">
+                        <div class="base-box box-8">scale(0.75)</div>
+                    </div>
+                    <div class="base-box fake-box">
+                        <div class="base-box box-9">scale(1.2)</div>
+                    </div>
+                </div>
+            </code>
+        </div>
+    </article>
+
+    <article> <!-- ===================================================================================== -->
+        <h3>Перспектива</h3>
+        <p>
+            Создает иллюзию глубины и позволяет перемещать в двумерном пространстве экрана точку вдоль и
+            вокруг оси Z (как бы вглубь экрана и из него). <br>
+            Для того, чтобы использовать перспективу, нужно задать свойство <em>perspective</em>:
+        </p>
+        <div class="card bg-light mb-3 p-3">            
+            <code class="html">
+                <style>
+                    .block-container {
+                        position: relative;
+                        padding: 15px;
+                        border: 1px solid lightgrey;
+                    }
+                    .pers{
+                        perspective: 600px;
+                    }
+                    .block {
+                        position: relative;
+                        display: inline-block;
+                        height: 100px; width: 200px;
+                        text-align: center;
+                        line-height: 100px;
+                        background-color: #5fa0a0;
+                        transform: rotateX(25deg);
+                    }
+                </style>
+                
+                <div class="block-container">
+                    <div class="pers">
+                        <div class="block">1</div>
+                        <div class="block">2</div>
+                        <div class="block">3</div>
+                    </div>
+                </div>
+            </code>
+        </div>
+        <p>
+            Расположение точки перспективы можно менять устанавливая значение свойства <em>perspective-origin</em>:
+        </p>
+        <div class="card bg-light mb-3 p-3">            
+            <code class="html">
+                <style>
+                    .pers_center{
+                        perspective-origin: 50% 50%;  /* Наблюдатель находится по центру объекта */
+                    }
+                    .pers_lt{
+                        perspective-origin: 0 0;      /* Наблюдатель перемещается в влевую верхнюю точку */
+                    }
+                    .pers_ct{
+                        perspective-origin: 50% 0%;   /* Наблюдатель находится по центру над объектом */
+                    }
+                    .pers_rt{
+                        perspective-origin: right top;
+                    }
+                </style>
+                
+                <div class="block-container">
+                    <div class="pers pers_center">
+                        <div class="block">1</div>
+                        <div class="block">2</div>
+                        <div class="block">3</div>
+                    </div>
+                </div>
+                <div class="block-container">
+                    <div class="pers pers_lt">
+                        <div class="block">1</div>
+                        <div class="block">2</div>
+                        <div class="block">3</div>
+                    </div>
+                </div>
+                <div class="block-container">
+                    <div class="pers pers_ct">
+                        <div class="block">1</div>
+                        <div class="block">2</div>
+                        <div class="block">3</div>
+                    </div>
+                </div>
+                <div class="block-container">
+                    <div class="pers pers_rt">
+                        <div class="block">1</div>
+                        <div class="block">2</div>
+                        <div class="block">3</div>
+                    </div>
+                </div>
+            </code>
+        </div>
+    </article>
+
+    <article> <!-- ===================================================================================== -->
+        <h3>Свойство transform-style</h3>
+        <p>
+            Свойство <em>transform-style</em> сообщает о том, что дочерние элементы позиционируются в 3D пространстве.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .wrapper{
+                        /* Не путать со свойством perspective! */
+                        transform: perspective(600px);
+                        /* По умолчанию flat */
+                        transform-style: preserve-3d;
+                    }
+                    .box-10 {
+                        text-align: center;
+                        line-height: 100px;
+                        font-size: 32px;
+                        background-color: #5fa0a0;
+                        transform: rotateY(60deg);
+                    }
+                    .box-11 {
+                        text-align: center;
+                        line-height: 100px;
+                        font-size: 32px;
+                        background-color: #5fa0a0;
+                        transform: rotateX(60deg);
+                    }
+                </style>
+                
+                <div class="base-box fake-box">
+                    <div class="base-box box-10">2D</div>
+                </div>
+                <div class="base-box fake-box">
+                    <div class="wrapper">
+                        <div class="base-box box-10">3D</div>
+                    </div>
+                </div>
+                <div class="base-box fake-box">
+                    <div class="base-box box-11">2D</div>
+                </div>
+                <div class="base-box fake-box">
+                    <div class="wrapper">
+                        <div class="base-box box-11">3D</div>
+                    </div>
+                </div>
+            </code>
+        </div>
+    </article>
+
+    <article> <!-- ===================================================================================== -->
+        <h3>Свойства transform</h3>
+        
+        <table class="table table-sm table-bordered w-50">
+            <thead>
+                <tr>
+                    <th>2D</th>
+                    <th>3D</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>translate(x, y)</td>
+                    <td>translate3d(x, y, z)</td>
+                </tr>
+                <tr>
+                    <td>sacle(x, y)</td>
+                    <td>sacle3d(x, y, z)</td>
+                </tr>
+                <tr>
+                    <td>rotate(angle)</td>
+                    <td>rotate(x, y, z, angle)</td>
+                </tr>
+                <tr>
+                    <td>matrix(a, b, c, d, e, f)</td>
+                    <td>matrix3d(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .wrapper{
+                        /* Не путать со свойством perspective! */
+                        transform: perspective(600px);
+                        /* По умолчанию flat */
+                        transform-style: preserve-3d;
+                    }
+                    .box3d-1 {
+                        text-align: center;
+                        line-height: 100px;
+                        font-size: 32px;
+                        background-color: #5fa0a0;
+                        transform: rotate3d(1, 1, 1, 50deg);
+                    }
+                </style>
+                
+                <div class="base-box fake-box">
+                    <div class="base-box box3d-1">2D</div>
+                </div>
+                <div class="base-box fake-box">
+                    <div class="wrapper">
+                        <div class="base-box box3d-1">3D</div>
+                    </div>
+                </div>
+            </code>
+        </div>
+    </article>
+    
+    <article> <!-- ===================================================================================== -->
+        <h3>Матрица преобразований</h3>
+        <p>
+            На самом деле, все предыдущие преобразования, которые мы просмотрели, основаны на матрице преобразований.
+            В CSS можно указать матрицу преобразований используя функцию <em>matrix()</em>. В этом случе, матрица будет
+            работать в двумерном пространстве:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="css">
+                .matrix {
+                    /*         matrix(a, b, c, d, tx, ty) */
+                    transform: matrix(2, 0, 0, 1, 0, 0);
+                }
+            </code>
+            <code></code>
+        </div>
+        <table class="table table-sm table-bordered w-50">
+            <thead>
+                <tr>
+                    <th>Коэффициент</th>
+                    <th>Преобразование</th>
+                    <th>Аналог</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>a</td>
+                    <td>Изменение размера по горизонтали</td>
+                    <td>scaleX()</td>
+                </tr>
+                <tr>
+                    <td>b</td>
+                    <td>Наклон по горизонтали</td>
+                    <td>skewX()</td>
+                </tr>
+                <tr>
+                    <td>c</td>
+                    <td>Наклон по вертикали</td>
+                    <td>skewY()</td>
+                </tr>
+                <tr>
+                    <td>d</td>
+                    <td>Изменение размера по вертикали</td>
+                    <td>scaleY()</td>
+                </tr>
+                <tr>
+                    <td>tx</td>
+                    <td>Смещение по горизонтали в пикселах</td>
+                    <td>transalteX()</td>
+                </tr>
+                <tr>
+                    <td>ty</td>
+                    <td>Смещение по вертикали в пикселах</td>
+                    <td>transalteY()</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+
+</section>
