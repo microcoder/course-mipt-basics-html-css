@@ -15,24 +15,24 @@
             -->
             <code class="html">
                 <style>
-                    /* TODO: Переделать CSS для предыдущей статьи так же как в этой. Сделать base-box, fake-box + незабыть про вложенность div'ов */
                     .box-container {
                         position: relative;
+                        padding: 5px;
                         border: 1px solid lightgrey;
+                        /* overflow: hidden;    Скрыть элементы за пределами контейнера */
                     }
                     .base-box {
-                        display: inline-block;
                         position: relative;
+                        display: inline-block;
                         width: 200px;
                         height: 100px;
                         text-align: center;
                         line-height: 100px;
                     }
                     .fake-box {
-                        top: 0px; left: 0px;
                         background-color: lightgray;
                     }
-                    .box {
+                    .box-1 {
                         position: absolute;
                         top: 0px; left: 0px;
                         background-color: rgba(156, 205, 50, 0.5);
@@ -43,7 +43,7 @@
                 
                 <div class="box-container">
                     <div class="base-box fake-box">transform from
-                        <div class="base-box box">box</div>
+                        <div class="base-box box-1">box-1</div>
                     </div>
                 </div>
             </code>
@@ -81,20 +81,12 @@
         <div class="card bg-light mb-3 p-3">
             <code class="html">
                 <style>
-                    .fake-box-3 {
-                        top: 0px; left: 0px;
-                        background-color: lightgray;
-                    }
                     .box-3 {
                         position: absolute;
                         top: 0px; left: 0px;
                         background-color: rgba(156, 205, 50, 0.5);
                         transform: rotate(25deg);
                         transform-origin: left top;
-                    }
-                    .fake-box-4 {
-                        top: 0px; left: 0px;
-                        background-color: lightgray;
                     }
                     .box-4 {
                         position: absolute;
@@ -103,20 +95,12 @@
                         transform: rotate(25deg);
                         transform-origin: center;
                     }
-                    .fake-box-5 {
-                        top: 0px; left: 0px;
-                        background-color: lightgray;
-                    }
                     .box-5 {
                         position: absolute;
                         top: 0px; left: 0px;
                         background-color: rgba(156, 205, 50, 0.5);
                         transform: rotate(25deg);
                         transform-origin: right top;
-                    }
-                    .fake-box-6 {
-                        top: 0px; left: 0px;
-                        background-color: lightgray;
                     }
                     .box-6 {
                         position: absolute;
@@ -128,16 +112,16 @@
                 </style>
 
                 <div class="box-container">
-                    <div class="base-box fake-box-3">transform from
+                    <div class="base-box fake-box">transform from
                         <div class="base-box box-3">box-3</div>
                     </div>
-                    <div class="base-box fake-box-4">transform from
+                    <div class="base-box fake-box">transform from
                         <div class="base-box box-4">box-4</div>
                     </div>
-                    <div class="base-box fake-box-5">transform from
+                    <div class="base-box fake-box">transform from
                         <div class="base-box box-5">box-5</div>
                     </div>
-                    <div class="base-box fake-box-6">transform from
+                    <div class="base-box fake-box">transform from
                         <div class="base-box box-6">box-6</div>
                     </div>
                 </div>
