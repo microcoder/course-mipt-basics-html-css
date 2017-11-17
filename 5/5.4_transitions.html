@@ -1,0 +1,333 @@
+<section>
+    <header><h3>Переходы</h3></header>
+    <article> <!-- ===================================================================================== -->
+        <h4>Простой переход</h4>
+        <p>
+            <strong>Переходы</strong> - это анимация от одного набора CSS свойств к другому. <br>
+            Для перехода необходимо:
+            <ul>
+                <li>Два набора свойств:
+                    <ul>
+                        <li>начальный набор свойств (color: <span style="color: #f00">#f00</span>)</li>
+                        <li>конечный набор свойств (color: <span style="color: #00f">#00f</span>)</li>
+                    </ul>
+                </li>
+                <li>Свойство <em>transition</em> - описание свойств и характеристик анимации перехода</li>
+                <li>Инициатор - действие, которое вызывает изменение от одного набора свойств к другому (:hover, :target, :focus, :active)</li>
+            </ul>
+            Дополнительную информацию можно найти по <a href="https://www.w3.org/TR/css3-transitions/#animatable-properties" target="_blank">этой ссылке</a>.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <!-- Количество элементов <code>:
+                * Если один, то отображается исходный код и он же проигрывается на странице.
+                * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+            -->
+            <code class="html">
+                <style>
+                    .button-1{
+                        /* Свойство перехода */
+                        transition-property: transform;
+                        /* Длительность перехода */
+                        transition-duration: .3s;
+                    }
+                    .button-1:hover{
+                        transform: scale(1.2);
+                    }
+                </style>
+                <button type="button" class="button-1">button</button>
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Несколько свойств</h4>
+        <p>
+            Возможность задать несколько свойств:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .button-2{
+                        transition-property: transform, background-color;
+                        transition-duration: 0.3s, 300ms;
+                        background-color: #ccc;
+                    }
+                    .button-2:hover{
+                        transform: scale(1.5);
+                        background-color: #f00;
+                    }
+                </style>
+                <button type="button" class="button-2">button-2</button>
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Задержка перехода</h4>
+        <p>
+            Иногда возникает потребность, чтобы анимация начиналась немного позже:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .button-3{
+                        transition-property: transform, background-color;
+                        transition-duration: 0.3s, 500ms;
+                        transition-delay: 0s, 0.5s;
+                        background-color: #ccc;
+                    }
+                    .button-3:hover{
+                        transform: scale(1.5);
+                        background-color: #f00;
+                    }
+                </style>
+                <button type="button" class="button-3">button-3</button>
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Тип перхода</h4>
+        <p>
+            Это функция которая показывает завершенность выполнения какого-то перехода от времени. Например, если указано значение
+            <em>linear</em>, то переход будет выполняться плавно и равномерно.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .button-4{
+                        transition-property: transform;
+                        /* Функция положения объекта от времени */
+                        transition-timing-function: linear;
+                        transition-duration: 0.3s;
+                    }
+                    .button-4:hover{
+                        transform: translateX(400px);
+                        background-color: #f00;
+                    }
+                </style>
+                <button type="button" class="button-4">button-4</button>
+            </code>
+        </div>
+        <p>
+            Так же, существуют другие значения:
+            <style>
+                .demo-box{
+                    background-color: white;
+                    text-align: center;
+                    border: 1px solid gray;
+                    border-radius: 5px;
+                    /* width: 50%; */
+                }
+                .demo-linear {
+                    transition-property: transform;
+                    transition-timing-function: linear;
+                    transition-duration: 0.3s;
+                }
+                .demo-linear:hover{
+                    transform: translateX(400px);
+                    background-color: #f00;
+                }
+                .demo-ease {
+                    transition-property: transform;
+                    transition-timing-function: ease;
+                    transition-duration: 0.3s;
+                }
+                .demo-ease:hover{
+                    transform: translateX(400px);
+                    background-color: #f00;
+                }
+                .demo-ease-in {
+                    transition-property: transform;
+                    transition-timing-function: ease-in;
+                    transition-duration: 0.3s;
+                }
+                .demo-ease-in:hover{
+                    transform: translateX(400px);
+                    background-color: #f00;
+                }
+                .demo-ease-out {
+                    transition-property: transform;
+                    transition-timing-function: ease-out;
+                    transition-duration: 0.3s;
+                }
+                .demo-ease-out:hover{
+                    transform: translateX(400px);
+                    background-color: #f00;
+                }
+                .demo-ease-in-out {
+                    transition-property: transform;
+                    transition-timing-function: ease-in-out;
+                    transition-duration: 0.3s;
+                }
+                .demo-ease-in-out:hover{
+                    transform: translateX(400px);
+                    background-color: #f00;
+                }
+                .demo-step-start {
+                    transition-property: transform;
+                    transition-timing-function: step-start;
+                    transition-duration: 0.3s;
+                }
+                .demo-step-start:hover{
+                    transform: translateX(400px);
+                    background-color: #f00;
+                }
+                .demo-step-end {
+                    transition-property: transform;
+                    transition-timing-function: step-end;
+                    transition-duration: 0.3s;
+                }
+                .demo-step-end:hover{
+                    transform: translateX(400px);
+                    background-color: #f00;
+                }
+                .demo-steps_10 {
+                    transition-property: transform;
+                    transition-timing-function: steps(10);
+                    transition-duration: 0.3s;
+                }
+                .demo-steps_10:hover{
+                    transform: translateX(400px);
+                    background-color: #f00;
+                }
+                .demo-steps_10_start {
+                    transition-property: transform;
+                    transition-timing-function: steps(10, start);
+                    transition-duration: 0.3s;
+                }
+                .demo-steps_10_start:hover{
+                    transform: translateX(400px);
+                    background-color: #f00;
+                }
+            </style>
+            <table class="table table-sm table-bordered w-50">
+                <thead>
+                    <tr>
+                        <th>Timing функция</th>
+                        <th>Демо</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>linear</td>
+                        <td><div class="demo-box demo-linear">linear</div></td>
+                    </tr>
+                    <tr>
+                        <td>ease</td>
+                        <td><div class="demo-box demo-ease">ease</div></td>
+                    </tr>
+                    <tr>
+                        <td>ease-in</td>
+                        <td><div class="demo-box demo-ease-in">ease-in</div></td>
+                    </tr>
+                    <tr>
+                        <td>ease-out</td>
+                        <td><div class="demo-box demo-ease-out">ease-out</div></td>
+                    </tr>
+                    <tr>
+                        <td>ease-in-out</td>
+                        <td><div class="demo-box demo-ease-in-out">ease-in-out</div></td>
+                    </tr>
+                    <tr>
+                        <td>step-start</td>
+                        <td><div class="demo-box demo-step-start">step-start</div></td>
+                    </tr>
+                    <tr>
+                        <td>step-end</td>
+                        <td><div class="demo-box demo-step-end">step-end</div></td>
+                    </tr>
+                    <tr>
+                        <td>steps(10)</td>
+                        <td><div class="demo-box demo-steps_10">steps(10)</div></td>
+                    </tr>
+                    <tr>
+                        <td>steps(10, start)</td>
+                        <td><div class="demo-box demo-steps_10_start">steps(10, start)</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+    </article>
+
+    <article>
+        <h4>Ракета</h4>
+        <p>
+            Мы хотим, чтобы у нас взлетала ракета. Но как взлетает ракета? Вначале она набирает скорость,
+            т.е., движится медленно, а потом в какой-то момент времени она ускоряется. Мы хотим, чтобы анимация длилась 3 секунды
+            и указываем функцию <em>cubic-bezier</em>.<br>
+            Дополнительно можно посмотреть CSS код на примере <a href="https://codepen.io/stephengreig/pen/vbqBh" target="_blank">шарика с гелием</a>.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .rocket {
+                        transition-property: transform;
+                        /*                                      ( x1, y1, x2, y2 ) */
+                        transition-timing-function: cubic-bezier(0.98, 0, 1, 0.28);
+                        transition-duration: 3s;
+                    }
+                    .rocket:hover{
+                        transform: translateY(-400px);
+                    }
+                </style>
+                <img src="res/rocket.png" alt="" class="rocket" width="100">
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Краткая запись</h4>
+        <p>
+            Записывать свойства для переходов в отдельности бывает не совсем удобно:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="css">
+                .long {
+                    transition-property: transform;
+                    transition-duration: 3s;
+                    transition-delay: 1s;
+                    transition-timing-function: ease-in;
+                }
+            </code>
+            <code></code>
+        </div>
+        <p>
+            Поэтому, существует короткая запись, и для этого используется свойство <em>transition</em>:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="css">
+                .short {
+                    /* transition: property duration [timing-function] [delay] */
+                    transition: transform 0.5s ease-in 1s;
+                }
+            </code>
+            <code></code>
+        </div>
+        <p>
+            Можно указать несколько свойств, они указываются через запятую:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="css">
+                .multi-short {
+                    transition: transform 0.5s ease-in,
+                                background-color 0.5s ease-in 1s;
+                }
+            </code>
+            <code></code>
+        </div>
+        <p>
+            Можно записать еще короче, указав значение <em>all</em>, в этом случае будут анимироваться все возможные свойства.
+            Также, указываем длительность анимации, все остальные свойства остаются по умолчанию:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="css">
+                .super-short {
+                    transition: all 5s;
+                }
+            </code>
+            <code></code>
+        </div>
+    </article>
+    
+</section>
