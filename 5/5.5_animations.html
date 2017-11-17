@@ -1,0 +1,480 @@
+<section>
+    <header><h3>Анимации</h3></header>
+    <article> <!-- ===================================================================================== -->
+        <h4>Свойство animation</h4>
+        <p>
+            Бывает недостаточно CSS-переходов, когда нужно добавить какие-то промежуточные изменения. Например,
+            хочется передвинуть объект сначала вверх, потом вправо, вниз и затем влево. С обычными переходами это
+            сделать не получится, поэтому придумали так называемые CSS-анимации.
+        </p>
+        <p>
+            Свойство <em>animation</em> - позволяет анимировать переходы между ключевыми кадрами.<br>
+            Для создания анимации необходимо:
+            <ol>
+                <li>Определить ключевые кадры - содержат свойства, которые применяются в определенный момент времени при анимации</li>
+                <li>Применение анимации к элементу</li>
+            </ol>
+        </p>
+    </article>
+    <article>
+        <h4>Ключевые кадры</h4>
+        <p>
+            Чтобы создать CSS-анимацию, нужно создать add-правило <em>@keyframes</em> и задать ему какое-то название.
+            Название может быть произвольным. Внутри указываются ключевые кадры. Ключевые кадры имеют название, например,
+            <em>from</em> и <em>to</em>:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="css">
+                @keyframes animationName {
+                    from {
+                        /* CSS свойства для первого кадра */
+                    }
+                    to {
+                        /* CSS свойства для второго кадра */
+                    }
+                }
+            </code>
+            <code></code>
+        </div>
+        <p>
+            Когда анимация включается (при наведении указателя мыши), элемент резко становится прозрачным и плавно переходит к непрозрачному:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes show {
+                        from {
+                            opacity: 0;
+                        }
+                        to {
+                            opacity: 1;
+                        }
+                    }
+                    .base-box {
+                        position: relative;
+                        display: inline-block;
+                        height: 100px; width: 200px;
+                        text-align: center;
+                        line-height: 100px;
+                    }
+                    .box-1:hover {
+                        animation-name: show;
+                        animation-duration: 3s;
+                    }
+                    .box-1 {
+                        background-color: #5fa0a0;
+                    }
+                </style>
+                <div class="base-box box-1">hover me</div>
+            </code>
+        </div>
+        <p>
+            Как избежать того, чтобы элемент сначала был прозрачным и плавно переходил к непрозрачному? Для этого, элементу задаем 
+            свойство <em>opacity = 0</em>, т.е., по умолчанию элемент будет прозрачным. Мы не указываем начальный кадр, только конечный.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes show-2 {
+                        to {
+                            opacity: 1;
+                        }
+                    }
+                    .box-2:hover {
+                        animation-name: show-2;
+                        animation-duration: 3s;
+                    }
+                    .box-2 {
+                        opacity: 0;
+                        background-color: #5fa0a0;
+                    }
+                </style>
+                <div class="base-box box-2">hover me</div>
+            </code>
+        </div>
+        <p>
+            Но когда анимация заканчивается, элемент возвращается к своему изначальному состоянию (opacity: 0). О том, как этого избежать,
+            будет рассказано чуть позже. <br>
+            Одну и ту же анимацию можно применять к нескольким элементам.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes blink {
+                        from {
+                            background-color: #7d7dff;
+                        }
+                        to {
+                            background-color: #5fa0a0;
+                        }
+                    }
+                    .box-3, .box-4 {
+                        background-color: #7d7dff;
+                    }
+                    .box-3:hover {
+                        animation-name: blink;
+                        animation-duration: 1s;
+                    }
+                    .box-4:hover {
+                        animation-name: blink;
+                        animation-duration: 5s;
+                    }
+                </style>
+                <div class="base-box box-3">hover me</div>
+                <div class="base-box box-4">hover me</div>
+            </code>
+        </div>
+        <p>
+            До этого, все примеры были основаны на двух ключевых кадрах - <em>from</em> и <em>to</em>. А чем это оличается от <em>transition</em>?
+            Так вот, в анимациях можно указывать промежуточные значения.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes blink-2 {
+                        from {
+                            background-color: #5fa0a0;
+                        }
+                        50% {
+                            background-color: #7d7dff;
+                        }
+                        to {
+                            background-color: #5fa0a0;
+                        }
+                    }
+                    .box-5 {
+                        background-color: #5fa0a0;
+                    }
+                    .box-5:hover {
+                        animation-name: blink-2;
+                        animation-duration: 2s;
+                    }
+                </style>
+                <div class="base-box box-5">hover me</div>
+            </code>
+        </div>
+        <p>
+            Вместо ключевых слов <em>from</em> и <em>to</em> можно указывать значения в процентах:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes blink-3 {
+                        0%   { background-color: blue; }
+                        25%  { background-color: green; }
+                        50%  { background-color: red; }
+                        75%  { background-color: yellow; }
+                        100% { background-color: grey; }
+                    }
+                    .box-6 {
+                        background-color: #5fa0a0;
+                    }
+                    .box-6:hover {
+                        animation-name: blink-3;
+                        animation-duration: 3s;
+                    }
+                </style>
+                <div class="base-box box-6">hover me</div>
+            </code>
+        </div>
+        <p>
+            Если есть ключевые кадры, где установлено одно и тоже свойство, то мы можем указать их через запятую:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes blink-4 {
+                         0%, 50% { background-color: blue; }
+                        25%, 75% { background-color: green; }
+                        100%     { background-color: grey; }
+                    }
+                    .box-7 {
+                        background-color: #5fa0a0;
+                    }
+                    .box-7:hover {
+                        animation-name: blink-4;
+                        animation-duration: 10s;
+                    }
+                </style>
+                <div class="base-box box-7">hover me</div>
+            </code>
+        </div>
+        <p>
+            Также, мы можем сделать эффект задержки. Мы знаем, что в середине (50%) цвет должен оставаться зеленым (который начался с 25%),
+            поэтому можно указать диапазон для зеленого цвета 25% - 75%, в этом месте создается ощущение паузы:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes blink-5 {
+                        0%       { background-color: blue; }
+                        25%, 75% { background-color: green; }
+                        100%     { background-color: grey; }
+                    }
+                    .box-8 {
+                        background-color: #5fa0a0;
+                    }
+                    .box-8:hover {
+                        animation-name: blink-5;
+                        animation-duration: 4s;
+                    }
+                </style>
+                <div class="base-box box-8">hover me</div>
+            </code>
+        </div>
+        <p>
+            Как вы уже наверное поняли, анимировать можно сразу несколько свойств:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes show-3 {
+                        0% {
+                            opacity: 0;
+                            background-color: blue;
+                        }
+                        50% { background-color: green; }
+                        100% {
+                            opacity: 1;
+                            background-color: #5fa0a0;
+                        }
+                    }
+                    .box-9 {
+                        background-color: #5fa0a0;
+                    }
+                    .box-9:hover {
+                        animation-name: show-3;
+                        animation-duration: 2s;
+                    }
+                </style>
+                <div class="base-box box-9">hover me</div>
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Задержка анимации</h4>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes move {
+                        25%, 75% {
+                            transform: translateX(100%);
+                        }
+                        100% {
+                            transform: translateX(200%);
+                        }
+                    }
+                    .box-10 {
+                        background-color: #5fa0a0;
+                    }
+                    .box-10:hover {
+                        animation-name: move;
+                        animation-duration: 2s;
+                        animation-delay: 1s;    /* Задержка между ключевыми кадрами */
+                    }
+                </style>
+                <div class="base-box box-10">hover me</div>
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Тип анимации</h4>
+        <p>
+            По аналогии с CSS-переходами, в CSS-анимации тоже можно задавать временную функцию. Можно создавать свою,
+            при помощи кривой безье (cubic-bezier) или воспользоваться готовыми - linear, ease, ease-in, ease-out и т.д.
+            Можно временную функцию менять с течением анимации, для этого в некоторых ключевых кадрах мы можем указывать
+            свойство <em>animation-timing-function</em> и указывать значение. Когда время придет к этому ключевому кадру,
+            то эта функция поменяется:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes move-2 {
+                        0% { transform: translate(0, 0); }
+                        25% {
+                            transform: translate(100%, 0);
+                            animation-timing-function: linear;
+                        }
+                        50% { transform: translate(100%, 200%); }
+                        75% {
+                            transform: translate(0, 200%);
+                            animation-timing-function: ease-out;
+                        }
+                        100% { transform: translate(0, 0); }
+                    }
+                    .box-11 {
+                        background-color: #5fa0a0;
+                    }
+                    .box-11:hover {
+                        animation-name: move-2;
+                        animation-duration: 8s;
+                        animation-timing-function: ease-in;
+                    }
+                </style>
+                <div class="base-box box-11">hover me</div>
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Повторение анимации</h4>
+        <p>
+            У CSS-анимации можно указывать количество повторений, для этого нужно задать в свойстве <em>animation-iteration-count</em>
+            количество повторений.
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes zoom {
+                        0%   { transform: scale(1); }
+                        50%  { transform: scale(2); }
+                        100% { transform: scale(1); }
+                    }
+                    .box-12 {
+                        background-color: #5fa0a0;
+                    }
+                    .box-12:hover {
+                        animation-name: zoom;
+                        animation-duration: 1s;
+                        animation-iteration-count: 3; /* Количество повторов анимации */
+                    }
+                </style>
+                <div class="base-box box-12">hover me</div>
+            </code>
+        </div>
+        <p>
+            Для бесконечного количества повторений нужно воспользоваться ключевым словом <em>infinite</em>
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="css">
+                .seconds {
+                    animation-name: seconds;
+                    animation-duration: 60s;
+                    animation-iteration-count: infinite;
+                }
+            </code>
+            <code></code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Скачки между повторениями</h4>
+        <p>
+            Между повторениями анимации происходят скачки, чтобы этого избежать, можно воспользоваться свойством <em>animation-direction</em>
+            со значением <em>alternate</em>. В этом случае, когда анимация закончится, она вернется к начальному состоянию тем же путем,
+            т.е., плавно, но в этом случае счетчик <em>animation-iteration-count</em> будет увеличиваться. Например, у нас круг увеличивается
+            3 раза, в этом случае 3 раза это будет увеличение-уменьшение-увеличение, после чего произойдет скачек к первоначальному состоянию:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes zoom-2 {
+                        0%   { transform: scale(1); }
+                        100% { transform: scale(2); }
+                    }
+                    .circle-1 {
+                        height: 100px; width: 100px;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 100px;
+                        background-color: #5fa0a0;
+                    }
+                    .circle-1:hover {
+                        animation-name: zoom-2;
+                        animation-duration: 1s;
+                        animation-iteration-count: 3;
+                        animation-direction: alternate;
+                    }
+                </style>
+                <div class="circle-1">hover me</div>
+            </code>
+        </div>
+        <p>
+            Как избежать скачков после завершения CSS-анимации? Для этого можно воспользоваться свойством <em>animation-fill-mode</em>
+            со значением <em>forwards</em>, т.е, когда у нас анимация заканчивается, то элемент застывает в конечном состоянии:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .circle-2 {
+                        height: 100px; width: 100px;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 100px;
+                        background-color: #5fa0a0;
+                    }
+                    .circle-2:hover {
+                        animation-name: zoom-2;
+                        animation-duration: 1s;
+                        animation-iteration-count: 3;
+                        animation-direction: alternate;
+                        animation-fill-mode: forwards;
+                    }
+                </style>
+                <div class="circle-2">hover me</div>
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Краткая запись</h4>
+        <p>
+            Если записать все свойства анимации, то запись получается довольно громоздкая:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="css">
+                .long {
+                    animation-name: sacle;
+                    animation-duration: 2s;
+                    animation-timing-function: ease-in-out;
+                    animation-iteration-count: 3;
+                    animation-direction: alternate;
+                    animation-delay: 5s;
+                    animation-fill-mode: forwards;
+                }
+            </code>
+        </div>
+        <p>
+            Существует более короткая запись:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="css">
+                .short {
+                    animation: sacle 2s ease-in-out 3 alternate 5s forwards;
+                }
+                /* Несколько анимаций через запятую */
+                .multi-short {
+                    animation: sacle 2s ease-in, move 2s ease-out;
+                }
+            </code>
+        </div>
+    </article>
+    
+    <article>
+        <h4>Управление анимацией</h4>
+        <p>
+            При помощи свойства <em>animation-play-state</em> можно поставить анимацию на паузу, например мы хотим
+            при наведении на элемент, остановить анимацию:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    .circle-3 {
+                        height: 100px; width: 100px;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 100px;
+                        background-color: #5fa0a0;
+                        animation: zoom-2 1s ease infinite;
+                    }
+                    .circle-3:hover {
+                        animation-play-state: paused;
+                    }
+                </style>
+                <div class="circle-3">hover me</div>
+            </code>
+        </div>
+    </article>
+</section>
