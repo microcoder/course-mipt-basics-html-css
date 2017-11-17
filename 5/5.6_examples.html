@@ -1,0 +1,140 @@
+<section>
+    <header><h3>Практические примеры</h3></header>
+    <article> <!-- ===================================================================================== -->
+        <h4>Эффект печати</h4>
+        <p>
+            Создается эффект, как будто символы набираются на клавиатуре и также моргает курсор. Основная идея заключается в том,
+            чтобы увеличивать ширину элимента по шагам. Количество шагов, это количество символов. Мигание элемента, это на
+            самом деле меняется цвет правого border'а, с прозрачного, на непрозрачный. Код выглядит следующим образом:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <!-- Количество элементов <code>:
+                * Если один, то отображается исходный код и он же проигрывается на странице.
+                * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
+            -->
+            <code class="html">
+                <style>
+                    @keyframes typing {
+                      from { width: 8ch; } /* Задаем ширину элемента в 8 символов */
+                        to { width: 27ch; }
+                    }
+                    @keyframes caret {
+                        50% { border-color: transparent; }
+                    }
+                    .typing {
+                        width: 8ch;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        border-right: 1px solid;
+                    }
+                    .typing:hover {
+                        animation: typing 4s steps(15) forwards,
+                                    caret 1s steps(1) infinite;
+                    }
+                </style>
+                <div class="typing">hover me: этот текст с эффектом</div>
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Движение по кругу</h4>
+        <p>
+            Нужно сделать так, чтобы элемент двигался по кругу, но не вращался бы вокруг своей оси. На первый взгляд кажется, что
+            всё просто, мы кладем элемент в другой элемент и вращаем этот элемент. В этом случае, элемент начинает вращаться вокруг своей оси,
+            а хотелось бы этого избежать:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes spin {
+                        to { transform: rotate(1turn); }
+                    }
+                    .circle-big {
+                        position: relative;
+                        height: 200px; width: 200px;
+                        background-color: yellowgreen;
+                        border-radius: 50%;
+                        animation: spin 4s linear infinite;
+                    }
+                    .circle-small {
+                        position: absolute;
+                        height: 50px; width: 50px;
+                        top: 22px; left: 22px;
+                        background-color: tomato;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 50px;
+                    }
+                </style>
+                <div class="circle-big">x
+                    <div class="circle-small">@</div>
+                </div>
+            </code>
+        </div>
+        <p>
+            Для этого, мы сделаем это немного хитрее. Расположим элемент в центре, и каждый раз будем выполнять набор трансформаций.
+            Посмотрим код:
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes spin-2 {
+                        0% {
+                            transform: rotate(0turn) translateY(75px) rotate(1turn);
+                        }
+                        100% {
+                            transform: rotate(1turn) translateY(75px) rotate(0turn);
+                        }
+                    }
+                    .circle-big-2 {
+                        position: relative;
+                        height: 200px; width: 200px;
+                        background-color: yellowgreen;
+                        border-radius: 50%
+                    }
+                    .circle-small-2 {
+                        position: absolute;
+                        height: 50px; width: 50px;
+                        top: 75px; left: 75px;
+                        background-color: tomato;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 50px;
+                        animation: spin-2 4s linear infinite;
+                    }
+                </style>
+                <div class="circle-big-2">x
+                    <div class="circle-small-2">@</div>
+                </div>
+            </code>
+        </div>
+    </article>
+
+    <article>
+        <h4>Блокировка свойств</h4>
+        <p>
+            Бывает, что какие-то сторонние плагины выставляют у атрибута <em>style</em> некоторые свойства со значениями <em>!important</em>.
+            Кажется, как можно перебить эти свойства? Это можно сделать при помощи анимации.<br>
+            <span style="text-decoration: underline;">P.S. В Firefox 57 этот трюк не работает.</span>
+        </p>
+        <div class="card bg-light mb-3 p-3">
+            <code class="html">
+                <style>
+                    @keyframes break-style {
+                        from { background-color: red; }
+                          to { background-color: red; }
+                    }
+                    .box {
+                        height: 100px; width: 200px;
+                        border: 1px solid gray;
+                    }
+                    .box:hover {
+                        animation: break-style 1s infinite;
+                    }
+                </style>
+                <div class="box" style="background-color: #fff !important;"></div>
+            </code>
+        </div>
+    </article>
+</section>
