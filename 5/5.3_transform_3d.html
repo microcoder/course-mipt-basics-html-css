@@ -82,6 +82,36 @@
                     </div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-1 {
+                    50%  { transform: rotateX(0deg); }
+                    100% { transform: rotateX(45deg); }
+                }
+                .box-1:hover {
+                    animation-name: anim-1;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-2 {
+                    50%  { transform: rotateY(0deg); }
+                    100% { transform: rotateY(45deg); }
+                }
+                .box-2:hover {
+                    animation-name: anim-2;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-3 {
+                    50%  { transform: rotateZ(0deg); }
+                    100% { transform: rotateZ(45deg); }
+                }
+                .box-3:hover {
+                    animation-name: anim-3;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
     </article>
     
@@ -132,6 +162,36 @@
                     </div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-4 {
+                    50%  { transform: translateX(0%); }
+                    100% { transform: translateX(25%); }
+                }
+                .box-4:hover {
+                    animation-name: anim-4;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-5 {
+                    50%  { transform: translateY(0%); }
+                    100% { transform: translateY(25%); }
+                }
+                .box-5:hover {
+                    animation-name: anim-5;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-6 {
+                    50%  { transform: translateZ(0px); }
+                    100% { transform: translateZ(200px); }
+                }
+                .box-6:hover {
+                    animation-name: anim-6;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
     </article>
 
@@ -181,6 +241,36 @@
                     </div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-7 {
+                    50%  { transform: scale(1); }
+                    100% { transform: scale(0.5); }
+                }
+                .box-7:hover {
+                    animation-name: anim-7;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-8 {
+                    50%  { transform: scale(1); }
+                    100% { transform: scale(0.75); }
+                }
+                .box-8:hover {
+                    animation-name: anim-8;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-9 {
+                    50%  { transform: scale(1); }
+                    100% { transform: scale(1.2); }
+                }
+                .box-9:hover {
+                    animation-name: anim-9;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
     </article>
 
@@ -221,6 +311,18 @@
                     </div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-block {
+                    50%  { transform: rotateX(0deg); }
+                    100% { transform: rotateX(25deg); }
+                }
+                .block:hover {
+                    animation-name: anim-block;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
         <p>
             Расположение точки перспективы можно менять устанавливая значение свойства <em>perspective-origin</em>:
@@ -321,6 +423,27 @@
                     </div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-10 {
+                    50%  { transform: rotateY(0deg); }
+                    100% { transform: rotateY(60deg); }
+                }
+                .box-10:hover {
+                    animation-name: anim-10;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-11 {
+                    50%  { transform: rotateX(0deg); }
+                    100% { transform: rotateX(60deg); }
+                }
+                .box-11:hover {
+                    animation-name: anim-11;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
     </article>
 
@@ -363,7 +486,7 @@
                         /* По умолчанию flat */
                         transform-style: preserve-3d;
                     }
-                    .box3d-1 {
+                    .box-12 {
                         text-align: center;
                         line-height: 100px;
                         font-size: 32px;
@@ -373,14 +496,26 @@
                 </style>
                 
                 <div class="base-box fake-box">
-                    <div class="base-box box3d-1">2D</div>
+                    <div class="base-box box-12">2D</div>
                 </div>
                 <div class="base-box fake-box">
                     <div class="wrapper">
-                        <div class="base-box box3d-1">3D</div>
+                        <div class="base-box box-12">3D</div>
                     </div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-12 {
+                    50%  { transform: rotate3d(0, 0, 0, 0deg); }
+                    100% { transform: rotate3d(1, 1, 1, 50deg); }
+                }
+                .box-12:hover {
+                    animation-name: anim-12;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
     </article>
     

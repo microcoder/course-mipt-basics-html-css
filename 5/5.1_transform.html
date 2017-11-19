@@ -60,7 +60,7 @@
                     .base-box {
                         position: relative;
                         display: inline-block;
-                        height: 100px; width: 300px;
+                        height: 100px; width: 200px;
                         text-align: center;
                         line-height: 100px;
                     }
@@ -78,7 +78,7 @@
                         position: absolute;
                         top: 0px; left: 0px;
                         background-color: rgba(95, 159, 160, 0.5);
-                        transform: translate(150px, 30px);
+                        transform: translate(100px, 30px);
                     }
                 </style>
                 
@@ -88,6 +88,18 @@
                     </div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-1 {
+                    50%  { transform: translate(0px, 0px); color: transparent; }
+                    100% { transform: translate(100px, 30px); }
+                }
+                .box-1:hover {
+                    animation-name: anim-1;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
 
         <p style="margin-top: 40px;">Еще примеры:</p>
@@ -96,20 +108,20 @@
             <code class="html">
                 <style>
                     .fake-box-2 {
-                        margin: 100px 0px 100px 300px;
+                        margin: 100px 0px 100px 200px;
                         background-color: lightgray;
                     }
                     .box-2 {
                         position: absolute;
                         top: 0px; left: 0px;
                         background-color: #75bcff;
-                        transform: translate(-300px, -100px);
+                        transform: translate(-200px, -100px);
                     }
                     .box-3 {
                         position: absolute;
                         top: 0px; left: 0px;
                         background-color: #da647b;
-                        transform: translate(300px, 0px);
+                        transform: translate(200px, 0px);
                     }
                     .box-4 {
                         position: absolute;
@@ -121,19 +133,59 @@
                         position: absolute;
                         top: 0px; left: 0px;
                         background-color: #ffcc73;
-                        transform: translate(300px, 100px);
+                        transform: translate(200px, 100px);
                     }
                 </style>
 
                 <div class="box-container">
+                    <span style="position: absolute; left: 250px;">Для демонстрации перемещения, нажмите и задержите клик на каждом из блоков</span>
                     <div class="base-box fake-box-2">transform from
-                        <div class="base-box box-2">translate(-300px, -100px)</div>
-                        <div class="base-box box-3">translate(300px, 0px);</div>
+                        <div class="base-box box-2">translate(-200px, -100px)</div>
+                        <div class="base-box box-3">translate(200px, 0px);</div>
                         <div class="base-box box-4">translate(0px, 100px);</div>
-                        <div class="base-box box-5">translate(300px, 100px);</div>
+                        <div class="base-box box-5">translate(200px, 100px);</div>
                     </div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-2 {
+                    50%  { transform: translate(0px, 0px); }
+                    100% { transform: translate(-200px, -100px); }
+                }
+                .box-2:active {
+                    animation-name: anim-2;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-3 {
+                    50%  { transform: translate(0px, 0px); }
+                    100% { transform: translate(200px, 0px); }
+                }
+                .box-3:active {
+                    animation-name: anim-3;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-4 {
+                    50%  { transform: translate(0px, 0px); }
+                    100% { transform: translate(0px, 100px); }
+                }
+                .box-4:active {
+                    animation-name: anim-4;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-5 {
+                    50%  { transform: translate(0px, 0px); }
+                    100% { transform: translate(200px, 100px); }
+                }
+                .box-5:active {
+                    animation-name: anim-5;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
         <p>
             Значения также можно задавать в процентах, в этом случае перемещение будет расчитываться относительно
@@ -142,28 +194,40 @@
         </p>
 
         <div class="card bg-light mb-3 p-3">
-                <code class="html">
-                    <style>
-                        .box-6 {
-                            position: absolute;
-                            top: 0px; left: 0px;
-                            background-color: rgba(95, 159, 160, 0.5);
-                            transform: translate(50%, 50%);
-                        }
-                    </style>
-                    
-                    <div class="box-container">
-                        <div class="base-box fake-box-1">transform from
-                            <div class="base-box box-6">translate(50%, 50%)</div>
-                        </div>
+            <code class="html">
+                <style>
+                    .box-6 {
+                        position: absolute;
+                        top: 0px; left: 0px;
+                        background-color: rgba(95, 159, 160, 0.5);
+                        transform: translate(50%, 50%);
+                    }
+                </style>
+                
+                <div class="box-container">
+                    <div class="base-box fake-box-1">transform from
+                        <div class="base-box box-6">translate(50%, 50%)</div>
                     </div>
-                </code>
-            </div>
+                </div>
+            </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-6 {
+                    50%  { transform: translate(0px, 0px); color: transparent; }
+                    100% { transform: translate(50%, 50%); }
+                }
+                .box-6:hover {
+                    animation-name: anim-6;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
+        </div>
             
-            <p style="margin-top: 30px;">
-                Так же, возможно указать перемещение только по одной из осей указав, например: <em>translate<strong>X</strong>(50%)</em>
-                или <em>translate<strong>Y</strong>(50%)</em> для того, чтобы не писать нулевые значения для второй оси.
-            </p>
+        <p style="margin-top: 30px;">
+            Так же, возможно указать перемещение только по одной из осей указав, например: <em>translate<strong>X</strong>(50%)</em>
+            или <em>translate<strong>Y</strong>(50%)</em> для того, чтобы не писать нулевые значения для второй оси.
+        </p>
     </article>
 
     <article>
@@ -194,6 +258,27 @@
                     <div class="base-box box-9">scale(0.7)</div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-8 {
+                    50%  { transform: scale(1); }
+                    100% { transform: scale(1.5); }
+                }
+                .box-8:hover {
+                    animation-name: anim-8;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-9 {
+                    50%  { transform: scale(1); }
+                    100% { transform: scale(0.7); }
+                }
+                .box-9:hover {
+                    animation-name: anim-9;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
 
         <p>
@@ -219,6 +304,27 @@
                     <div class="base-box box-11">scale(1.5, 1)</div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-10 {
+                    50%  { transform: scale(1); }
+                    100% { transform: scale(1, 1.5); }
+                }
+                .box-10:hover {
+                    animation-name: anim-10;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-11 {
+                    50%  { transform: scale(1); }
+                    100% { transform: scale(1.5, 1); }
+                }
+                .box-11:hover {
+                    animation-name: anim-11;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
         <p>
             Также, в функции scale() можно указывать отрицательные значения. В этом случае происходит переворот элемента:
@@ -246,6 +352,36 @@
                     <div class="base-box box-14">scale(-2)</div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-12 {
+                    50%  { transform: scale(1); }
+                    100% { transform: scale(1, -1); }
+                }
+                .box-12:hover {
+                    animation-name: anim-12;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-13 {
+                    50%  { transform: scale(1); }
+                    100% { transform: scale(-1, 1); }
+                }
+                .box-13:hover {
+                    animation-name: anim-13;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-14 {
+                    50%  { transform: scale(1); }
+                    100% { transform: scale(-2); }
+                }
+                .box-14:hover {
+                    animation-name: anim-14;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
     </article>
 
@@ -273,11 +409,34 @@
                     <div class="base-box box-16">rotate(-30deg)</div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-15 {
+                    50%  { transform: rotate(0deg); }
+                    100% { transform: rotate(30deg); }
+                }
+                .box-15:hover {
+                    animation-name: anim-15;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-16 {
+                    50%  { transform: rotate(0deg); }
+                    100% { transform: rotate(-30deg); }
+                }
+                .box-16:hover {
+                    animation-name: anim-16;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
+
         <p class="pt-5">
             Также, значения можно указывать в других единицах измерениях, такие как количество поворотов (turn),
             градусы (grad) или радианы (rad):
         </p>
+        
         <div class="card bg-light mb-3 p-3">
             <code class="html">
                 <style>
@@ -300,6 +459,36 @@
                     <div class="base-box box-19">rotate(9.42478rad)</div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-17 {
+                    40%, 50% { transform: rotate(0turn); }    /* 40%, 50% -  Создается эффект паузы */
+                    90%, 100% { transform: rotate(1.5turn); }
+                }
+                .box-17:hover {
+                    animation-name: anim-17;
+                    animation-duration: 4s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-18 {
+                    40%, 50% { transform: rotate(0grad); }
+                    90%, 100% { transform: rotate(600grad); }
+                }
+                .box-18:hover {
+                    animation-name: anim-18;
+                    animation-duration: 4s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-19 {
+                    40%, 50%  { transform: rotate(0rad); }
+                    90%, 100% { transform: rotate(9.42478rad); }
+                }
+                .box-19:hover {
+                    animation-name: anim-19;
+                    animation-duration: 4s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
     </article>
 
@@ -331,6 +520,36 @@
                     <div class="base-box box-22">skew(25deg, 25deg)</div>
                 </div>
             </code>
+            <!-- Реализация анимации примеров -->
+            <style>
+                @keyframes anim-20 {
+                    50%  { transform: skew(0, 0); }
+                    100% { transform: skew(25deg, 0); }
+                }
+                .box-20:hover {
+                    animation-name: anim-20;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-21 {
+                    50%  { transform: skew(0, 0); }
+                    100% { transform: skew(0, 25deg); }
+                }
+                .box-21:hover {
+                    animation-name: anim-21;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+                @keyframes anim-22 {
+                    50%  { transform: skew(0, 0); }
+                    100% { transform: skew(25deg, 25deg); }
+                }
+                .box-22:hover {
+                    animation-name: anim-22;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+            </style>
         </div>
     </article>
 </section>

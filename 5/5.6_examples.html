@@ -116,7 +116,7 @@
         <p>
             Бывает, что какие-то сторонние плагины выставляют у атрибута <em>style</em> некоторые свойства со значениями <em>!important</em>.
             Кажется, как можно перебить эти свойства? Это можно сделать при помощи анимации.<br>
-            <span style="text-decoration: underline;">P.S. В Firefox 57 этот трюк не работает.</span>
+            <span style="text-decoration: underline;">P.S. В Firefox 57 этот трюк не работает, а в Chrome 62 работает.</span>
         </p>
         <div class="card bg-light mb-3 p-3">
             <code class="html">
@@ -128,12 +128,14 @@
                     .box {
                         height: 100px; width: 200px;
                         border: 1px solid gray;
+                        text-align: center;
+                        line-height: 100px;
                     }
                     .box:hover {
                         animation: break-style 1s infinite;
                     }
                 </style>
-                <div class="box" style="background-color: #fff !important;"></div>
+                <div class="box" style="background-color: #fff !important;">hover me</div>
             </code>
         </div>
     </article>
