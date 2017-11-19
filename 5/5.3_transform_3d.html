@@ -284,41 +284,49 @@
         <div class="card bg-light mb-3 p-3">            
             <code class="html">
                 <style>
-                    .block-container {
+                    .cube-container {
                         position: relative;
                         padding: 15px;
                         border: 1px solid lightgrey;
+                        width: 50%;
                     }
                     .pers{
                         perspective: 600px;
                     }
-                    .block {
+                    .cube {
                         position: relative;
                         display: inline-block;
-                        height: 100px; width: 200px;
+                        height: 100px; width: 100px;
                         text-align: center;
                         line-height: 100px;
                         background-color: #5fa0a0;
-                        transform: rotateX(25deg);
+                        transform: rotateX(30deg);
                     }
                 </style>
                 
-                <div class="block-container">
+                <div class="cube-container">
                     <div class="pers">
-                        <div class="block">1</div>
-                        <div class="block">2</div>
-                        <div class="block">3</div>
+                        <div class="cube">1</div>
+                        <div class="cube">2</div>
+                        <div class="cube">3</div>
+                        <div class="cube">4</div>
+                        <div class="cube">5</div>
+                        <div class="cube">6</div>
                     </div>
                 </div>
             </code>
             <!-- Реализация анимации примеров -->
             <style>
-                @keyframes anim-block {
+                @keyframes anim-cube {
                     50%  { transform: rotateX(0deg); }
-                    100% { transform: rotateX(25deg); }
+                    100% { transform: rotateX(30deg); }
                 }
-                .block:hover {
-                    animation-name: anim-block;
+                /*
+                    Селектор выбирает класс 'pers' с псевдоклассом ':hover', а затем отбирает только
+                    дочерние элементы с классом 'cube' и уже к ним применяются свойства анимации.
+                */
+                .pers:hover > .cube {
+                    animation-name: anim-cube;
                     animation-duration: 2s;
                     animation-iteration-count: infinite;
                 }
@@ -344,32 +352,44 @@
                     }
                 </style>
                 
-                <div class="block-container">
+                <div class="cube-container">
                     <div class="pers pers_center">
-                        <div class="block">1</div>
-                        <div class="block">2</div>
-                        <div class="block">3</div>
+                        <div class="cube">1</div>
+                        <div class="cube">2</div>
+                        <div class="cube">3</div>
+                        <div class="cube">4</div>
+                        <div class="cube">5</div>
+                        <div class="cube">6</div>
                     </div>
                 </div>
-                <div class="block-container">
+                <div class="cube-container">
                     <div class="pers pers_lt">
-                        <div class="block">1</div>
-                        <div class="block">2</div>
-                        <div class="block">3</div>
+                        <div class="cube">1</div>
+                        <div class="cube">2</div>
+                        <div class="cube">3</div>
+                        <div class="cube">4</div>
+                        <div class="cube">5</div>
+                        <div class="cube">6</div>
                     </div>
                 </div>
-                <div class="block-container">
+                <div class="cube-container">
                     <div class="pers pers_ct">
-                        <div class="block">1</div>
-                        <div class="block">2</div>
-                        <div class="block">3</div>
+                        <div class="cube">1</div>
+                        <div class="cube">2</div>
+                        <div class="cube">3</div>
+                        <div class="cube">4</div>
+                        <div class="cube">5</div>
+                        <div class="cube">6</div>
                     </div>
                 </div>
-                <div class="block-container">
+                <div class="cube-container">
                     <div class="pers pers_rt">
-                        <div class="block">1</div>
-                        <div class="block">2</div>
-                        <div class="block">3</div>
+                        <div class="cube">1</div>
+                        <div class="cube">2</div>
+                        <div class="cube">3</div>
+                        <div class="cube">4</div>
+                        <div class="cube">5</div>
+                        <div class="cube">6</div>
                     </div>
                 </div>
             </code>
@@ -468,7 +488,7 @@
                 </tr>
                 <tr>
                     <td>rotate(angle)</td>
-                    <td>rotate(x, y, z, angle)</td>
+                    <td>rotate3d(x, y, z, angle)</td>
                 </tr>
                 <tr>
                     <td>matrix(a, b, c, d, e, f)</td>
@@ -477,7 +497,7 @@
             </tbody>
         </table>
 
-        <div class="card bg-light mb-3 p-3">
+        <div class="card bg-light mb-5 p-3">
             <code class="html">
                 <style>
                     .wrapper{

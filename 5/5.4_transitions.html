@@ -113,140 +113,130 @@
             Так же, существуют другие значения:
             <style>
                 .demo-box{
-                    background-color: white;
+                    color: white;
+                    background-color: gray;
                     text-align: center;
-                    border: 1px solid gray;
+                    /* border: 1px solid gray; */
                     border-radius: 5px;
-                    /* width: 50%; */
+                    width: 120px;
+                }
+                @keyframes anim {
+                    0%, 10% { transform: translateX(0px); }
+                    90%, 100% { transform: translateX(380px); }
                 }
                 .demo-linear {
-                    transition-property: transform;
-                    transition-timing-function: linear;
-                    transition-duration: 0.3s;
-                }
-                .demo-linear:hover{
-                    transform: translateX(400px);
-                    background-color: #f00;
+                    animation-name: anim;
+                    animation-timing-function: linear;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
                 .demo-ease {
-                    transition-property: transform;
-                    transition-timing-function: ease;
-                    transition-duration: 0.3s;
-                }
-                .demo-ease:hover{
-                    transform: translateX(400px);
-                    background-color: #f00;
+                    animation-name: anim;
+                    animation-timing-function: ease;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
                 .demo-ease-in {
-                    transition-property: transform;
-                    transition-timing-function: ease-in;
-                    transition-duration: 0.3s;
-                }
-                .demo-ease-in:hover{
-                    transform: translateX(400px);
-                    background-color: #f00;
+                    animation-name: anim;
+                    animation-timing-function: ease-in;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
                 .demo-ease-out {
-                    transition-property: transform;
-                    transition-timing-function: ease-out;
-                    transition-duration: 0.3s;
-                }
-                .demo-ease-out:hover{
-                    transform: translateX(400px);
-                    background-color: #f00;
+                    animation-name: anim;
+                    animation-timing-function: ease-out;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
                 .demo-ease-in-out {
-                    transition-property: transform;
-                    transition-timing-function: ease-in-out;
-                    transition-duration: 0.3s;
-                }
-                .demo-ease-in-out:hover{
-                    transform: translateX(400px);
-                    background-color: #f00;
+                    animation-name: anim;
+                    animation-timing-function: ease-in-out;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
                 .demo-step-start {
-                    transition-property: transform;
-                    transition-timing-function: step-start;
-                    transition-duration: 0.3s;
-                }
-                .demo-step-start:hover{
-                    transform: translateX(400px);
-                    background-color: #f00;
+                    animation-name: anim;
+                    animation-timing-function: step-start;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
                 .demo-step-end {
-                    transition-property: transform;
-                    transition-timing-function: step-end;
-                    transition-duration: 0.3s;
-                }
-                .demo-step-end:hover{
-                    transform: translateX(400px);
-                    background-color: #f00;
+                    animation-name: anim;
+                    animation-timing-function: step-end;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
                 .demo-steps_10 {
-                    transition-property: transform;
-                    transition-timing-function: steps(10);
-                    transition-duration: 0.3s;
-                }
-                .demo-steps_10:hover{
-                    transform: translateX(400px);
-                    background-color: #f00;
+                    animation-name: anim;
+                    animation-timing-function: steps(10);
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
                 .demo-steps_10_start {
-                    transition-property: transform;
-                    transition-timing-function: steps(10, start);
-                    transition-duration: 0.3s;
-                }
-                .demo-steps_10_start:hover{
-                    transform: translateX(400px);
-                    background-color: #f00;
+                    animation-name: anim;
+                    animation-timing-function: steps(10, start);
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
                 }
             </style>
-            <table class="table table-sm table-bordered w-50">
-                <thead>
-                    <tr>
-                        <th>Timing функция</th>
-                        <th>Демо</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>linear</td>
-                        <td><div class="demo-box demo-linear">linear</div></td>
-                    </tr>
-                    <tr>
-                        <td>ease</td>
-                        <td><div class="demo-box demo-ease">ease</div></td>
-                    </tr>
-                    <tr>
-                        <td>ease-in</td>
-                        <td><div class="demo-box demo-ease-in">ease-in</div></td>
-                    </tr>
-                    <tr>
-                        <td>ease-out</td>
-                        <td><div class="demo-box demo-ease-out">ease-out</div></td>
-                    </tr>
-                    <tr>
-                        <td>ease-in-out</td>
-                        <td><div class="demo-box demo-ease-in-out">ease-in-out</div></td>
-                    </tr>
-                    <tr>
-                        <td>step-start</td>
-                        <td><div class="demo-box demo-step-start">step-start</div></td>
-                    </tr>
-                    <tr>
-                        <td>step-end</td>
-                        <td><div class="demo-box demo-step-end">step-end</div></td>
-                    </tr>
-                    <tr>
-                        <td>steps(10)</td>
-                        <td><div class="demo-box demo-steps_10">steps(10)</div></td>
-                    </tr>
-                    <tr>
-                        <td>steps(10, start)</td>
-                        <td><div class="demo-box demo-steps_10_start">steps(10, start)</div></td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <div class="col-md-3">
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Timing функция</th>
+                            <th>Демо</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>linear</td>
+                            <td><div class="demo-box demo-linear">linear</div></td>
+                        </tr>
+                        <tr>
+                            <td>ease</td>
+                            <td><div class="demo-box demo-ease">ease</div></td>
+                        </tr>
+                        <tr>
+                            <td>ease-in</td>
+                            <td><div class="demo-box demo-ease-in">ease-in</div></td>
+                        </tr>
+                        <tr>
+                            <td>ease-out</td>
+                            <td><div class="demo-box demo-ease-out">ease-out</div></td>
+                        </tr>
+                        <tr>
+                            <td>ease-in-out</td>
+                            <td><div class="demo-box demo-ease-in-out">ease-in-out</div></td>
+                        </tr>
+                        <tr>
+                            <td>step-start</td>
+                            <td><div class="demo-box demo-step-start">step-start</div></td>
+                        </tr>
+                        <tr>
+                            <td>step-end</td>
+                            <td><div class="demo-box demo-step-end">step-end</div></td>
+                        </tr>
+                        <tr>
+                            <td>steps(10)</td>
+                            <td><div class="demo-box demo-steps_10">steps(10)</div></td>
+                        </tr>
+                        <tr>
+                            <td>steps(10, start)</td>
+                            <td><div class="demo-box demo-steps_10_start">steps(10, start)</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </p>
     </article>
 
