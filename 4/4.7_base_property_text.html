@@ -1,4 +1,4 @@
-<section>
+<main>
     <header><h3>Базовые свойства для работы с текстом</h3></header>
 
     <article> <!-- ===================================================================================== -->
@@ -32,7 +32,6 @@
                 .cinco  { text-align: center;  }
                 .seis   { text-align: justify; }
             </code>
-            <code></code>
         </div>
         <style>
             .uno    { text-align: left;    }
@@ -43,179 +42,87 @@
             .seis   { text-align: justify; }
         </style>
 
-        <div class="container mb-3">
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По левому краю (left)</div>
-                    </div>
-                    <div class="row">
-                        <div class="col uno">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По краю начала текста (start)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col dos">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По правому краю (right)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col tres">Строка текста</div>
-                    </div>
-                </div>
-            </div>
+        <style>
+            .table-caption {
+                font-weight: bold;
+                white-space: nowrap;
+                width: 33%;
+            }
+        </style>
 
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По конечному краю (end)</div>
-                    </div>
-                    <div class="row">
-                        <div class="col quatro">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По центру (center)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col cinco">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По всей ширине (justify)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col seis">Строка текста</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table class="table table-sm table-bordered table-striped w-75">
+            <tr>
+                <td class="table-caption">По левому краю (left)</td>
+                <td class="table-caption">По краю начала текста (start)</td>
+                <td class="table-caption">По правому краю (right)</td>
+            </tr>
+            <tr>
+                <td class="uno">Строка текста</td>
+                <td class="dos">Строка текста</td>
+                <td class="tres">Строка текста</td>
+            </tr>
+            <tr>
+                <td class="table-caption">По конечному краю (end)</td>
+                <td class="table-caption">По центру (center)</td>
+                <td class="table-caption">По всей ширине (justify)</td>
+            </tr>
+            <tr>
+                <td class="quatro">Строка текста</td>
+                <td class="cinco">Строка текста</td>
+                <td class="seis">Строка текста</td>
+            </tr>
+        </table>
 
-        <p>Выравнивание по всей ширине не сработало. Почему? Потому, что нужно больше одной строки текста:</p>
+        <p>Выравнивание по всей ширине не сработало. Почему? Потому, что нужно больше одной строки текста:</p>        
 
-        <div class="container mb-3">
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По левому краю (left)</div>
-                    </div>
-                    <div class="row">
-                        <div class="col uno">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По краю начала текста (start)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col dos">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По правому краю (right)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col tres">Строка текста</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По конечному краю (end)</div>
-                    </div>
-                    <div class="row">
-                        <div class="col quatro">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По центру (center)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col cinco">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По всей ширине (justify)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col seis">We need so many text as possible, my comrade, otherwise, we can't see what's "justify" doing</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table class="table table-sm table-bordered table-striped w-75">
+            <tr>
+                <td class="table-caption">По левому краю (left)</td>
+                <td class="table-caption">По краю начала текста (start)</td>
+                <td class="table-caption">По правому краю (right)</td>
+            </tr>
+            <tr>
+                <td class="uno">Строка текста</td>
+                <td class="dos">Строка текста</td>
+                <td class="tres">Строка текста</td>
+            </tr>
+            <tr>
+                <td class="table-caption">По конечному краю (end)</td>
+                <td class="table-caption">По центру (center)</td>
+                <td class="table-caption">По всей ширине (justify)</td>
+            </tr>
+            <tr>
+                <td class="quatro">Строка текста</td>
+                <td class="cinco">Строка текста</td>
+                <td class="seis">We need so many text as possible, my comrade, otherwise, we can't see what's "justify" doing</td>
+            </tr>
+        </table>
 
         <p>Если мы поменяем направление текста на <em>rtl</em>, то получим немного другие результаты:</p>
 
-        <div class="container mb-3">
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По левому краю (left)</div>
-                    </div>
-                    <div class="row">
-                        <div class="col uno" dir="rtl">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По краю начала текста (start)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col dos" dir="rtl" style="color: crimson">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По правому краю (right)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col tres" dir="rtl">Строка текста</div>
-                    </div>
-                </div>
-            </div>
+        <table class="table table-sm table-bordered table-striped w-75">
+            <tr>
+                <td class="table-caption">По левому краю (left)</td>
+                <td class="table-caption">По краю начала текста (start)</td>
+                <td class="table-caption">По правому краю (right)</td>
+            </tr>
+            <tr>
+                <td class="uno" dir="rtl">Строка текста</td>
+                <td class="dos" dir="rtl" style="color: crimson;">Строка текста</td>
+                <td class="tres" dir="rtl">Строка текста</td>
+            </tr>
+            <tr>
+                <td class="table-caption">По конечному краю (end)</td>
+                <td class="table-caption">По центру (center)</td>
+                <td class="table-caption">По всей ширине (justify)</td>
+            </tr>
+            <tr>
+                <td class="quatro" dir="rtl" style="color: crimson;">Строка текста</td>
+                <td class="cinco" dir="rtl">Строка текста</td>
+                <td class="seis" dir="rtl" style="color: crimson;">We need so many text as possible, my comrade, otherwise, we can't see what's "justify" doing</td>
+            </tr>
+        </table>
 
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По конечному краю (end)</div>
-                    </div>
-                    <div class="row">
-                        <div class="col quatro" dir="rtl" style="color: crimson">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По центру (center)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col cinco" dir="rtl">Строка текста</div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4 col-xl-3 table-bordered">
-                    <div class="row alert-secondary pt-1 pb-1">
-                        <div class="col" style="font-weight: bold;">По всей ширине (justify)</div>
-                    </div>
-                    <div class="row pt-1 pb-1">
-                        <div class="col seis" dir="rtl" style="color: crimson">
-                            We need so many text as possible, my comrade, otherwise, we can't see what's "justify" doing
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </article>
 
     <article> <!-- ===================================================================================== -->
@@ -400,7 +307,7 @@
                             <kbd>blur-radius</kbd> <kbd>color</kbd>
         </p>
         <p>
-            Обязательными являются только сдвиг по x и по y. Цвет наследуется от родителя, а <em>blur-radius</em> будет равен 0.
+            Обязательными являются только сдвиг по <em>x</em> и по <em>y</em>. Цвет наследуется от родителя, а <em>blur-radius</em> будет равен 0.
         </p>
         <p>
             text-shadow: <kbd>offset-x</kbd> <kbd>offset-y</kbd>
@@ -595,4 +502,4 @@
             </code>
         </div>
     </article>
-</section>
+</main>

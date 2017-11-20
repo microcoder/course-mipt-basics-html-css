@@ -1,4 +1,4 @@
-<section>
+<main>
     <header><h3>Расстояние строк и символов</h3></header>
 
     <article> <!-- ===================================================================================== -->
@@ -10,6 +10,14 @@
                 * Если 2 или более, то первый отображается как исходный код, второй проигрывается на странице.
             -->
             <code class="html">
+                <style>
+                    body {font-size: 20px;}
+
+                    .line-height-mult {line-height: 1.5;}
+                    .line-height-em {line-height: 1.5em;}
+                    .line-height-pixel {line-height: 30px;}
+                </style>
+                
                 <div class="line-height-mult">
                     <p>
                         Swinging against the wind keeping the noose tight on her skin.
@@ -31,16 +39,16 @@
                         Fractions of fiction dismissed so start your hunt.
                     </p>
                 </div>
-                
+            </code>
+            <code>
                 <style>
-                    body {font-size: 20px;}
+                    div#ex1 {font-size: 20px;}
 
                     .line-height-mult {line-height: 1.5;}
                     .line-height-em {line-height: 1.5em;}
                     .line-height-pixel {line-height: 30px;}
                 </style>
-            </code>
-            <code>
+                
                 <div id="ex1">                    
                     <div class="line-height-mult">
                         <small class="text-muted"><strong>line-height-mult:</strong> 1.5 * 20 = 30 px</small>
@@ -68,14 +76,6 @@
                         </p>
                     </div>
                 </div>
-                
-                <style>
-                    div#ex1 {font-size: 20px;}
-
-                    .line-height-mult {line-height: 1.5;}
-                    .line-height-em {line-height: 1.5em;}
-                    .line-height-pixel {line-height: 30px;}
-                </style>
             </code>
         </div>
 
@@ -85,6 +85,16 @@
         </p>
         <div class="card bg-light mb-3 p-3">
             <code class="html">
+                <style>
+                    body {font-size: 20px;}
+
+                    .line-height-mult {line-height: 1.5;}
+                    .line-height-em {line-height: 1.5em;}
+                    .line-height-pixel {line-height: 30px;}
+
+                    p {font-size: 30px;}
+                </style>
+                
                 <div class="line-height-mult">
                     <p>
                         Swinging against the wind keeping the noose tight on her skin.
@@ -106,19 +116,19 @@
                         Fractions of fiction dismissed so start your hunt.
                     </p>
                 </div>
-                
-                <style>
-                    body {font-size: 20px;}
-
-                    .line-height-mult {line-height: 1.5;}
-                    .line-height-em {line-height: 1.5em;}
-                    .line-height-pixel {line-height: 30px;}
-
-                    p {font-size: 30px;}
-                </style>
             </code>
             <code>
-                <div id="ex2">                    
+                <div id="ex2">
+                    <style>
+                        div#ex2 {font-size: 20px;}
+    
+                        .line-height-mult {line-height: 1.5;}
+                        .line-height-em {line-height: 1.5em;}
+                        .line-height-pixel {line-height: 30px;}
+    
+                        div#ex2 p {font-size: 30px;}
+                    </style>
+                    
                     <div class="line-height-mult">
                         <small class="text-muted">Межстрочное расстояние: 1.5 * 30px = 45px</small>
                         <p>
@@ -127,6 +137,7 @@
                         </p>
                     </div>
                     <div class="line-height-em">
+                        <small class="text-muted">Межстрочное расстояние: 1.5 * 20px = 30px</small>
                         <p>
                             Does that make it okay? Sin finds the culprit.
                             Unexplained circumstances cause people to fear, deceive
@@ -134,6 +145,7 @@
                         </p>
                     </div>
                     <div class="line-height-pixel">
+                        <small class="text-muted">Межстрочное расстояние: 30px</small>
                         <p>
                             Up in the bedroom, she's seeing ghosts.
                             Demons in clothes, people she knows.
@@ -142,16 +154,6 @@
                         </p>
                     </div>
                 </div>
-                
-                <style>
-                    div#ex2 {font-size: 20px;}
-
-                    .line-height-mult {line-height: 1.5;}
-                    .line-height-em {line-height: 1.5em;}
-                    .line-height-pixel {line-height: 30px;}
-
-                    div#ex2 p {font-size: 30px;}
-                </style>
             </code>
         </div>
         <p>
@@ -173,6 +175,12 @@
         </p>
         <div class="card bg-light mb-3 p-3">
             <code class="html">
+                <style>
+                    .l-zero {letter-spacing: normal;}
+                    .l-first {letter-spacing: -2.5px;}
+                    .l-second{letter-spacing: 1em;}
+                </style>
+                
                 <p class="l-zero">
                     Swinging against the wind keeping the noose tight on her skin.
                     God will save her, the father's Lucifer they say,oh, do they?
@@ -188,17 +196,11 @@
                     Swear on the bible, that earns their trust.
                     Fractions of fiction dismissed so start your hunt.
                 </p>
-
-                <style>
-                    .l-zero {letter-spacing: normal;}
-                    .l-first {letter-spacing: -2.5px;}
-                    .l-second{letter-spacing: 1em;}
-                </style>
             </code>
         </div>
         <ol>
             <li>У первого параграфа ничего не поменялось</li>
-            <li>У второго параграфа отрицательное значение как бы склеяло буквы друг к другу</li>
+            <li>У второго параграфа отрицательное значение как бы склеило буквы друг к другу</li>
             <li>У третьего параграфа расстояние между буквами растянулось</li>
         </ol>
     </article>
@@ -211,6 +213,12 @@
         </p>
         <div class="card bg-light mb-3 p-3">
             <code class="html">
+                <style>
+                    .w-zero {word-spacing: normal;}
+                    .w-first {word-spacing: -10px;}
+                    .w-second{word-spacing: 1em;}
+                </style>
+                
                 <p class="w-zero">
                     Swinging against the wind keeping the noose tight on her skin.
                     God will save her, the father's Lucifer they say,oh, do they?
@@ -226,13 +234,7 @@
                     Swear on the bible, that earns their trust.
                     Fractions of fiction dismissed so start your hunt.
                 </p>
-
-                <style>
-                    .w-zero {word-spacing: normal;}
-                    .w-first {word-spacing: -10px;}
-                    .w-second{word-spacing: 1em;}
-                </style>
             </code>
         </div>
     </article>
-</section>
+</main>
