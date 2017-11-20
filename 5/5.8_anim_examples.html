@@ -1,0 +1,63 @@
+<section>
+    <header><h3>Примеры анимаций</h3></header>
+    <article> <!-- ===================================================================================== -->
+        
+        <style>
+            .text-container {
+                position: relative;
+                margin: 0;
+                width: 100%;
+                border: 1px solid lightgrey;
+            }
+            .text-container > div {
+                padding-left: 10px;
+                display: inline-block;
+                font: bold 72px Arial, sans-serif;
+            }
+            @keyframes anim {
+                0%   { transform: translateX(800px) rotate(1.5turn) scale(2); text-shadow: 5px 5px 20px; }
+                30%  { opacity: 1; }
+                90%  { transform: scale(1) skewX(0); text-shadow: 0px 0px 0px; }
+                95%  { transform: scale(1.5); text-shadow: 4px 4px 10px; }
+                100% { transform: translateX(0px); transform: scale(1); text-shadow: 0px 0px 0px; opacity: 1; }
+            }
+            .text-container:hover > div {
+                opacity: 0;
+                animation-name: anim;
+                animation-timing-function: ease-out;
+                animation-fill-mode: forwards;
+            }
+            .text-container:hover > div:nth-child(1){
+                animation-duration: 2s;
+            }
+            .text-container:hover > div:nth-child(2){
+                animation-duration: 1.8s;
+                animation-delay: 0.5s;
+            }
+            .text-container:hover > div:nth-child(3){
+                animation-duration: 1.6s;
+                animation-delay: 1s;
+            }
+            .text-container:hover > div:nth-child(4){
+                animation-duration: 1.4s;
+                animation-delay: 1.5s;
+            }
+            .text-container:hover > div:nth-child(5){
+                animation-duration: 1.2s;
+                animation-delay: 2s;
+            }
+            .text-container:hover > div:nth-child(6){
+                animation-duration: 1s;
+                animation-delay: 2.5s;
+            }
+        </style>
+        <div class="text-container">
+            <div>П</div>
+            <div>Р</div>
+            <div>О</div>
+            <div>С</div>
+            <div>Т</div>
+            <div>О</div>
+        </div>
+    </article>
+</section>
